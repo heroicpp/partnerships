@@ -86,14 +86,14 @@
     .payout-value { font-size: 16px; font-weight: 600; }
 
     /* CALCULATOR */
-    .calc-wrap { background: var(--h-dark); border-radius: var(--radius); padding: 28px; color: var(--h-cream); margin-top: 20px; }
-    .calc-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--h-gold); margin-bottom: 16px; }
+    .calc-wrap { background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 28px; color: var(--h-dark); margin-top: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .calc-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--h-blue); margin-bottom: 16px; }
     .calc-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .calc-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 16px; text-align: center; }
-    .calc-box.highlight { border-color: var(--h-gold); }
-    .calc-box-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #9CA3AF; margin-bottom: 6px; }
+    .calc-box { background: var(--h-cream); border: 1px solid #D4D1C7; border-radius: var(--radius); padding: 16px; text-align: center; }
+    .calc-box.highlight { border-color: var(--h-blue); background: #F0F1F8; }
+    .calc-box-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--h-mid); margin-bottom: 6px; }
     .calc-box-val { font-family: 'DM Serif Display', serif; font-size: 28px; font-weight: 400; }
-    .calc-box-sub { font-size: 11px; color: #6B7280; margin-top: 2px; }
+    .calc-box-sub { font-size: 11px; color: var(--h-mid); margin-top: 2px; }
 
     /* ASSETS - ACCORDION */
     .asset-accordion { margin-bottom: 12px; }
@@ -111,11 +111,11 @@
 
     /* BRAND GUIDELINES */
     .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .brand-do { background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 22px; }
-    .brand-dont { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 10px; padding: 22px; }
-    .brand-do h4 { color: #059669; font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-    .brand-dont h4 { color: #DC2626; font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-    .brand-do li, .brand-dont li { font-size: 13px; margin-bottom: 4px; margin-left: 16px; color: var(--h-dark); }
+    .brand-do { background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 28px; }
+    .brand-dont { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 10px; padding: 28px; }
+    .brand-do h4 { color: #059669; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+    .brand-dont h4 { color: #DC2626; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+    .brand-do li, .brand-dont li { font-size: 15px; margin-bottom: 8px; margin-left: 16px; color: var(--h-dark); line-height: 1.5; }
 
     /* PROMO IDEAS */
     .idea-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
@@ -151,6 +151,38 @@
     .hq-callout p { font-size: 14px; color: var(--h-dark); }
     .hq-callout strong { color: var(--h-blue); }
 
+    /* PRODUCT SELECTOR */
+    .ps-card { background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 16px; text-align: center; transition: all 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .ps-card .ps-icon { font-size: 24px; margin-bottom: 4px; }
+    .ps-card .ps-name { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+    .ps-card .ps-price { font-size: 12px; color: var(--h-blue); font-weight: 600; }
+    .ps-card .ps-desc { font-size: 11px; color: var(--h-mid); margin-top: 4px; }
+    .ps-card .ps-soon { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #D97706; background: #FFFBEB; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-top: 4px; }
+    .ps-active { border-color: var(--h-blue); box-shadow: 0 0 0 3px rgba(84,97,174,0.15); }
+    .ps-disabled { opacity: 0.5; cursor: default !important; }
+
+    /* EMAIL ITEMS */
+    .email-item { border: 1px solid #D4D1C7; border-radius: 8px; overflow: hidden; background: var(--h-white); }
+    .email-trigger { width: 100%; padding: 14px 18px; background: var(--h-white); border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-family: 'Outfit', sans-serif; font-size: 14px; color: var(--h-dark); text-align: left; transition: background 0.15s; }
+    .email-trigger:hover { background: var(--h-tan); }
+    .email-arrow { font-size: 12px; color: var(--h-mid); transition: transform 0.2s; flex-shrink: 0; }
+    .email-trigger.open .email-arrow { transform: rotate(90deg); }
+    .email-body { display: none; border-top: 1px solid #E5E7EB; padding: 16px 18px; background: #FAFAF8; }
+    .email-body.open { display: block; }
+    .email-preview { background: var(--h-white); border: 1px solid #E5E7EB; border-radius: 8px; padding: 20px; font-size: 13px; line-height: 1.7; color: var(--h-dark); }
+    .email-field { padding: 4px 0; font-size: 13px; }
+    .email-field-label { font-weight: 600; color: var(--h-mid); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .email-divider { border-bottom: 1px solid #E5E7EB; margin: 8px 0 12px; }
+    .email-content { white-space: pre-wrap; }
+    .copy-email-btn { display: block; margin-top: 12px; font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 8px; border: 1px solid var(--h-blue); background: var(--h-blue); color: white; cursor: pointer; transition: all 0.15s; }
+    .copy-email-btn:hover { background: #4551A0; }
+
+    /* FAQ FILTER TAGS */
+    .faq-tag { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-mid); cursor: pointer; transition: all 0.15s; }
+    .faq-tag:hover { border-color: var(--h-blue); color: var(--h-blue); }
+    .faq-tag-active { background: var(--h-blue); color: var(--h-white); border-color: var(--h-blue); }
+    .faq-tag-active:hover { background: #4551A0; }
+
     hr.heroic-hr { border: none; border-top: 1px solid #D4D1C7; margin: 48px 0; }
 
     @media (max-width: 700px) {
@@ -158,6 +190,7 @@
       .hq-header { padding: 14px 20px; }
       .hq-hero h1 { font-size: 30px; }
       .quick-actions, .gs-grid, .tier-row, .payout-grid, .brand-grid, .idea-grid, .link-grid, .calc-results { grid-template-columns: 1fr; }
+      .product-selector { grid-template-columns: repeat(2, 1fr) !important; }
     }
   </style>
 </head>
@@ -168,13 +201,7 @@
     <div class="hq-logo">
       <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic">
     </div>
-    <div class="hq-header-right">
-      <div class="hq-header-links">
-        <a href="[INSERT DASHBOARD LINK]">Dashboard</a>
-        <a href="[INSERT FAQ LINK]">FAQ</a>
-        <a href="mailto:partners@heroic.us">Support</a>
-      </div>
-    </div>
+    <div class="hq-header-right"></div>
   </div>
 
   <div class="page-wrap">
@@ -184,9 +211,12 @@
       <h1>Partner HQ</h1>
       <p>Everything you need to promote Heroic and maximize your earnings. Bookmark this page.</p>
       <div class="hq-contact">
-        <img src="https://pbs.twimg.com/profile_images/1917957401346531328/cqVyHmm7_400x400.jpg" alt="TG">
+        <div style="display: flex; margin-right: 4px;">
+          <img src="https://pbs.twimg.com/profile_images/1917957401346531328/cqVyHmm7_400x400.jpg" alt="TG" style="border: 2px solid var(--h-white); z-index: 2;">
+          <img src="https://media.licdn.com/dms/image/v2/D5603AQGmyLPGjbtR4g/profile-displayphoto-crop_800_800/B56Zl8dtJ6JkAI-/0/1758729797522?e=1775692800&v=beta&t=JIbQ290eENDQMQ1DUNsKGE8nHu1Pb3Pat2ZEEUjn85A" alt="MB" style="border: 2px solid var(--h-white); margin-left: -10px; z-index: 1;">
+        </div>
         <div class="hq-contact-info">
-          <div class="hq-contact-name">TG, Head of Partnerships</div>
+          <div class="hq-contact-name">Contact Us</div>
           <div class="hq-contact-email"><a href="mailto:partners@heroic.us">partners@heroic.us</a></div>
         </div>
       </div>
@@ -194,21 +224,21 @@
 
     <!-- QUICK ACTIONS -->
     <div class="quick-actions">
-      <a href="[INSERT DASHBOARD LINK]" class="qa-card">
+      <a href="https://partners.dub.co/programs/heroic" class="qa-card">
         <div class="qa-icon">📊</div>
         <div class="qa-title">Dashboard</div>
       </a>
-      <a href="#assets" class="qa-card">
+      <a href="#assets" class="qa-card" onclick="event.preventDefault(); document.getElementById('assets').scrollIntoView({behavior:'smooth'});">
         <div class="qa-icon">📦</div>
         <div class="qa-title">Assets</div>
       </a>
-      <a href="#commissions" class="qa-card">
+      <a href="https://partners.dub.co/programs/heroic/earnings" class="qa-card">
         <div class="qa-icon">💰</div>
         <div class="qa-title">Commissions</div>
       </a>
-      <a href="mailto:partners@heroic.us" class="qa-card">
-        <div class="qa-icon">💬</div>
-        <div class="qa-title">Support</div>
+      <a href="#faq-section" class="qa-card" onclick="event.preventDefault(); document.getElementById('faq-section').scrollIntoView({behavior:'smooth'});">
+        <div class="qa-icon">❓</div>
+        <div class="qa-title">FAQ</div>
       </a>
     </div>
 
@@ -277,24 +307,24 @@
       <div class="calc-wrap">
         <div class="calc-label">Earnings Calculator</div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-          <span style="font-size: 14px;">Customers you refer per month</span>
-          <span id="hq-slider-val" style="font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--h-gold);">10</span>
+          <span style="font-size: 14px; color: var(--h-dark);">Customers you refer per month</span>
+          <span id="hq-slider-val" style="font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--h-blue);">10</span>
         </div>
-        <input type="range" id="hq-slider" min="1" max="200" value="10" style="width:100%; height:6px; accent-color: #E2CA39; cursor:pointer; margin-bottom: 20px;">
+        <input type="range" id="hq-slider" min="1" max="200" value="10" style="width:100%; height:6px; accent-color: var(--h-blue); cursor:pointer; margin-bottom: 20px;">
         <div class="calc-results">
           <div class="calc-box">
             <div class="calc-box-label">Monthly</div>
-            <div id="hq-monthly" class="calc-box-val" style="color: var(--h-cream);">$495</div>
+            <div id="hq-monthly" class="calc-box-val" style="color: var(--h-dark);">$495</div>
             <div class="calc-box-sub">entry product</div>
           </div>
           <div class="calc-box">
             <div class="calc-box-label">Monthly + Upsells</div>
-            <div id="hq-monthly-up" class="calc-box-val" style="color: #4ADE80;">$869</div>
+            <div id="hq-monthly-up" class="calc-box-val" style="color: #059669;">$869</div>
             <div class="calc-box-sub">with value ladder</div>
           </div>
           <div class="calc-box highlight">
             <div class="calc-box-label">Annual Potential</div>
-            <div id="hq-annual" class="calc-box-val" style="color: var(--h-gold);">$10,430</div>
+            <div id="hq-annual" class="calc-box-val" style="color: var(--h-blue);">$10,430</div>
             <div id="hq-customers" class="calc-box-sub">120 customers referred</div>
           </div>
         </div>
@@ -309,13 +339,10 @@
           <div class="payout-item"><div class="payout-label">Cookie Window</div><div class="payout-value">60 days</div></div>
           <div class="payout-item"><div class="payout-label">Commission Window</div><div class="payout-value">12 months</div></div>
           <div class="payout-item"><div class="payout-label">Attribution</div><div class="payout-value">First-touch</div></div>
-          <div class="payout-item"><div class="payout-label">Payment Method</div><div class="payout-value">Stripe via Dub</div></div>
+          <div class="payout-item"><div class="payout-label">Payout Method</div><div class="payout-value">Stripe via Dub</div></div>
         </div>
       </div>
 
-      <div class="hq-callout">
-        <p><strong>Override Commissions:</strong> Silver and Gold partners earn additional commissions when partners they recruit into the program generate sales. Details in your dashboard.</p>
-      </div>
     </div>
 
     <hr class="heroic-hr">
@@ -327,6 +354,71 @@
         <h2>Heroic Logos, Copy & Creative</h2>
       </div>
 
+      <!-- PRODUCT SELECTOR -->
+      <div style="margin-bottom: 24px;">
+        <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--h-mid); margin-bottom: 12px;">Select Product</div>
+        <div class="product-selector" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+          <div class="ps-card ps-active" data-product="pn" onclick="selectProduct('pn', this)" style="cursor:pointer;">
+            <div class="ps-icon">📚</div>
+            <div class="ps-name">PhilosophersNotes</div>
+            <div class="ps-price">$99</div>
+            <div class="ps-desc">700+ book summaries. Lifetime access.</div>
+          </div>
+          <div class="ps-card ps-disabled" data-product="bt">
+            <div class="ps-icon">🏋️</div>
+            <div class="ps-name">Basic Training</div>
+            <div class="ps-price">$199</div>
+            <div class="ps-soon">Coming Soon</div>
+          </div>
+          <div class="ps-card ps-disabled" data-product="mastery">
+            <div class="ps-icon">🎯</div>
+            <div class="ps-name">Mastery</div>
+            <div class="ps-price">$499</div>
+            <div class="ps-soon">Coming Soon</div>
+          </div>
+          <div class="ps-card ps-disabled" data-product="coach">
+            <div class="ps-icon">🧭</div>
+            <div class="ps-name">Heroic Coach</div>
+            <div class="ps-price">$999</div>
+            <div class="ps-soon">Coming Soon</div>
+          </div>
+          <div class="ps-card ps-disabled" data-product="hwit">
+            <div class="ps-icon">🏔️</div>
+            <div class="ps-name">HWIT</div>
+            <div class="ps-price">$999</div>
+            <div class="ps-soon">Coming Soon</div>
+          </div>
+          <div class="ps-card ps-disabled" data-product="os">
+            <div class="ps-icon">💻</div>
+            <div class="ps-name">Heroic OS</div>
+            <div class="ps-price">TBD</div>
+            <div class="ps-soon">Coming Soon</div>
+          </div>
+          <div class="ps-card ps-disabled" data-product="live">
+            <div class="ps-icon">🎬</div>
+            <div class="ps-name">Heroic Live</div>
+            <div class="ps-price">TBD</div>
+            <div class="ps-soon">Coming Soon</div>
+          </div>
+          <div class="ps-card ps-disabled" data-product="bundle">
+            <div class="ps-icon">🎁</div>
+            <div class="ps-name">All-3 Bundle</div>
+            <div class="ps-price">$2,099</div>
+            <div class="ps-soon">Coming Soon</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT PAGE LINK (product-dependent) -->
+      <div class="product-asset" data-for="pn" style="background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 18px 24px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+        <div style="flex: 1; min-width: 0;">
+          <div style="font-size: 15px; font-weight: 600;">PhilosophersNotes</div>
+          <div style="font-size: 13px; color: var(--h-mid);">Review the live product page. Always use your partner link when sharing with your audience.</div>
+        </div>
+        <a href="https://www.philosophersnotes.com/" target="_blank" style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--h-blue); color: white; text-decoration: none; white-space: nowrap; flex-shrink: 0;">Visit Page &rarr;</a>
+      </div>
+
+      <!-- LOGOS (always visible) -->
       <div class="asset-accordion">
         <button class="asset-trigger" onclick="toggleAsset(this)">
           <span class="asset-label">Heroic Logos & Color Palette</span> <span class="badge badge-ready">Ready</span>
@@ -334,136 +426,236 @@
         </button>
         <div class="asset-content">
           <p><strong>Primary Logo (Dark):</strong></p>
-          <div style="background: var(--h-cream); border: 1px solid #E5E7EB; border-radius: 6px; padding: 24px; text-align: center; margin: 8px 0 16px;">
-            <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic Logo" style="height: 40px;">
+          <div style="background: var(--h-cream); border: 1px solid #E5E7EB; border-radius: 6px; padding: 24px; text-align: center; margin: 8px 0 8px;">
+            <img id="heroic-logo-img" src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic Logo" style="height: 40px;">
           </div>
-          <p><strong>Brand Colors:</strong></p>
-          <div style="display: flex; gap: 8px; margin: 8px 0 16px; flex-wrap: wrap;">
-            <div style="width: 60px; height: 60px; background: #13171B; border-radius: 6px; border: 1px solid #E5E7EB;" title="#13171B"></div>
-            <div style="width: 60px; height: 60px; background: #5461AE; border-radius: 6px;" title="#5461AE"></div>
-            <div style="width: 60px; height: 60px; background: #E2CA39; border-radius: 6px;" title="#E2CA39"></div>
-            <div style="width: 60px; height: 60px; background: #CFE1ED; border-radius: 6px; border: 1px solid #E5E7EB;" title="#CFE1ED"></div>
-            <div style="width: 60px; height: 60px; background: #F0EDE1; border-radius: 6px; border: 1px solid #E5E7EB;" title="#F0EDE1"></div>
-            <div style="width: 60px; height: 60px; background: #F8F7F3; border-radius: 6px; border: 1px solid #E5E7EB;" title="#F8F7F3"></div>
+          <div style="margin-bottom: 16px;">
+            <a href="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" download="heroic-logo.png" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--h-blue); text-decoration: none; padding: 6px 14px; border: 1px solid var(--h-blue); border-radius: 6px; transition: all 0.15s;" onmouseover="this.style.background='rgba(84,97,174,0.08)'" onmouseout="this.style.background=''">&#8595; Download Logo</a>
+          </div>
+          <p><strong>Brand Colors:</strong> <span style="font-size: 11px; color: var(--h-mid);">(click to copy)</span></p>
+          <div style="display: flex; gap: 10px; margin: 8px 0 16px; flex-wrap: wrap;">
+            <div class="color-swatch" onclick="copyHex('#13171B', this)" style="cursor:pointer; text-align:center;">
+              <div style="width: 60px; height: 60px; background: #13171B; border-radius: 6px; border: 1px solid #E5E7EB;"></div>
+              <div class="hex-label" style="font-size: 10px; font-weight: 600; color: var(--h-mid); margin-top: 4px; font-family: monospace;">#13171B</div>
+            </div>
+            <div class="color-swatch" onclick="copyHex('#5461AE', this)" style="cursor:pointer; text-align:center;">
+              <div style="width: 60px; height: 60px; background: #5461AE; border-radius: 6px;"></div>
+              <div class="hex-label" style="font-size: 10px; font-weight: 600; color: var(--h-mid); margin-top: 4px; font-family: monospace;">#5461AE</div>
+            </div>
+            <div class="color-swatch" onclick="copyHex('#E2CA39', this)" style="cursor:pointer; text-align:center;">
+              <div style="width: 60px; height: 60px; background: #E2CA39; border-radius: 6px;"></div>
+              <div class="hex-label" style="font-size: 10px; font-weight: 600; color: var(--h-mid); margin-top: 4px; font-family: monospace;">#E2CA39</div>
+            </div>
+            <div class="color-swatch" onclick="copyHex('#CFE1ED', this)" style="cursor:pointer; text-align:center;">
+              <div style="width: 60px; height: 60px; background: #CFE1ED; border-radius: 6px; border: 1px solid #E5E7EB;"></div>
+              <div class="hex-label" style="font-size: 10px; font-weight: 600; color: var(--h-mid); margin-top: 4px; font-family: monospace;">#CFE1ED</div>
+            </div>
+            <div class="color-swatch" onclick="copyHex('#F0EDE1', this)" style="cursor:pointer; text-align:center;">
+              <div style="width: 60px; height: 60px; background: #F0EDE1; border-radius: 6px; border: 1px solid #E5E7EB;"></div>
+              <div class="hex-label" style="font-size: 10px; font-weight: 600; color: var(--h-mid); margin-top: 4px; font-family: monospace;">#F0EDE1</div>
+            </div>
+            <div class="color-swatch" onclick="copyHex('#F8F7F3', this)" style="cursor:pointer; text-align:center;">
+              <div style="width: 60px; height: 60px; background: #F8F7F3; border-radius: 6px; border: 1px solid #E5E7EB;"></div>
+              <div class="hex-label" style="font-size: 10px; font-weight: 600; color: var(--h-mid); margin-top: 4px; font-family: monospace;">#F8F7F3</div>
+            </div>
           </div>
           <p style="font-size: 12px;">Right-click any logo to save. Use these colors when creating co-branded content. Do not modify or recolor the logo.</p>
         </div>
       </div>
 
-      <div class="asset-accordion">
+      <!-- PROMOTIONAL IMAGES (product-dependent) -->
+      <div class="asset-accordion product-asset" data-for="pn">
         <button class="asset-trigger" onclick="toggleAsset(this)">
-          <span class="asset-label">Email Swipe Copy</span> <span class="badge badge-soon">Coming Soon</span>
+          <span class="asset-label">Promotional Images</span> <span class="badge badge-ready">Ready</span>
           <span class="asset-arrow">&#9660;</span>
         </button>
         <div class="asset-content">
-          <div style="display: flex; justify-content: space-between; align-items: center;"><p><strong>Dedicated Send Template</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
-          <div class="swipe-block" style="background: var(--h-tan); border-radius: 6px; padding: 16px; margin: 8px 0; font-size: 13px;">Subject: I found something for you
+          <p style="font-size: 13px; color: var(--h-mid); margin-bottom: 16px;">Use these images in social posts, blog articles, emails, and ads. Right-click or use the download button to save. Always include your partner link when sharing.</p>
+          <div class="promo-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
 
-Hey [First Name],
+            <!-- Image 1: Ultimate Wisdom Library -->
+            <div class="promo-img-card" style="background: var(--h-cream); border: 1px solid #D4D1C7; border-radius: 10px; overflow: hidden;">
+              <img src="https://lh3.googleusercontent.com/d/1eYf3_0pjtX2YQoQx2J0ZayjEYLlb6khS" alt="One app. One price. Forever. The ultimate wisdom library. PhilosophersNotes app showing categories like Habits, Stoicism, Leadership, Productivity." style="width: 100%; display: block; aspect-ratio: 1/1; object-fit: cover; background: #5C69B3;">
+              <div style="padding: 12px 14px; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <div style="font-size: 13px; font-weight: 600;">The Ultimate Wisdom Library</div>
+                  <div style="font-size: 11px; color: var(--h-mid);">App hero with categories</div>
+                </div>
+                <a href="https://drive.google.com/uc?export=download&id=1eYf3_0pjtX2YQoQx2J0ZayjEYLlb6khS" download="pn-ultimate-wisdom-library.jpg" style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer; text-decoration: none; white-space: nowrap;">&#8595; Download</a>
+              </div>
+            </div>
 
-I wanted to share something I've been using that has genuinely changed how I approach [personal development / leadership / performance].
+            <!-- Image 2: Atomic Habits / Installing Big Ideas -->
+            <div class="promo-img-card" style="background: var(--h-cream); border: 1px solid #D4D1C7; border-radius: 10px; overflow: hidden;">
+              <img src="https://lh3.googleusercontent.com/d/1HYxUfDPcq4uhXsQLuRZ5Pw_xdciKYN3L" alt="Buying the book isn't a habit. Installing the Big Ideas is. PhilosophersNotes app with Atomic Habits by James Clear." style="width: 100%; display: block; aspect-ratio: 1/1; object-fit: cover; background: #5C69B3;">
+              <div style="padding: 12px 14px; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <div style="font-size: 13px; font-weight: 600;">Installing the Big Ideas</div>
+                  <div style="font-size: 11px; color: var(--h-mid);">Atomic Habits feature</div>
+                </div>
+                <a href="https://drive.google.com/uc?export=download&id=1HYxUfDPcq4uhXsQLuRZ5Pw_xdciKYN3L" download="pn-installing-big-ideas.jpg" style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer; text-decoration: none; white-space: nowrap;">&#8595; Download</a>
+              </div>
+            </div>
 
-It's called Heroic. Think of it as the world's most life-changing wisdom library. 700+ book summaries distilled into practical, actionable wisdom you can apply immediately. One "PhilosophersNote" takes about 20 minutes and is worth more than reading the entire book.
+            <!-- Image 3: Wisest Person in the Room -->
+            <div class="promo-img-card" style="background: var(--h-cream); border: 1px solid #D4D1C7; border-radius: 10px; overflow: hidden;">
+              <img src="https://lh3.googleusercontent.com/d/1sSzNQdZXEtpnXBu7-FoTEFSgdnxP3A1R" alt="Become the wisest person in the room. Join Philosopher's Notes. Greek statue wearing headphones holding a phone." style="width: 100%; display: block; aspect-ratio: 1/1; object-fit: cover; background: #5C69B3;">
+              <div style="padding: 12px 14px; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <div style="font-size: 13px; font-weight: 600;">Wisest Person in the Room</div>
+                  <div style="font-size: 11px; color: var(--h-mid);">Statue with headphones</div>
+                </div>
+                <a href="https://drive.google.com/uc?export=download&id=1sSzNQdZXEtpnXBu7-FoTEFSgdnxP3A1R" download="pn-wisest-person-room.jpg" style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer; text-decoration: none; white-space: nowrap;">&#8595; Download</a>
+              </div>
+            </div>
 
-I partnered with them because I believe in the product that much. Here's my link if you want to check it out: [YOUR LINK]
+            <!-- Image 4: Life-Changing Wisdom Library -->
+            <div class="promo-img-card" style="background: var(--h-cream); border: 1px solid #D4D1C7; border-radius: 10px; overflow: hidden;">
+              <img src="https://lh3.googleusercontent.com/d/1kG8iFOCGrPd-rDByqGck3LZtiFkqvMXJ" alt="The world's most life-changing wisdom library. 700+ Philosopher's Notes. Laptop and phone showing the PhilosophersNotes platform." style="width: 100%; display: block; aspect-ratio: 1/1; object-fit: cover; background: #5C69B3;">
+              <div style="padding: 12px 14px; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <div style="font-size: 13px; font-weight: 600;">700+ PhilosophersNotes</div>
+                  <div style="font-size: 11px; color: var(--h-mid);">Laptop & phone mockup</div>
+                </div>
+                <a href="https://drive.google.com/uc?export=download&id=1kG8iFOCGrPd-rDByqGck3LZtiFkqvMXJ" download="pn-700-notes-mockup.jpg" style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer; text-decoration: none; white-space: nowrap;">&#8595; Download</a>
+              </div>
+            </div>
 
-[Your name]</div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;"><p><strong>Newsletter Mention (P.S. Style)</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
-          <div class="swipe-block" style="background: var(--h-tan); border-radius: 6px; padding: 16px; margin: 8px 0; font-size: 13px;">P.S. If you're a reader and want to level up faster, check out Heroic. It's a library of 700+ book summaries from the best personal development books ever written. I'm a partner because I use it myself. [YOUR LINK]</div>
-
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;"><p><strong>Newsletter Copy (Full Section)</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
-          <div class="swipe-block" style="background: var(--h-tan); border-radius: 6px; padding: 16px; margin: 8px 0; font-size: 13px;">THE RESOURCE I KEEP RECOMMENDING
-
-I get asked all the time what tools I use for personal development. The honest answer? Heroic's PhilosophersNotes.
-
-It's 700+ book summaries distilled into practical, 20-minute sessions. Think of it as having a world-class mentor who's read every book on leadership, performance, and personal growth, and gives you just the parts you need.
-
-I partnered with Heroic because I've used it myself and it's the real deal. $99 for lifetime access to the entire library.
-
-Check it out here: [YOUR LINK]
-
-(Disclosure: I'm a Heroic Partner and earn a commission if you purchase through my link.)</div>
-
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;"><p><strong>Sponsorship Insert</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
-          <p style="font-size: 12px; color: var(--h-mid); margin: 4px 0 8px;">Drop this into your newsletter as a sponsored section. Designed to look like a natural sponsorship block readers can click through.</p>
-          <div class="swipe-block" style="background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 8px; padding: 20px; margin: 8px 0; font-size: 13px;">
-<div style="font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: #9CA3AF; margin-bottom: 8px;">Presented by Heroic</div>
-<div style="font-size: 15px; font-weight: 600; color: #13171B; margin-bottom: 6px;">700+ Books. 20 Minutes Each. Lifetime Access.</div>
-<div style="color: #6B7280; margin-bottom: 12px;">Heroic's PhilosophersNotes distills the world's best personal development books into practical wisdom you can apply immediately. Used by Fortune 500 leaders, elite athletes, and high-performers worldwide. $99 for lifetime access to the full library.</div>
-<div style="font-weight: 600; color: #5461AE;">[YOUR LINK] &rarr;</div>
-<div style="font-size: 10px; color: #9CA3AF; margin-top: 8px;">(Partner link)</div></div>
-          <p style="font-size: 12px; margin-top: 12px;">More templates coming soon. Always include your unique partner link and an FTC disclosure.</p>
+          </div>
+          <p style="font-size: 12px; margin-top: 14px; color: var(--h-mid);">More images coming soon. Always disclose your partner relationship when using promotional materials.</p>
         </div>
       </div>
 
-      <div class="asset-accordion">
+      <!-- EMAIL SWIPE COPY (product-dependent) -->
+      <div class="asset-accordion product-asset" data-for="pn">
         <button class="asset-trigger" onclick="toggleAsset(this)">
-          <span class="asset-label">Social Media Templates</span> <span class="badge badge-soon">Coming Soon</span>
+          <span class="asset-label">Email Swipe Copy</span> <span class="badge badge-ready">Ready</span>
           <span class="asset-arrow">&#9660;</span>
         </button>
         <div class="asset-content">
-          <div style="display: flex; justify-content: space-between; align-items: center;"><p><strong>LinkedIn Post</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
-          <div class="swipe-block" style="background: var(--h-tan); border-radius: 6px; padding: 16px; margin: 8px 0; font-size: 13px;">The best leaders I know read constantly. But not all of us have time to read 50 books a year.
+          <p style="font-size: 13px; color: var(--h-mid); margin-bottom: 16px;">Click any template to expand. Copy the full email with one click. Always include your unique partner link and an FTC disclosure.</p>
 
-That's why I recommend Heroic's PhilosophersNotes. 700+ book summaries distilled into practical wisdom you can apply in 20 minutes.
+          <!-- Email 1: Dedicated Send -->
+          <div class="email-item" style="margin-bottom: 8px;">
+            <button class="email-trigger" onclick="toggleEmail(this)">
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 16px;">📧</span>
+                <span><strong>Dedicated Send</strong><br><span style="font-size: 11px; color: var(--h-mid); font-weight: 400;">Full email to your list about Heroic</span></span>
+              </span>
+              <span class="email-arrow">&#9654;</span>
+            </button>
+            <div class="email-body">
+              <div class="email-preview">
+                <div class="email-field"><span class="email-field-label">Subject:</span> I found something for you</div>
+                <div class="email-divider"></div>
+                <div class="email-content">Hey [First Name],<br><br>I wanted to share something I've been using that has changed how I approach [personal development / leadership / performance].<br><br>It's called Heroic. Think of it as the world's most life-changing wisdom library. 700+ book summaries distilled into practical, actionable wisdom you can apply immediately. One "PhilosophersNote" takes about 20 minutes and is worth more than reading the entire book.<br><br>I partnered with them because I believe in the product that much. Here's my link if you want to check it out: <strong>[YOUR LINK]</strong><br><br>[Your name]</div>
+              </div>
+              <button class="copy-email-btn" onclick="copyEmailBlock(this)">Copy Email</button>
+            </div>
+          </div>
 
-I'm a Heroic Partner because I genuinely use and love this product. Link in comments.
+          <!-- Email 2: P.S. Mention -->
+          <div class="email-item" style="margin-bottom: 8px;">
+            <button class="email-trigger" onclick="toggleEmail(this)">
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 16px;">✏️</span>
+                <span><strong>Newsletter P.S. Mention</strong><br><span style="font-size: 11px; color: var(--h-mid); font-weight: 400;">Quick mention at the end of any newsletter</span></span>
+              </span>
+              <span class="email-arrow">&#9654;</span>
+            </button>
+            <div class="email-body">
+              <div class="email-preview">
+                <div class="email-content">P.S. If you're a reader and want to level up faster, check out Heroic. It's a library of 700+ book summaries from the best personal development books ever written. I'm a partner because I use it myself. <strong>[YOUR LINK]</strong></div>
+              </div>
+              <button class="copy-email-btn" onclick="copyEmailBlock(this)">Copy Email</button>
+            </div>
+          </div>
 
-#leadership #personaldevelopment #wisdom</div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;"><p><strong>Twitter/X Post</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
-          <div class="swipe-block" style="background: var(--h-tan); border-radius: 6px; padding: 16px; margin: 8px 0; font-size: 13px;">700+ books distilled into 20-minute summaries. Heroic's PhilosophersNotes is the most underrated resource in personal development. Link: [YOUR LINK] (partner link)</div>
+          <!-- Email 3: Newsletter Full Section -->
+          <div class="email-item" style="margin-bottom: 8px;">
+            <button class="email-trigger" onclick="toggleEmail(this)">
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 16px;">📰</span>
+                <span><strong>Newsletter Full Section</strong><br><span style="font-size: 11px; color: var(--h-mid); font-weight: 400;">Dedicated section within your newsletter</span></span>
+              </span>
+              <span class="email-arrow">&#9654;</span>
+            </button>
+            <div class="email-body">
+              <div class="email-preview">
+                <div class="email-field"><span class="email-field-label">Section Header:</span> THE RESOURCE I KEEP RECOMMENDING</div>
+                <div class="email-divider"></div>
+                <div class="email-content">I get asked all the time what tools I use for personal development. The honest answer? Heroic's PhilosophersNotes.<br><br>It's 700+ book summaries distilled into practical, 20-minute sessions. Think of it as having a world-class mentor who's read every book on leadership, performance, and personal growth, and gives you just the parts you need.<br><br>I partnered with Heroic because I've used it myself and it's the real deal. $99 for lifetime access to the entire library.<br><br>Check it out here: <strong>[YOUR LINK]</strong><br><br><em>(Disclosure: I'm a Heroic Partner and earn a commission if you purchase through my link.)</em></div>
+              </div>
+              <button class="copy-email-btn" onclick="copyEmailBlock(this)">Copy Email</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPONSORSHIP INSERT (product-dependent) -->
+      <div class="asset-accordion product-asset" data-for="pn">
+        <button class="asset-trigger" onclick="toggleAsset(this)">
+          <span class="asset-label">Sponsorship Insert</span> <span class="badge badge-ready">Ready</span>
+          <span class="asset-arrow">&#9660;</span>
+        </button>
+        <div class="asset-content">
+          <p style="font-size: 13px; color: var(--h-mid); margin-bottom: 12px;">Drop this into your newsletter as a sponsored section. Designed to look like a natural sponsorship block readers can click through.</p>
+          <div class="email-preview" style="margin-bottom: 12px;">
+            <div style="font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: #9CA3AF; margin-bottom: 8px;">Presented by Heroic</div>
+            <div style="font-size: 15px; font-weight: 600; color: #13171B; margin-bottom: 6px;">700+ Books. 20 Minutes Each. Lifetime Access.</div>
+            <div style="color: #6B7280; margin-bottom: 12px; font-size: 13px;">Heroic's PhilosophersNotes distills the world's best personal development books into practical wisdom you can apply immediately. Used by Fortune 500 leaders, elite athletes, and high-performers worldwide. $99 for lifetime access to the full library.</div>
+            <div style="font-weight: 600; color: #5461AE;">[YOUR LINK] &rarr;</div>
+            <div style="font-size: 10px; color: #9CA3AF; margin-top: 8px;">(Partner link)</div>
+          </div>
+          <button class="copy-email-btn" onclick="copyEmailBlock(this)">Copy Sponsorship Block</button>
+        </div>
+      </div>
+
+      <!-- SOCIAL MEDIA (product-dependent) -->
+      <div class="asset-accordion product-asset" data-for="pn">
+        <button class="asset-trigger" onclick="toggleAsset(this)">
+          <span class="asset-label">Social Media Templates</span> <span class="badge badge-ready">Ready</span>
+          <span class="asset-arrow">&#9660;</span>
+        </button>
+        <div class="asset-content">
+          <!-- LinkedIn -->
+          <div class="email-item" style="margin-bottom: 8px;">
+            <button class="email-trigger" onclick="toggleEmail(this)">
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 16px;">💼</span>
+                <span><strong>LinkedIn Post</strong><br><span style="font-size: 11px; color: var(--h-mid); font-weight: 400;">Personal recommendation for your network</span></span>
+              </span>
+              <span class="email-arrow">&#9654;</span>
+            </button>
+            <div class="email-body">
+              <div class="email-preview">
+                <div class="email-content">The best leaders I know read constantly. But not all of us have time to read 50 books a year.<br><br>That's why I recommend Heroic's PhilosophersNotes. 700+ book summaries distilled into practical wisdom you can apply in 20 minutes.<br><br>I'm a Heroic Partner because I use and love this product. Link in comments.<br><br>#leadership #personaldevelopment #wisdom</div>
+              </div>
+              <button class="copy-email-btn" onclick="copyEmailBlock(this)">Copy Post</button>
+            </div>
+          </div>
+          <!-- Twitter/X -->
+          <div class="email-item" style="margin-bottom: 8px;">
+            <button class="email-trigger" onclick="toggleEmail(this)">
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 16px;">🐦</span>
+                <span><strong>Twitter/X Post</strong><br><span style="font-size: 11px; color: var(--h-mid); font-weight: 400;">Short-form recommendation</span></span>
+              </span>
+              <span class="email-arrow">&#9654;</span>
+            </button>
+            <div class="email-body">
+              <div class="email-preview">
+                <div class="email-content">700+ books distilled into 20-minute summaries. Heroic's PhilosophersNotes is the most underrated resource in personal development. Link: <strong>[YOUR LINK]</strong> (partner link)</div>
+              </div>
+              <button class="copy-email-btn" onclick="copyEmailBlock(this)">Copy Post</button>
+            </div>
+          </div>
           <p style="font-size: 12px; margin-top: 12px;">Graphics and image templates coming soon. Always disclose your partner relationship in social posts.</p>
         </div>
       </div>
 
-      <div class="asset-accordion">
-        <button class="asset-trigger" onclick="toggleAsset(this)">
-          <span class="asset-label">Product Overview</span> <span class="badge badge-ready">Ready</span>
-          <span class="asset-arrow">&#9660;</span>
-        </button>
-        <div class="asset-content">
-          <p style="margin-bottom: 16px;">Heroic is Brian Johnson's personal development platform on a mission to help a million people close the gap between who they're capable of being and who they're actually being.</p>
-
-          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
-            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">📚</div>
-            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">PhilosophersNotes</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">$99 Lifetime Access</div><div style="font-size: 13px;">700+ book summaries distilled into 20-minute practical wisdom sessions. The entry point to the Heroic ecosystem and your primary promotional product.</div></div>
-          </div>
-
-          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
-            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">🏋️</div>
-            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">Basic Training</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">$199</div><div style="font-size: 13px;">Structured training program building on PhilosophersNotes foundations. Deeper application of the core principles.</div></div>
-          </div>
-
-          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
-            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">🎯</div>
-            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">Mastery</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">$499</div><div style="font-size: 13px;">Advanced mastery program for committed practitioners. Deep-dive into the Heroic framework for sustainable high performance.</div></div>
-          </div>
-
-          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
-            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">🧭</div>
-            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">Heroic Coach</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">$999</div><div style="font-size: 13px;">Coaching certification and advanced training. For those who want to lead others through the Heroic methodology.</div></div>
-          </div>
-
-          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
-            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--h-gold) 0%, #B8860B 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">🏔️</div>
-            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">HWIT (Heroic Workshop Instructor Training)</div><div style="font-size: 12px; color: var(--h-gold); font-weight: 600; margin-bottom: 4px;">$999</div><div style="font-size: 13px;">The pinnacle instructor certification program. Transform into a certified Heroic Workshop facilitator and leader. The highest-value product in the suite.</div></div>
-          </div>
-
-          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
-            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">💻</div>
-            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">Heroic OS</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">TBD</div><div style="font-size: 13px;">Coming soon. Advanced operating system for personal and professional development.</div></div>
-          </div>
-
-          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
-            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">🎬</div>
-            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">Heroic Live</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">TBD</div><div style="font-size: 13px;">Coming soon. Live events and experiences connecting the Heroic community.</div></div>
-          </div>
-
-          <p style="font-size: 12px; margin-top: 8px;">Partners earn commissions across the entire product suite. When your referral ascends the ladder, you earn on every purchase for 12 months.</p>
-        </div>
-      </div>
-
-      <div class="asset-accordion">
+      <!-- CO-BRANDED LANDING PAGE (product-dependent) -->
+      <div class="asset-accordion product-asset" data-for="pn">
         <button class="asset-trigger" onclick="toggleAsset(this)">
           <span class="asset-label">Co-Branded Landing Page</span> <span class="badge badge-soon">Request</span>
           <span class="asset-arrow">&#9660;</span>
@@ -479,20 +671,50 @@ I'm a Heroic Partner because I genuinely use and love this product. Link in comm
         </div>
       </div>
 
+      <!-- PARTNER BADGE (always visible) -->
       <div class="asset-accordion">
         <button class="asset-trigger" onclick="toggleAsset(this)">
           <span class="asset-label">Partner Badge</span> <span class="badge badge-ready">Ready</span>
           <span class="asset-arrow">&#9660;</span>
         </button>
         <div class="asset-content">
-          <p>Display the "Official Heroic Partner" badge on your website, email signature, or social profiles.</p>
-          <div style="background: var(--h-white); border: 2px solid #E5E7EB; border-radius: 6px; padding: 24px; text-align: center; margin: 12px 0;">
-            <div style="display: inline-flex; align-items: center; gap: 10px; background: var(--h-dark); color: var(--h-cream); padding: 12px 24px; border-radius: var(--radius); font-size: 13px; font-weight: 600; letter-spacing: 0.5px;">
-              <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic" style="height: 16px; filter: invert(1);">
-              Official Partner
+          <p style="margin-bottom: 16px;">Display the "Official Heroic Partner" badge on your website, email signature, or social profiles. Three formats available.</p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+            <!-- Wide Badge -->
+            <div style="text-align: center;">
+              <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--h-mid); margin-bottom: 8px;">Wide</div>
+              <div id="badge-wide" style="background: var(--h-cream); border: 1px solid #E5E7EB; border-radius: 8px; padding: 24px 16px; display: flex; align-items: center; justify-content: center; min-height: 90px;">
+                <div style="display: inline-flex; align-items: center; gap: 10px; background: var(--h-dark); color: var(--h-cream); padding: 12px 24px; border-radius: var(--radius); font-size: 12px; font-weight: 600; letter-spacing: 0.5px; white-space: nowrap;">
+                  <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic" style="height: 14px; filter: invert(1);">
+                  Official Partner
+                </div>
+              </div>
+              <button onclick="downloadBadge('wide')" style="margin-top: 8px; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer;">&#8595; Download</button>
+            </div>
+            <!-- Square Badge -->
+            <div style="text-align: center;">
+              <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--h-mid); margin-bottom: 8px;">Square</div>
+              <div id="badge-square" style="background: var(--h-cream); border: 1px solid #E5E7EB; border-radius: 8px; padding: 16px; display: flex; align-items: center; justify-content: center; min-height: 90px;">
+                <div style="background: var(--h-dark); color: var(--h-cream); padding: 16px; border-radius: var(--radius); text-align: center; width: 100px;">
+                  <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic" style="height: 14px; filter: invert(1); margin-bottom: 6px; display: block; margin-left: auto; margin-right: auto;">
+                  <div style="font-size: 9px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">Official<br>Partner</div>
+                </div>
+              </div>
+              <button onclick="downloadBadge('square')" style="margin-top: 8px; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer;">&#8595; Download</button>
+            </div>
+            <!-- Circular Badge -->
+            <div style="text-align: center;">
+              <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--h-mid); margin-bottom: 8px;">Circle</div>
+              <div id="badge-circle" style="background: var(--h-cream); border: 1px solid #E5E7EB; border-radius: 8px; padding: 16px; display: flex; align-items: center; justify-content: center; min-height: 90px;">
+                <div style="background: var(--h-dark); color: var(--h-cream); width: 80px; height: 80px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                  <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic" style="height: 12px; filter: invert(1); margin-bottom: 4px;">
+                  <div style="font-size: 7px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; line-height: 1.2;">Official<br>Partner</div>
+                </div>
+              </div>
+              <button onclick="downloadBadge('circle')" style="margin-top: 8px; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer;">&#8595; Download</button>
             </div>
           </div>
-          <p style="font-size: 12px;">Right-click to save. Use on your website, email footer, or social bios. Do not modify the badge design.</p>
+          <p style="font-size: 12px; margin-top: 14px; color: var(--h-mid);">Use on your website, email footer, or social bios. Do not modify the badge design or colors.</p>
         </div>
       </div>
     </div>
@@ -545,7 +767,7 @@ I'm a Heroic Partner because I genuinely use and love this product. Link in comm
         <div class="idea-card"><div class="idea-icon">📧</div><div class="idea-title">Email Newsletter</div><div class="idea-desc">Dedicated send or P.S. mention</div></div>
         <div class="idea-card"><div class="idea-icon">🎙️</div><div class="idea-title">Podcast / Video</div><div class="idea-desc">Mention with link in show notes</div></div>
         <div class="idea-card"><div class="idea-icon">💼</div><div class="idea-title">LinkedIn Post</div><div class="idea-desc">Personal recommendation to your network</div></div>
-        <div class="idea-card"><div class="idea-icon">🤝</div><div class="idea-title">Direct Referral</div><div class="idea-desc">Warm intro via email or conversation</div></div>
+        <div class="idea-card"><div class="idea-icon">🔥</div><div class="idea-title">21-Day Challenge</div><div class="idea-desc">21-day challenge with your audience and our team</div></div>
         <div class="idea-card"><div class="idea-icon">🎤</div><div class="idea-title">Webinar / Workshop</div><div class="idea-desc">Co-create content with Heroic</div></div>
       </div>
       <div style="background: var(--h-blue-light); border-radius: 10px; padding: 20px 24px; margin-top: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
@@ -553,7 +775,7 @@ I'm a Heroic Partner because I genuinely use and love this product. Link in comm
           <div style="font-size: 15px; font-weight: 600;">Want more ideas?</div>
           <div style="font-size: 13px; color: var(--h-mid);">Read our guide on the best ways to promote the Heroic Partner Program.</div>
         </div>
-        <a href="[INSERT BLOG POST LINK]" style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--h-blue); color: white; text-decoration: none; white-space: nowrap;">Read the Guide</a>
+        <a href="#" style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--h-blue); color: white; text-decoration: none; white-space: nowrap;">Read the Guide</a>
       </div>
     </div>
 
@@ -566,10 +788,10 @@ I'm a Heroic Partner because I genuinely use and love this product. Link in comm
         <h2>Key Links</h2>
       </div>
       <div class="link-grid">
-        <a href="[INSERT DASHBOARD LINK]" class="link-card"><div class="link-card-title">Partner Dashboard</div><div class="link-card-desc">Stats, links & payouts</div></a>
-        <a href="[INSERT FAQ LINK]" class="link-card"><div class="link-card-title">Partner FAQ</div><div class="link-card-desc">Common questions</div></a>
-        <a href="[INSERT TOS LINK]" class="link-card"><div class="link-card-title">Terms of Service</div><div class="link-card-desc">Program agreement</div></a>
-        <a href="[INSERT APPLICATION LINK]" class="link-card"><div class="link-card-title">Refer a Partner</div><div class="link-card-desc">Earn overrides</div></a>
+        <a href="https://partners.dub.co/programs/heroic" class="link-card"><div class="link-card-title">Partner Dashboard</div><div class="link-card-desc">Stats, links & payouts</div></a>
+        <a href="#faq-section" class="link-card" onclick="event.preventDefault(); document.getElementById('faq-section').scrollIntoView({behavior:'smooth'});"><div class="link-card-title">Partner FAQ</div><div class="link-card-desc">Jump to FAQ below</div></a>
+        <div class="link-card" style="opacity: 0.45; pointer-events: none; cursor: default;"><div class="link-card-title" style="color: var(--h-mid);">Terms of Service</div><div class="link-card-desc">Coming Soon</div></div>
+        <div class="link-card" style="opacity: 0.45; pointer-events: none; cursor: default;"><div class="link-card-title" style="color: var(--h-mid);">Refer a Partner</div><div class="link-card-desc">Coming Soon</div></div>
         <a href="mailto:partners@heroic.us" class="link-card"><div class="link-card-title">Email Support</div><div class="link-card-desc">partners@heroic.us</div></a>
         <a href="https://heroic.us" class="link-card" target="_blank"><div class="link-card-title">Heroic Website</div><div class="link-card-desc">heroic.us</div></a>
       </div>
@@ -578,19 +800,87 @@ I'm a Heroic Partner because I genuinely use and love this product. Link in comm
     <hr class="heroic-hr">
 
     <!-- FAQ -->
-    <div class="hq-section">
+    <div class="hq-section" id="faq-section">
       <div class="hq-section-header">
         <div class="hq-section-label">FAQ</div>
-        <h2>Quick Answers</h2>
+        <h2>Partner FAQ</h2>
       </div>
-      <div class="faq-mini">
-        <div class="faq-mini-item"><div class="faq-mini-q">When do I get paid?</div><div class="faq-mini-a">Twice monthly, 10th and 25th. 30-day provisioning. No minimum.</div></div>
-        <div class="faq-mini-item"><div class="faq-mini-q">How long is the cookie?</div><div class="faq-mini-a">60 days from first click.</div></div>
-        <div class="faq-mini-item"><div class="faq-mini-q">How do I move up tiers?</div><div class="faq-mini-a">Cumulative lifetime referrals. Progress visible in dashboard.</div></div>
-        <div class="faq-mini-item"><div class="faq-mini-q">Where's my tracking link?</div><div class="faq-mini-a">In your Partner Dashboard (Dub.co).</div></div>
-        <div class="faq-mini-item"><div class="faq-mini-q">Who do I contact?</div><div class="faq-mini-a">partners@heroic.us. Twice-monthly newsletter keeps you in the loop.</div></div>
+
+      <!-- Filter Tags -->
+      <div class="faq-filters" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;">
+        <button class="faq-tag faq-tag-active" onclick="filterFaq('all', this)">All</button>
+        <button class="faq-tag" onclick="filterFaq('started', this)">Getting Started</button>
+        <button class="faq-tag" onclick="filterFaq('commissions', this)">Commissions</button>
+        <button class="faq-tag" onclick="filterFaq('tracking', this)">Tracking</button>
+        <button class="faq-tag" onclick="filterFaq('payouts', this)">Payouts</button>
+        <button class="faq-tag" onclick="filterFaq('promotion', this)">Promotion</button>
+        <button class="faq-tag" onclick="filterFaq('incentives', this)">Incentives</button>
       </div>
-      <p style="font-size: 13px; color: var(--h-mid); margin-top: 12px;">Full FAQ: <a href="[INSERT FAQ LINK]" style="color: var(--h-blue); font-weight: 500;">View Partner FAQ</a></p>
+
+      <!-- Getting Started -->
+      <div class="faq-group" data-faq="started" style="margin-bottom: 20px;">
+        <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--h-blue); margin-bottom: 10px;">Getting Started</div>
+        <div class="faq-mini">
+          <div class="faq-mini-item"><div class="faq-mini-q">What is the Heroic Partner Program?</div><div class="faq-mini-a">The Heroic Partner Program rewards you for referring customers to one or more products in our product suite. When someone you refer makes a purchase, you earn a commission. The program is free to join, and we provide tracking, a real-time dashboard, promotional resources, and dedicated support to help you succeed.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">Who is a good fit for this program?</div><div class="faq-mini-a">People whose audience overlaps with Heroic's mission of helping high-performers close the gap between their potential and their performance. Great fits include authors and speakers in the personal development space, performance and executive coaches, business and mindset podcasters, fitness and wellness influencers, and anyone who serves entrepreneurs, executives, or high-performing professionals.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">Is there a cost to join?</div><div class="faq-mini-a">No. The Heroic Partner Program is completely free to join and participate in.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">How long does approval take?</div><div class="faq-mini-a">Most applications are reviewed within 48 hours. You'll receive an email confirmation once approved, along with access to your Partner Dashboard and tracking links.</div></div>
+        </div>
+      </div>
+
+      <!-- Commissions & Earnings -->
+      <div class="faq-group" data-faq="commissions" style="margin-bottom: 20px;">
+        <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--h-blue); margin-bottom: 10px;">Commissions & Earnings</div>
+        <div class="faq-mini">
+          <div class="faq-mini-item"><div class="faq-mini-q">How much can I earn?</div><div class="faq-mini-a">Partners can earn up to <strong>50% commission</strong> on eligible digital products across the Heroic product suite. A single referred customer can generate commissions across multiple purchases over time through the value ladder.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">How does the tier system work?</div><div class="faq-mini-a">Three tiers: <strong>Bronze, Silver, and Gold</strong>. All new partners start at Bronze. Based on total lifetime referrals, you move up tiers and increase your commission rate. Progress is always visible in your Partner Dashboard.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">Do I earn commissions on upsells?</div><div class="faq-mini-a"><strong>Yes.</strong> You earn commissions on all qualifying purchases your referred customer makes within a <strong>12-month window</strong> from their initial purchase. If they upgrade or buy additional products, you earn on each.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">What products are eligible for commissions?</div><div class="faq-mini-a">Commissions apply to eligible digital products across the Heroic product suite. The full list and rates are available in your Partner Dashboard (Dub.co).</div></div>
+        </div>
+      </div>
+
+      <!-- Tracking & Attribution -->
+      <div class="faq-group" data-faq="tracking" style="margin-bottom: 20px;">
+        <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--h-blue); margin-bottom: 10px;">Tracking & Attribution</div>
+        <div class="faq-mini">
+          <div class="faq-mini-item"><div class="faq-mini-q">How are my referrals tracked?</div><div class="faq-mini-a">You receive a unique partner link through Dub.co. When someone clicks your link, a cookie is placed on their browser. If they purchase within the attribution window, you receive full credit.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">What if someone doesn't buy right away?</div><div class="faq-mini-a">Your attribution window is <strong>60 days</strong>. As long as they complete a purchase within 60 days of clicking your link, you get full credit for the sale and all subsequent purchases within the 12-month commission period.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">What if a customer clicks multiple partner links?</div><div class="faq-mini-a">We use <strong>first-touch attribution</strong>. The partner whose link the customer clicked first receives credit. Only one partner receives commission per customer.</div></div>
+        </div>
+      </div>
+
+      <!-- Payouts -->
+      <div class="faq-group" data-faq="payouts" style="margin-bottom: 20px;">
+        <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--h-blue); margin-bottom: 10px;">Payouts</div>
+        <div class="faq-mini">
+          <div class="faq-mini-item"><div class="faq-mini-q">When do I get paid?</div><div class="faq-mini-a">Twice monthly on the <strong>10th and 25th</strong>. There is a 30-day provisioning window after each sale before the commission becomes eligible for payout.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">Is there a minimum payout?</div><div class="faq-mini-a"><strong>No.</strong> Any earned commission is paid on the next scheduled payout date.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">How do I receive payment?</div><div class="faq-mini-a">Payments are processed via Stripe through the Dub.co platform. You'll set up your payment details in your Partner Dashboard.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">What happens if a customer gets a refund?</div><div class="faq-mini-a">The 30-day provisioning window catches most refunds before commissions are paid. If a refund occurs after that, it will appear as a clawback and be deducted from future commissions.</div></div>
+        </div>
+      </div>
+
+      <!-- Promotion & Brand -->
+      <div class="faq-group" data-faq="promotion" style="margin-bottom: 20px;">
+        <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--h-blue); margin-bottom: 10px;">Promotion & Brand</div>
+        <div class="faq-mini">
+          <div class="faq-mini-item"><div class="faq-mini-q">How should I promote Heroic?</div><div class="faq-mini-a">Use your unique partner link in blog posts, social media, email newsletters, YouTube videos, podcasts, or direct recommendations. We provide promotional assets and swipe copy in Partner HQ.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">Are there any promotion restrictions?</div><div class="faq-mini-a">You cannot bid on Heroic or PhilosophersNotes brand keywords in paid ads, send unsolicited emails or spam, make misleading claims, or create fake reviews. You MAY run paid ads to your own content that naturally links to your partner URL. Full details are in the Partner Agreement.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">Do I need to disclose that I'm a partner?</div><div class="faq-mini-a"><strong>Yes.</strong> FTC guidelines require disclosure. Something as simple as "I'm a Heroic partner and may earn a commission if you purchase through my link" is sufficient.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">Can I promote multiple Heroic products?</div><div class="faq-mini-a"><strong>Yes.</strong> You can promote any eligible product in the suite. Many of our best partners promote the entry product and let the value ladder do the rest.</div></div>
+        </div>
+      </div>
+
+      <!-- Incentives & Support -->
+      <div class="faq-group" data-faq="incentives" style="margin-bottom: 20px;">
+        <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--h-blue); margin-bottom: 10px;">Incentives & Support</div>
+        <div class="faq-mini">
+          <div class="faq-mini-item"><div class="faq-mini-q">Are there bonuses beyond commissions?</div><div class="faq-mini-a"><strong>Yes.</strong> Beyond base commissions, the program offers referral bounties, quarterly incentives for top performers, and partner discounts on Heroic products. Current details are in your dashboard and communicated via the partner newsletter.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">Do partners get access to Heroic products?</div><div class="faq-mini-a">Yes. Active partners receive product access and partner discounts. Specific benefits are outlined in your Partner Dashboard.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">Who do I contact for help?</div><div class="faq-mini-a">Email <strong>partners@heroic.us</strong> for any questions. Our Head of Partnerships is your dedicated point of contact. Active partners also receive a twice-monthly newsletter with updates, tips, and incentive announcements.</div></div>
+          <div class="faq-mini-item"><div class="faq-mini-q">Can I suggest changes to the program?</div><div class="faq-mini-a">Absolutely. We value partner feedback. Email partners@heroic.us with suggestions, questions, or ideas.</div></div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -636,32 +926,151 @@ I'm a Heroic Partner because I genuinely use and love this product. Link in comm
   hqSlider.addEventListener('input', hqRecalc);
   hqSelectTier(0.50, 'Gold', document.getElementById('hq-tc-gold'));
 
-  // COPY SWIPE
-  function copySwipe(btn) {
-    const block = btn.parentElement.nextElementSibling;
-    const text = block.innerText || block.textContent;
-    navigator.clipboard.writeText(text).then(() => {
-      const orig = btn.textContent;
-      btn.textContent = 'Copied!';
-      btn.style.background = '#ECFDF5';
-      btn.style.color = '#059669';
-      btn.style.borderColor = '#059669';
-      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; btn.style.borderColor = ''; }, 2000);
+  // COPY HEX CODE
+  function copyHex(hex, el) {
+    navigator.clipboard.writeText(hex).then(() => {
+      const label = el.querySelector('.hex-label');
+      const orig = label.textContent;
+      label.textContent = 'Copied!';
+      label.style.color = '#059669';
+      setTimeout(() => { label.textContent = orig; label.style.color = ''; }, 1500);
     });
   }
 
-  // ACCORDION
+  // COPY EMAIL BLOCK
+  function copyEmailBlock(btn) {
+    const container = btn.closest('.email-body') || btn.closest('.asset-content');
+    const preview = container.querySelector('.email-preview');
+    const text = preview.innerText || preview.textContent;
+    navigator.clipboard.writeText(text.trim()).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.style.background = '#059669';
+      btn.style.borderColor = '#059669';
+      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.borderColor = ''; }, 2000);
+    });
+  }
+
+  // ASSET ACCORDION
   function toggleAsset(btn) {
     const content = btn.nextElementSibling;
     const isOpen = content.classList.contains('open');
-    // Close all
     document.querySelectorAll('.asset-content').forEach(c => c.classList.remove('open'));
     document.querySelectorAll('.asset-trigger').forEach(t => t.classList.remove('open'));
-    // Open this one if it was closed
     if (!isOpen) {
       content.classList.add('open');
       btn.classList.add('open');
     }
+  }
+
+  // EMAIL SUB-ACCORDION
+  function toggleEmail(btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    // Close siblings within same parent
+    const parent = btn.closest('.asset-content');
+    if (parent) {
+      parent.querySelectorAll('.email-body').forEach(b => b.classList.remove('open'));
+      parent.querySelectorAll('.email-trigger').forEach(t => t.classList.remove('open'));
+    }
+    if (!isOpen) {
+      body.classList.add('open');
+      btn.classList.add('open');
+    }
+  }
+
+  // FAQ FILTER
+  function filterFaq(category, btn) {
+    document.querySelectorAll('.faq-tag').forEach(t => t.classList.remove('faq-tag-active'));
+    btn.classList.add('faq-tag-active');
+    document.querySelectorAll('.faq-group').forEach(g => {
+      if (category === 'all' || g.dataset.faq === category) {
+        g.style.display = '';
+      } else {
+        g.style.display = 'none';
+      }
+    });
+  }
+
+  // BADGE DOWNLOAD (renders badge to canvas)
+  function downloadBadge(type) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const dark = '#13171B';
+    const cream = '#F8F7F3';
+
+    if (type === 'wide') {
+      canvas.width = 400; canvas.height = 80;
+      ctx.fillStyle = dark;
+      roundRect(ctx, 0, 0, 400, 80, 12);
+      ctx.fill();
+      ctx.fillStyle = cream;
+      ctx.font = '600 18px Outfit, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('HEROIC  |  Official Partner', 200, 47);
+    } else if (type === 'square') {
+      canvas.width = 200; canvas.height = 200;
+      ctx.fillStyle = dark;
+      roundRect(ctx, 0, 0, 200, 200, 16);
+      ctx.fill();
+      ctx.fillStyle = cream;
+      ctx.font = '600 14px Outfit, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('HEROIC', 100, 90);
+      ctx.font = '600 11px Outfit, sans-serif';
+      ctx.fillText('OFFICIAL', 100, 118);
+      ctx.fillText('PARTNER', 100, 134);
+    } else {
+      canvas.width = 200; canvas.height = 200;
+      ctx.fillStyle = dark;
+      ctx.beginPath();
+      ctx.arc(100, 100, 100, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = cream;
+      ctx.font = '600 14px Outfit, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('HEROIC', 100, 90);
+      ctx.font = '600 10px Outfit, sans-serif';
+      ctx.fillText('OFFICIAL', 100, 114);
+      ctx.fillText('PARTNER', 100, 128);
+    }
+
+    const link = document.createElement('a');
+    link.download = 'heroic-partner-badge-' + type + '.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }
+
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+
+  // PRODUCT SELECTOR
+  function selectProduct(product, el) {
+    if (el.classList.contains('ps-disabled')) return;
+    document.querySelectorAll('.ps-card').forEach(c => c.classList.remove('ps-active'));
+    el.classList.add('ps-active');
+    // Show/hide product-dependent assets
+    document.querySelectorAll('.product-asset').forEach(a => {
+      if (a.dataset.for === product) {
+        a.style.display = '';
+      } else {
+        a.style.display = 'none';
+      }
+    });
+    // Close any open accordions when switching
+    document.querySelectorAll('.asset-content').forEach(c => c.classList.remove('open'));
+    document.querySelectorAll('.asset-trigger').forEach(t => t.classList.remove('open'));
   }
   </script>
 
