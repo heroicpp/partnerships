@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner HQ | Heroic Partner Program</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --h-cream: #F8F7F3;
+      --h-blue-light: #CFE1ED;
+      --h-tan: #F0EDE1;
+      --h-gold: #E2CA39;
+      --h-blue: #5461AE;
+      --h-dark: #13171B;
+      --h-mid: #6B7280;
+      --h-border: #13171B;
+      --h-white: #FFFFFF;
+      --h-card-border: 1px solid #D4D1C7;
+      --radius: 8px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Outfit', sans-serif; color: var(--h-dark); background: var(--h-cream); line-height: 1.6; letter-spacing: 0.03em; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; letter-spacing: -0.02em; }
+
+    /* HEADER */
+    .hq-header { background: var(--h-cream); padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #D4D1C7; }
+    .hq-logo img { height: 32px; }
+    .hq-header-right { display: flex; align-items: center; gap: 24px; }
+    .hq-header-links { display: flex; gap: 20px; }
+    .hq-header-links a { font-size: 13px; font-weight: 500; color: var(--h-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
+    .hq-header-links a:hover { color: var(--h-blue); }
+
+    .page-wrap { max-width: 960px; margin: 0 auto; padding: 0 40px; }
+
+    /* HERO */
+    .hq-hero { padding: 48px 0 40px; text-align: center; }
+    .hq-hero h1 { font-size: 44px; line-height: 1.15; margin-bottom: 12px; }
+    .hq-hero p { font-size: 17px; color: var(--h-mid); max-width: 560px; margin: 0 auto 24px; }
+    .hq-contact { display: inline-flex; align-items: center; gap: 12px; background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 14px 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .hq-contact img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+    .hq-contact-info { text-align: left; }
+    .hq-contact-name { font-size: 14px; font-weight: 600; }
+    .hq-contact-email { font-size: 12px; color: var(--h-mid); }
+    .hq-contact-email a { color: var(--h-blue); text-decoration: none; }
+
+    /* QUICK ACTIONS */
+    .quick-actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 48px; }
+    .qa-card { background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 22px; text-align: center; text-decoration: none; color: var(--h-dark); transition: all 0.2s; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .qa-card:hover { border-color: var(--h-blue); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(84,97,174,0.12); }
+    .qa-icon { font-size: 24px; margin-bottom: 6px; }
+    .qa-title { font-size: 14px; font-weight: 600; }
+
+    /* SECTION */
+    .hq-section { margin-bottom: 48px; }
+    .hq-section-header { margin-bottom: 20px; }
+    .hq-section-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--h-blue); margin-bottom: 6px; }
+    .hq-section h2 { font-size: 30px; }
+
+    /* GETTING STARTED STEPS */
+    .gs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .gs-step { background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 22px; display: flex; gap: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .gs-num { background: var(--h-blue); color: var(--h-white); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+    .gs-title { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+    .gs-desc { font-size: 13px; color: var(--h-mid); }
+
+    /* TIERS */
+    .tier-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+    .tier-card { background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 32px 28px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: all 0.15s; }
+    .tier-card.gold { background: linear-gradient(180deg, #FFFDF0 0%, var(--h-white) 100%); border-color: #E2CA39; box-shadow: 0 2px 8px rgba(226,202,57,0.15); }
+    .tier-name { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+    .tier-bronze .tier-name { color: #CD7F32; }
+    .tier-silver .tier-name { color: #888; }
+    .tier-gold .tier-name { color: #B8860B; }
+    .tier-pct { font-family: 'DM Serif Display', serif; font-size: 48px; line-height: 1; margin-bottom: 4px; }
+    .tier-bronze .tier-pct { color: #CD7F32; }
+    .tier-silver .tier-pct { color: #888; }
+    .tier-gold .tier-pct { color: #B8860B; }
+    .tier-sub { font-size: 12px; color: var(--h-mid); }
+
+    /* PAYOUT DETAILS */
+    .payout-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .payout-item { background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .payout-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--h-mid); margin-bottom: 2px; }
+    .payout-value { font-size: 16px; font-weight: 600; }
+
+    /* CALCULATOR */
+    .calc-wrap { background: var(--h-dark); border-radius: var(--radius); padding: 28px; color: var(--h-cream); margin-top: 20px; }
+    .calc-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--h-gold); margin-bottom: 16px; }
+    .calc-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .calc-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 16px; text-align: center; }
+    .calc-box.highlight { border-color: var(--h-gold); }
+    .calc-box-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #9CA3AF; margin-bottom: 6px; }
+    .calc-box-val { font-family: 'DM Serif Display', serif; font-size: 28px; font-weight: 400; }
+    .calc-box-sub { font-size: 11px; color: #6B7280; margin-top: 2px; }
+
+    /* ASSETS - ACCORDION */
+    .asset-accordion { margin-bottom: 12px; }
+    .asset-trigger { background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 20px 24px; display: flex; align-items: center; cursor: pointer; transition: all 0.15s; width: 100%; text-align: left; font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 600; color: var(--h-dark); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .asset-trigger:hover { background: var(--h-tan); }
+    .asset-trigger .asset-label { flex: 1; }
+    .asset-trigger .badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 12px; flex-shrink: 0; }
+    .badge-ready { background: #ECFDF5; color: #059669; }
+    .badge-soon { background: #FFFBEB; color: #D97706; }
+    .asset-arrow { transition: transform 0.2s; font-size: 18px; }
+    .asset-content { display: none; background: var(--h-white); border: 1px solid #D4D1C7; border-top: none; border-radius: 0 0 10px 10px; padding: 24px; margin-top: -1px; font-size: 14px; color: var(--h-mid); line-height: 1.7; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+    .asset-content.open { display: block; }
+    .asset-trigger.open { border-radius: 10px 10px 0 0; border-bottom-color: transparent; }
+    .asset-trigger.open .asset-arrow { transform: rotate(180deg); }
+
+    /* BRAND GUIDELINES */
+    .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .brand-do { background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 22px; }
+    .brand-dont { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 10px; padding: 22px; }
+    .brand-do h4 { color: #059669; font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .brand-dont h4 { color: #DC2626; font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .brand-do li, .brand-dont li { font-size: 13px; margin-bottom: 4px; margin-left: 16px; color: var(--h-dark); }
+
+    /* PROMO IDEAS */
+    .idea-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .idea-card { background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 22px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .idea-icon { font-size: 28px; margin-bottom: 8px; }
+    .idea-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .idea-desc { font-size: 12px; color: var(--h-mid); }
+
+    /* LINKS */
+    .link-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .link-card { background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 20px; text-align: center; text-decoration: none; color: var(--h-dark); transition: all 0.2s; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .link-card:hover { border-color: var(--h-blue); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(84,97,174,0.12); }
+    .link-card-title { color: var(--h-blue); }
+    .link-card-title { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .link-card-desc { font-size: 11px; opacity: 0.7; }
+
+    /* FAQ */
+    .faq-mini { background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .faq-mini-item { padding: 14px 20px; border-bottom: 1px solid #E5E7EB; }
+    .faq-mini-item:last-child { border-bottom: none; }
+    .faq-mini-q { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .faq-mini-a { font-size: 13px; color: var(--h-mid); }
+
+    /* FOOTER */
+    .hq-footer { background: var(--h-dark); padding: 28px 40px; margin-top: 48px; }
+    .hq-footer-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .hq-footer-left { color: var(--h-cream); font-size: 14px; font-weight: 500; }
+    .hq-footer-left a { color: var(--h-gold); text-decoration: none; }
+    .hq-footer-right { font-size: 12px; color: #6B7280; }
+
+    /* CALLOUT */
+    .hq-callout { background: var(--h-blue-light); border: 1px solid #B8D4E3; border-radius: 10px; padding: 20px 24px; margin: 20px 0; }
+    .hq-callout p { font-size: 14px; color: var(--h-dark); }
+    .hq-callout strong { color: var(--h-blue); }
+
+    hr.heroic-hr { border: none; border-top: 1px solid #D4D1C7; margin: 48px 0; }
+
+    @media (max-width: 700px) {
+      .page-wrap { padding: 0 20px; }
+      .hq-header { padding: 14px 20px; }
+      .hq-hero h1 { font-size: 30px; }
+      .quick-actions, .gs-grid, .tier-row, .payout-grid, .brand-grid, .idea-grid, .link-grid, .calc-results { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="hq-header">
+    <div class="hq-logo">
+      <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic">
+    </div>
+    <div class="hq-header-right">
+      <div class="hq-header-links">
+        <a href="[INSERT DASHBOARD LINK]">Dashboard</a>
+        <a href="[INSERT FAQ LINK]">FAQ</a>
+        <a href="mailto:partners@heroic.us">Support</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+
+    <!-- HERO -->
+    <div class="hq-hero">
+      <h1>Partner HQ</h1>
+      <p>Everything you need to promote Heroic and maximize your earnings. Bookmark this page.</p>
+      <div class="hq-contact">
+        <img src="https://pbs.twimg.com/profile_images/1917957401346531328/cqVyHmm7_400x400.jpg" alt="TG">
+        <div class="hq-contact-info">
+          <div class="hq-contact-name">TG, Head of Partnerships</div>
+          <div class="hq-contact-email"><a href="mailto:partners@heroic.us">partners@heroic.us</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div class="quick-actions">
+      <a href="[INSERT DASHBOARD LINK]" class="qa-card">
+        <div class="qa-icon">📊</div>
+        <div class="qa-title">Dashboard</div>
+      </a>
+      <a href="#assets" class="qa-card">
+        <div class="qa-icon">📦</div>
+        <div class="qa-title">Assets</div>
+      </a>
+      <a href="#commissions" class="qa-card">
+        <div class="qa-icon">💰</div>
+        <div class="qa-title">Commissions</div>
+      </a>
+      <a href="mailto:partners@heroic.us" class="qa-card">
+        <div class="qa-icon">💬</div>
+        <div class="qa-title">Support</div>
+      </a>
+    </div>
+
+    <!-- 1. GETTING STARTED -->
+    <div class="hq-section">
+      <div class="hq-section-header">
+        <div class="hq-section-label">Getting Started</div>
+        <h2>Six Steps to Your First Commission</h2>
+      </div>
+      <div class="gs-grid">
+        <div class="gs-step">
+          <div class="gs-num">1</div>
+          <div><div class="gs-title">Access Your Dashboard</div><div class="gs-desc">Log in to Dub.co to see your unique tracking link, stats, and payout history.</div></div>
+        </div>
+        <div class="gs-step">
+          <div class="gs-num">2</div>
+          <div><div class="gs-title">Grab Your Link</div><div class="gs-desc">Your unique referral link is in your dashboard. Every click is tracked for 60 days.</div></div>
+        </div>
+        <div class="gs-step">
+          <div class="gs-num">3</div>
+          <div><div class="gs-title">Review Your Commission Structure</div><div class="gs-desc">Check your current tier and rates in the dashboard. Overview below.</div></div>
+        </div>
+        <div class="gs-step">
+          <div class="gs-num">4</div>
+          <div><div class="gs-title">Download Promotional Assets</div><div class="gs-desc">Logos, email copy, social templates, and product descriptions are below.</div></div>
+        </div>
+        <div class="gs-step">
+          <div class="gs-num">5</div>
+          <div><div class="gs-title">Start Sharing</div><div class="gs-desc">Blog, email, social, podcast, or direct recommendations. See promotion ideas below.</div></div>
+        </div>
+        <div class="gs-step">
+          <div class="gs-num">6</div>
+          <div><div class="gs-title">Watch Your Earnings Grow</div><div class="gs-desc">Track everything in real-time. Payouts on the 10th and 25th of every month.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="heroic-hr">
+
+    <!-- 2. COMMISSIONS -->
+    <div class="hq-section" id="commissions">
+      <div class="hq-section-header">
+        <div class="hq-section-label">Commissions</div>
+        <h2>Your Earning Potential</h2>
+      </div>
+
+      <div class="tier-row">
+        <div class="tier-card tier-bronze" id="hq-tc-bronze" onclick="hqSelectTier(0.30,'Bronze',this)" style="cursor:pointer; transition: all 0.15s;">
+          <div class="tier-name">Bronze</div>
+          <div class="tier-pct">30%</div>
+          <div class="tier-sub">Starting tier (all new partners)</div>
+        </div>
+        <div class="tier-card tier-silver" id="hq-tc-silver" onclick="hqSelectTier(0.40,'Silver',this)" style="cursor:pointer; transition: all 0.15s;">
+          <div class="tier-name">Silver</div>
+          <div class="tier-pct">40%</div>
+          <div class="tier-sub">1,000 referrals + override commissions</div>
+        </div>
+        <div class="tier-card tier-gold gold" id="hq-tc-gold" onclick="hqSelectTier(0.50,'Gold',this)" style="cursor:pointer; transition: all 0.15s;">
+          <div class="tier-name">Gold</div>
+          <div class="tier-pct">50%</div>
+          <div class="tier-sub">2,500 referrals + highest overrides</div>
+        </div>
+      </div>
+
+      <!-- CALCULATOR -->
+      <div class="calc-wrap">
+        <div class="calc-label">Earnings Calculator</div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span style="font-size: 14px;">Customers you refer per month</span>
+          <span id="hq-slider-val" style="font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--h-gold);">10</span>
+        </div>
+        <input type="range" id="hq-slider" min="1" max="200" value="10" style="width:100%; height:6px; accent-color: #E2CA39; cursor:pointer; margin-bottom: 20px;">
+        <div class="calc-results">
+          <div class="calc-box">
+            <div class="calc-box-label">Monthly</div>
+            <div id="hq-monthly" class="calc-box-val" style="color: var(--h-cream);">$495</div>
+            <div class="calc-box-sub">entry product</div>
+          </div>
+          <div class="calc-box">
+            <div class="calc-box-label">Monthly + Upsells</div>
+            <div id="hq-monthly-up" class="calc-box-val" style="color: #4ADE80;">$869</div>
+            <div class="calc-box-sub">with value ladder</div>
+          </div>
+          <div class="calc-box highlight">
+            <div class="calc-box-label">Annual Potential</div>
+            <div id="hq-annual" class="calc-box-val" style="color: var(--h-gold);">$10,430</div>
+            <div id="hq-customers" class="calc-box-sub">120 customers referred</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAYOUT DETAILS -->
+      <div style="margin-top: 20px;">
+        <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--h-mid); margin-bottom: 10px;">Payout Details</div>
+        <div class="payout-grid">
+          <div class="payout-item"><div class="payout-label">Payout Schedule</div><div class="payout-value">10th & 25th</div></div>
+          <div class="payout-item"><div class="payout-label">Minimum Payout</div><div class="payout-value">None</div></div>
+          <div class="payout-item"><div class="payout-label">Cookie Window</div><div class="payout-value">60 days</div></div>
+          <div class="payout-item"><div class="payout-label">Commission Window</div><div class="payout-value">12 months</div></div>
+          <div class="payout-item"><div class="payout-label">Attribution</div><div class="payout-value">First-touch</div></div>
+          <div class="payout-item"><div class="payout-label">Payment Method</div><div class="payout-value">Stripe via Dub</div></div>
+        </div>
+      </div>
+
+      <div class="hq-callout">
+        <p><strong>Override Commissions:</strong> Silver and Gold partners earn additional commissions when partners they recruit into the program generate sales. Details in your dashboard.</p>
+      </div>
+    </div>
+
+    <hr class="heroic-hr">
+
+    <!-- 3. ASSETS -->
+    <div class="hq-section" id="assets">
+      <div class="hq-section-header">
+        <div class="hq-section-label">Promotional Assets</div>
+        <h2>Heroic Logos, Copy & Creative</h2>
+      </div>
+
+      <div class="asset-accordion">
+        <button class="asset-trigger" onclick="toggleAsset(this)">
+          <span class="asset-label">Heroic Logos & Color Palette</span> <span class="badge badge-ready">Ready</span>
+          <span class="asset-arrow">&#9660;</span>
+        </button>
+        <div class="asset-content">
+          <p><strong>Primary Logo (Dark):</strong></p>
+          <div style="background: var(--h-cream); border: 1px solid #E5E7EB; border-radius: 6px; padding: 24px; text-align: center; margin: 8px 0 16px;">
+            <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic Logo" style="height: 40px;">
+          </div>
+          <p><strong>Brand Colors:</strong></p>
+          <div style="display: flex; gap: 8px; margin: 8px 0 16px; flex-wrap: wrap;">
+            <div style="width: 60px; height: 60px; background: #13171B; border-radius: 6px; border: 1px solid #E5E7EB;" title="#13171B"></div>
+            <div style="width: 60px; height: 60px; background: #5461AE; border-radius: 6px;" title="#5461AE"></div>
+            <div style="width: 60px; height: 60px; background: #E2CA39; border-radius: 6px;" title="#E2CA39"></div>
+            <div style="width: 60px; height: 60px; background: #CFE1ED; border-radius: 6px; border: 1px solid #E5E7EB;" title="#CFE1ED"></div>
+            <div style="width: 60px; height: 60px; background: #F0EDE1; border-radius: 6px; border: 1px solid #E5E7EB;" title="#F0EDE1"></div>
+            <div style="width: 60px; height: 60px; background: #F8F7F3; border-radius: 6px; border: 1px solid #E5E7EB;" title="#F8F7F3"></div>
+          </div>
+          <p style="font-size: 12px;">Right-click any logo to save. Use these colors when creating co-branded content. Do not modify or recolor the logo.</p>
+        </div>
+      </div>
+
+      <div class="asset-accordion">
+        <button class="asset-trigger" onclick="toggleAsset(this)">
+          <span class="asset-label">Email Swipe Copy</span> <span class="badge badge-soon">Coming Soon</span>
+          <span class="asset-arrow">&#9660;</span>
+        </button>
+        <div class="asset-content">
+          <div style="display: flex; justify-content: space-between; align-items: center;"><p><strong>Dedicated Send Template</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
+          <div class="swipe-block" style="background: var(--h-tan); border-radius: 6px; padding: 16px; margin: 8px 0; font-size: 13px;">Subject: I found something for you
+
+Hey [First Name],
+
+I wanted to share something I've been using that has genuinely changed how I approach [personal development / leadership / performance].
+
+It's called Heroic. Think of it as the world's most life-changing wisdom library. 700+ book summaries distilled into practical, actionable wisdom you can apply immediately. One "PhilosophersNote" takes about 20 minutes and is worth more than reading the entire book.
+
+I partnered with them because I believe in the product that much. Here's my link if you want to check it out: [YOUR LINK]
+
+[Your name]</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;"><p><strong>Newsletter Mention (P.S. Style)</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
+          <div class="swipe-block" style="background: var(--h-tan); border-radius: 6px; padding: 16px; margin: 8px 0; font-size: 13px;">P.S. If you're a reader and want to level up faster, check out Heroic. It's a library of 700+ book summaries from the best personal development books ever written. I'm a partner because I use it myself. [YOUR LINK]</div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;"><p><strong>Newsletter Copy (Full Section)</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
+          <div class="swipe-block" style="background: var(--h-tan); border-radius: 6px; padding: 16px; margin: 8px 0; font-size: 13px;">THE RESOURCE I KEEP RECOMMENDING
+
+I get asked all the time what tools I use for personal development. The honest answer? Heroic's PhilosophersNotes.
+
+It's 700+ book summaries distilled into practical, 20-minute sessions. Think of it as having a world-class mentor who's read every book on leadership, performance, and personal growth, and gives you just the parts you need.
+
+I partnered with Heroic because I've used it myself and it's the real deal. $99 for lifetime access to the entire library.
+
+Check it out here: [YOUR LINK]
+
+(Disclosure: I'm a Heroic Partner and earn a commission if you purchase through my link.)</div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;"><p><strong>Sponsorship Insert</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
+          <p style="font-size: 12px; color: var(--h-mid); margin: 4px 0 8px;">Drop this into your newsletter as a sponsored section. Designed to look like a natural sponsorship block readers can click through.</p>
+          <div class="swipe-block" style="background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 8px; padding: 20px; margin: 8px 0; font-size: 13px;">
+<div style="font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: #9CA3AF; margin-bottom: 8px;">Presented by Heroic</div>
+<div style="font-size: 15px; font-weight: 600; color: #13171B; margin-bottom: 6px;">700+ Books. 20 Minutes Each. Lifetime Access.</div>
+<div style="color: #6B7280; margin-bottom: 12px;">Heroic's PhilosophersNotes distills the world's best personal development books into practical wisdom you can apply immediately. Used by Fortune 500 leaders, elite athletes, and high-performers worldwide. $99 for lifetime access to the full library.</div>
+<div style="font-weight: 600; color: #5461AE;">[YOUR LINK] &rarr;</div>
+<div style="font-size: 10px; color: #9CA3AF; margin-top: 8px;">(Partner link)</div></div>
+          <p style="font-size: 12px; margin-top: 12px;">More templates coming soon. Always include your unique partner link and an FTC disclosure.</p>
+        </div>
+      </div>
+
+      <div class="asset-accordion">
+        <button class="asset-trigger" onclick="toggleAsset(this)">
+          <span class="asset-label">Social Media Templates</span> <span class="badge badge-soon">Coming Soon</span>
+          <span class="asset-arrow">&#9660;</span>
+        </button>
+        <div class="asset-content">
+          <div style="display: flex; justify-content: space-between; align-items: center;"><p><strong>LinkedIn Post</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
+          <div class="swipe-block" style="background: var(--h-tan); border-radius: 6px; padding: 16px; margin: 8px 0; font-size: 13px;">The best leaders I know read constantly. But not all of us have time to read 50 books a year.
+
+That's why I recommend Heroic's PhilosophersNotes. 700+ book summaries distilled into practical wisdom you can apply in 20 minutes.
+
+I'm a Heroic Partner because I genuinely use and love this product. Link in comments.
+
+#leadership #personaldevelopment #wisdom</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;"><p><strong>Twitter/X Post</strong></p><button onclick="copySwipe(this)" style="font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-dark); cursor: pointer;">Copy</button></div>
+          <div class="swipe-block" style="background: var(--h-tan); border-radius: 6px; padding: 16px; margin: 8px 0; font-size: 13px;">700+ books distilled into 20-minute summaries. Heroic's PhilosophersNotes is the most underrated resource in personal development. Link: [YOUR LINK] (partner link)</div>
+          <p style="font-size: 12px; margin-top: 12px;">Graphics and image templates coming soon. Always disclose your partner relationship in social posts.</p>
+        </div>
+      </div>
+
+      <div class="asset-accordion">
+        <button class="asset-trigger" onclick="toggleAsset(this)">
+          <span class="asset-label">Product Overview</span> <span class="badge badge-ready">Ready</span>
+          <span class="asset-arrow">&#9660;</span>
+        </button>
+        <div class="asset-content">
+          <p style="margin-bottom: 16px;">Heroic is Brian Johnson's personal development platform on a mission to help a million people close the gap between who they're capable of being and who they're actually being.</p>
+
+          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
+            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">📚</div>
+            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">PhilosophersNotes</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">$99 Lifetime Access</div><div style="font-size: 13px;">700+ book summaries distilled into 20-minute practical wisdom sessions. The entry point to the Heroic ecosystem and your primary promotional product.</div></div>
+          </div>
+
+          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
+            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">🏋️</div>
+            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">Basic Training</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">$199</div><div style="font-size: 13px;">Structured training program building on PhilosophersNotes foundations. Deeper application of the core principles.</div></div>
+          </div>
+
+          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
+            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">🎯</div>
+            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">Mastery</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">$499</div><div style="font-size: 13px;">Advanced mastery program for committed practitioners. Deep-dive into the Heroic framework for sustainable high performance.</div></div>
+          </div>
+
+          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
+            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">🧭</div>
+            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">Heroic Coach</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">$999</div><div style="font-size: 13px;">Coaching certification and advanced training. For those who want to lead others through the Heroic methodology.</div></div>
+          </div>
+
+          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--h-gold) 0%, #B8860B 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">🏔️</div>
+            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">HWIT (Heroic Workshop Instructor Training)</div><div style="font-size: 12px; color: var(--h-gold); font-weight: 600; margin-bottom: 4px;">$999</div><div style="font-size: 13px;">The pinnacle instructor certification program. Transform into a certified Heroic Workshop facilitator and leader. The highest-value product in the suite.</div></div>
+          </div>
+
+          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
+            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">💻</div>
+            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">Heroic OS</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">TBD</div><div style="font-size: 13px;">Coming soon. Advanced operating system for personal and professional development.</div></div>
+          </div>
+
+          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--h-cream); border-radius: 8px; margin-bottom: 12px;">
+            <div style="width: 80px; height: 80px; background: var(--h-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 28px; color: white;">🎬</div>
+            <div><div style="font-size: 15px; font-weight: 600; margin-bottom: 2px;">Heroic Live</div><div style="font-size: 12px; color: var(--h-blue); font-weight: 600; margin-bottom: 4px;">TBD</div><div style="font-size: 13px;">Coming soon. Live events and experiences connecting the Heroic community.</div></div>
+          </div>
+
+          <p style="font-size: 12px; margin-top: 8px;">Partners earn commissions across the entire product suite. When your referral ascends the ladder, you earn on every purchase for 12 months.</p>
+        </div>
+      </div>
+
+      <div class="asset-accordion">
+        <button class="asset-trigger" onclick="toggleAsset(this)">
+          <span class="asset-label">Co-Branded Landing Page</span> <span class="badge badge-soon">Request</span>
+          <span class="asset-arrow">&#9660;</span>
+        </button>
+        <div class="asset-content">
+          <p>We can build a custom landing page featuring your name and brand alongside Heroic. These convert significantly higher for warm traffic because they leverage your existing credibility with your audience.</p>
+          <p style="margin-top: 12px;">To request a co-branded landing page, email <a href="mailto:partners@heroic.us?subject=Co-Branded Landing Page Request" style="color: var(--h-blue); font-weight: 600;">partners@heroic.us</a> with:</p>
+          <ul style="margin: 8px 0 0 20px;">
+            <li>Your name/brand as you'd like it displayed</li>
+            <li>Your logo (if applicable)</li>
+            <li>Any specific messaging or audience context</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="asset-accordion">
+        <button class="asset-trigger" onclick="toggleAsset(this)">
+          <span class="asset-label">Partner Badge</span> <span class="badge badge-ready">Ready</span>
+          <span class="asset-arrow">&#9660;</span>
+        </button>
+        <div class="asset-content">
+          <p>Display the "Official Heroic Partner" badge on your website, email signature, or social profiles.</p>
+          <div style="background: var(--h-white); border: 2px solid #E5E7EB; border-radius: 6px; padding: 24px; text-align: center; margin: 12px 0;">
+            <div style="display: inline-flex; align-items: center; gap: 10px; background: var(--h-dark); color: var(--h-cream); padding: 12px 24px; border-radius: var(--radius); font-size: 13px; font-weight: 600; letter-spacing: 0.5px;">
+              <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic" style="height: 16px; filter: invert(1);">
+              Official Partner
+            </div>
+          </div>
+          <p style="font-size: 12px;">Right-click to save. Use on your website, email footer, or social bios. Do not modify the badge design.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="heroic-hr">
+
+    <!-- BRAND GUIDELINES -->
+    <div class="hq-section">
+      <div class="hq-section-header">
+        <div class="hq-section-label">Brand</div>
+        <h2>Brand Guidelines & Rules</h2>
+      </div>
+      <div class="brand-grid">
+        <div class="brand-do">
+          <h4>Do</h4>
+          <ul>
+            <li>Use approved Heroic logos without modification</li>
+            <li>Link directly to heroic.us or philosophersnotes.com</li>
+            <li>Share genuine personal experiences</li>
+            <li>Disclose your partner relationship (FTC)</li>
+            <li>Use your unique tracking link for all promotions</li>
+            <li>Match the brand tone: aspirational, practical, credible</li>
+          </ul>
+        </div>
+        <div class="brand-dont">
+          <h4>Don't</h4>
+          <ul>
+            <li>Modify, recolor, or distort Heroic logos</li>
+            <li>Make false or exaggerated product claims</li>
+            <li>Bid on "Heroic" or "PhilosophersNotes" in paid ads</li>
+            <li>Send spam or unsolicited bulk emails</li>
+            <li>Use Heroic branding in misleading contexts</li>
+            <li>Offer unauthorized discounts or cash incentives</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="heroic-hr">
+
+    <!-- PROMO IDEAS -->
+    <div class="hq-section">
+      <div class="hq-section-header">
+        <div class="hq-section-label">Playbook</div>
+        <h2>Promotion Ideas</h2>
+      </div>
+      <p style="font-size: 14px; color: var(--h-mid); margin-bottom: 20px;">Not sure where to start? Here's how our top partners promote Heroic.</p>
+      <div class="idea-grid">
+        <div class="idea-card"><div class="idea-icon">📝</div><div class="idea-title">Blog / Article</div><div class="idea-desc">Review, comparison, or "tools I use" post</div></div>
+        <div class="idea-card"><div class="idea-icon">📧</div><div class="idea-title">Email Newsletter</div><div class="idea-desc">Dedicated send or P.S. mention</div></div>
+        <div class="idea-card"><div class="idea-icon">🎙️</div><div class="idea-title">Podcast / Video</div><div class="idea-desc">Mention with link in show notes</div></div>
+        <div class="idea-card"><div class="idea-icon">💼</div><div class="idea-title">LinkedIn Post</div><div class="idea-desc">Personal recommendation to your network</div></div>
+        <div class="idea-card"><div class="idea-icon">🤝</div><div class="idea-title">Direct Referral</div><div class="idea-desc">Warm intro via email or conversation</div></div>
+        <div class="idea-card"><div class="idea-icon">🎤</div><div class="idea-title">Webinar / Workshop</div><div class="idea-desc">Co-create content with Heroic</div></div>
+      </div>
+      <div style="background: var(--h-blue-light); border-radius: 10px; padding: 20px 24px; margin-top: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <div style="font-size: 15px; font-weight: 600;">Want more ideas?</div>
+          <div style="font-size: 13px; color: var(--h-mid);">Read our guide on the best ways to promote the Heroic Partner Program.</div>
+        </div>
+        <a href="[INSERT BLOG POST LINK]" style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--h-blue); color: white; text-decoration: none; white-space: nowrap;">Read the Guide</a>
+      </div>
+    </div>
+
+    <hr class="heroic-hr">
+
+    <!-- KEY LINKS -->
+    <div class="hq-section">
+      <div class="hq-section-header">
+        <div class="hq-section-label">Quick Links</div>
+        <h2>Key Links</h2>
+      </div>
+      <div class="link-grid">
+        <a href="[INSERT DASHBOARD LINK]" class="link-card"><div class="link-card-title">Partner Dashboard</div><div class="link-card-desc">Stats, links & payouts</div></a>
+        <a href="[INSERT FAQ LINK]" class="link-card"><div class="link-card-title">Partner FAQ</div><div class="link-card-desc">Common questions</div></a>
+        <a href="[INSERT TOS LINK]" class="link-card"><div class="link-card-title">Terms of Service</div><div class="link-card-desc">Program agreement</div></a>
+        <a href="[INSERT APPLICATION LINK]" class="link-card"><div class="link-card-title">Refer a Partner</div><div class="link-card-desc">Earn overrides</div></a>
+        <a href="mailto:partners@heroic.us" class="link-card"><div class="link-card-title">Email Support</div><div class="link-card-desc">partners@heroic.us</div></a>
+        <a href="https://heroic.us" class="link-card" target="_blank"><div class="link-card-title">Heroic Website</div><div class="link-card-desc">heroic.us</div></a>
+      </div>
+    </div>
+
+    <hr class="heroic-hr">
+
+    <!-- FAQ -->
+    <div class="hq-section">
+      <div class="hq-section-header">
+        <div class="hq-section-label">FAQ</div>
+        <h2>Quick Answers</h2>
+      </div>
+      <div class="faq-mini">
+        <div class="faq-mini-item"><div class="faq-mini-q">When do I get paid?</div><div class="faq-mini-a">Twice monthly, 10th and 25th. 30-day provisioning. No minimum.</div></div>
+        <div class="faq-mini-item"><div class="faq-mini-q">How long is the cookie?</div><div class="faq-mini-a">60 days from first click.</div></div>
+        <div class="faq-mini-item"><div class="faq-mini-q">How do I move up tiers?</div><div class="faq-mini-a">Cumulative lifetime referrals. Progress visible in dashboard.</div></div>
+        <div class="faq-mini-item"><div class="faq-mini-q">Where's my tracking link?</div><div class="faq-mini-a">In your Partner Dashboard (Dub.co).</div></div>
+        <div class="faq-mini-item"><div class="faq-mini-q">Who do I contact?</div><div class="faq-mini-a">partners@heroic.us. Twice-monthly newsletter keeps you in the loop.</div></div>
+      </div>
+      <p style="font-size: 13px; color: var(--h-mid); margin-top: 12px;">Full FAQ: <a href="[INSERT FAQ LINK]" style="color: var(--h-blue); font-weight: 500;">View Partner FAQ</a></p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="hq-footer">
+    <div class="hq-footer-inner">
+      <div class="hq-footer-left">
+        Heroic Partner Program &middot; Questions? <a href="mailto:partners@heroic.us">partners@heroic.us</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // CALCULATOR
+  const hqACV = 173.83;
+  const hqEntry = 99;
+  let hqRate = 0.50;
+  const hqSlider = document.getElementById('hq-slider');
+
+  function hqFmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+
+  function hqSelectTier(rate, name, el) {
+    hqRate = rate;
+    document.querySelectorAll('.tier-card').forEach(c => { c.style.boxShadow = 'none'; });
+    el.style.boxShadow = '0 0 0 4px var(--h-gold)';
+    hqRecalc();
+  }
+
+  function hqRecalc() {
+    const refs = parseInt(hqSlider.value);
+    document.getElementById('hq-slider-val').textContent = refs;
+    const monthlyEntry = refs * hqEntry * hqRate;
+    const monthlyUp = refs * hqACV * hqRate;
+    const totalCust = refs * 12;
+    const annual = totalCust * hqACV * hqRate;
+    document.getElementById('hq-monthly').textContent = hqFmt(monthlyEntry);
+    document.getElementById('hq-monthly-up').textContent = hqFmt(monthlyUp);
+    document.getElementById('hq-annual').textContent = hqFmt(annual);
+    document.getElementById('hq-customers').textContent = totalCust.toLocaleString() + ' customers referred';
+  }
+
+  hqSlider.addEventListener('input', hqRecalc);
+  hqSelectTier(0.50, 'Gold', document.getElementById('hq-tc-gold'));
+
+  // COPY SWIPE
+  function copySwipe(btn) {
+    const block = btn.parentElement.nextElementSibling;
+    const text = block.innerText || block.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.style.background = '#ECFDF5';
+      btn.style.color = '#059669';
+      btn.style.borderColor = '#059669';
+      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; btn.style.borderColor = ''; }, 2000);
+    });
+  }
+
+  // ACCORDION
+  function toggleAsset(btn) {
+    const content = btn.nextElementSibling;
+    const isOpen = content.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.asset-content').forEach(c => c.classList.remove('open'));
+    document.querySelectorAll('.asset-trigger').forEach(t => t.classList.remove('open'));
+    // Open this one if it was closed
+    if (!isOpen) {
+      content.classList.add('open');
+      btn.classList.add('open');
+    }
+  }
+  </script>
+
+</body>
+</html>
