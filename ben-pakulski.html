@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ben Pakulski x Heroic — Partner GTM Kit</title>
+  <title>Ben Pakulski x Heroic — Partner Kit</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -15,13 +15,10 @@
       --h-mid:        #6B7280;
       --h-border:     #D4D1C7;
       --h-white:      #FFFFFF;
-
-      /* Partner accent — Ben Pakulski blue */
       --p-accent:       #0093FF;
       --p-accent-light: rgba(0, 147, 255, 0.12);
       --p-accent-text:  #ffffff;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Outfit', sans-serif;
@@ -154,7 +151,9 @@
       flex-shrink: 0;
     }
     .tier-pill::before { content: '●'; font-size: 8px; }
-    .tier-gold { background: rgba(184,134,11,0.12); color: #B8860B; border: 1px solid rgba(184,134,11,0.3); }
+    .tier-bronze { background: rgba(205,127,50,0.12); color: #CD7F32; border: 1px solid rgba(205,127,50,0.3); }
+    .tier-silver { background: rgba(168,169,173,0.12); color: #888; border: 1px solid rgba(168,169,173,0.3); }
+    .tier-gold   { background: rgba(184,134,11,0.12); color: #B8860B; border: 1px solid rgba(184,134,11,0.3); }
 
     /* ── PAGE LAYOUT ── */
     .page-wrap { max-width: 960px; margin: 0 auto; padding: 0 40px; }
@@ -163,7 +162,7 @@
     /* ── QUICK ACTIONS ── */
     .quick-actions {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       margin: 32px 0 48px;
     }
@@ -178,9 +177,9 @@
       transition: all 0.2s;
       cursor: pointer;
       box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 88px;
     }
     .qa-card:hover { border-color: var(--p-accent); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .qa-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 88px; }
     .qa-icon { font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center; height: 28px; }
     .qa-title { font-size: 13px; font-weight: 600; }
 
@@ -217,16 +216,52 @@
     .welcome-card p { font-size: 15px; line-height: 1.75; color: var(--h-dark); margin-bottom: 16px; }
     .welcome-card p:last-of-type { margin-bottom: 0; }
 
-    .welcome-signoff { display: block; margin-top: 20px; }
+    .welcome-signoff {
+      display: block;
+      margin-top: 20px;
+    }
     .signoff-text { font-size: 14px; color: var(--h-mid); line-height: 1.65; }
     .signoff-avatars { display: flex; gap: 20px; margin-top: 20px; }
     .signoff-avatar-wrap { text-align: left; }
     .signoff-avatar {
-      width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
-      border: 2px solid var(--h-border); display: block; margin: 0 0 5px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--h-border);
+      display: block;
+      margin: 0 0 5px;
     }
     .signoff-name { font-size: 11px; font-weight: 600; color: var(--h-dark); }
     .signoff-role { font-size: 10px; color: var(--h-mid); margin-top: 1px; }
+
+    /* ── PRODUCT SELECTOR ── */
+    .product-selector-wrap { margin-bottom: 20px; }
+    .product-selector-label {
+      font-size: 11px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--h-mid); margin-bottom: 10px;
+    }
+    .product-selector { display: flex; gap: 10px; flex-wrap: wrap; }
+    .ps-card {
+      background: var(--h-white);
+      border: 1px solid var(--h-border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      min-width: 160px;
+    }
+    .ps-card:hover { border-color: var(--p-accent); }
+    .ps-card.ps-active { border-color: var(--p-accent); box-shadow: 0 0 0 3px var(--p-accent-light); }
+    .ps-card.ps-disabled { opacity: 0.45; cursor: default; pointer-events: none; }
+    .ps-icon { font-size: 20px; flex-shrink: 0; }
+    .ps-name { font-size: 13px; font-weight: 600; }
+    .ps-price { font-size: 12px; color: var(--h-blue); font-weight: 600; }
+    .ps-soon { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #D97706; background: #FFFBEB; padding: 2px 7px; border-radius: 10px; display: inline-block; margin-top: 2px; }
 
     /* ── ACCORDIONS ── */
     .asset-accordion { margin-bottom: 10px; }
@@ -348,32 +383,57 @@
     .promo-img-name { font-size: 14px; font-weight: 600; color: var(--h-dark); }
     .promo-img-desc { font-size: 12px; color: var(--h-mid); margin-top: 2px; }
 
-    /* ── SECONDARY BUTTON ── */
+    /* ── CONSISTENT SECONDARY BUTTON (download, preview, etc.) ── */
     .asset-btn {
-      display: inline-flex; align-items: center; gap: 4px;
-      font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600;
-      color: var(--h-blue); background: none; border: 1px solid var(--h-blue);
-      border-radius: 6px; padding: 6px 14px; cursor: pointer; text-decoration: none;
-      transition: background 0.15s; white-space: nowrap; flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--h-blue);
+      background: none;
+      border: 1px solid var(--h-blue);
+      border-radius: 6px;
+      padding: 6px 14px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .asset-btn:hover { background: rgba(84,97,174,0.08); }
 
+    /* ── CONSISTENT BODY COPY inside accordions ── */
     .asset-body-text { font-size: 14px; color: var(--h-mid); line-height: 1.7; margin-bottom: 16px; }
     .asset-sublabel { font-size: 12px; color: var(--h-mid); margin-top: 12px; line-height: 1.6; }
     .asset-section-title { font-size: 14px; font-weight: 600; color: var(--h-dark); margin-bottom: 8px; }
 
     /* ── CAMPAIGN ROWS ── */
     .campaign-row {
-      display: flex; align-items: flex-start; gap: 16px; padding: 12px 16px;
-      background: var(--h-cream); border: 1px solid var(--h-border); border-radius: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 12px 16px;
+      background: var(--h-cream);
+      border: 1px solid var(--h-border);
+      border-radius: 8px;
     }
-    .campaign-date { font-size: 13px; font-weight: 700; color: var(--p-accent); white-space: nowrap; min-width: 110px; padding-top: 2px; }
-    .campaign-activity { font-size: 14px; color: var(--h-dark); line-height: 1.6; }
+    .campaign-date {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--p-accent);
+      white-space: nowrap;
+      min-width: 110px;
+      padding-top: 2px;
+    }
+    .campaign-activity {
+      font-size: 14px;
+      color: var(--h-dark);
+      line-height: 1.6;
+    }
 
-    /* ── BADGE GRID ── */
-    .badge-grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-
-    /* ── FOOTER ── */
+    /* ── SIMPLE FOOTER ── */
     .hq-footer-simple {
       border-top: 1px solid var(--h-border);
       padding: 32px 40px;
@@ -382,37 +442,177 @@
     }
     .hq-footer-simple img { height: 24px; opacity: 0.5; }
 
-    /* ── RESPONSIVE ── */
+    /* ── PASSWORD GATE ── */
+    #pw-gate {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--h-cream);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pw-box {
+      background: var(--h-white);
+      border: 1px solid var(--h-border);
+      border-radius: 16px;
+      padding: 40px 48px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .pw-logo { height: 28px; margin-bottom: 24px; }
+    .pw-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--h-dark); margin-bottom: 6px; }
+    .pw-sub { font-size: 14px; color: var(--h-mid); margin-bottom: 24px; }
+    .pw-input {
+      width: 100%; padding: 12px 16px; font-family: 'Outfit', sans-serif;
+      font-size: 15px; color: var(--h-dark); background: var(--h-cream);
+      border: 1.5px solid var(--h-border); border-radius: 8px;
+      outline: none; margin-bottom: 12px; text-align: center; letter-spacing: 2px;
+      transition: border-color 0.15s;
+    }
+    .pw-input:focus { border-color: var(--p-accent); }
+    .pw-btn {
+      width: 100%; padding: 12px; font-family: 'Outfit', sans-serif;
+      font-size: 14px; font-weight: 600; color: var(--p-accent-text);
+      background: var(--p-accent); border: none; border-radius: 8px;
+      cursor: pointer; transition: opacity 0.15s;
+    }
+    .pw-btn:hover { opacity: 0.85; }
+    .pw-error { font-size: 13px; color: #DC2626; margin-top: 10px; display: none; }
+
+    /* ── TASK CARDS (campaign checklist) ── */
+    .task-card {
+      background: var(--h-white);
+      border: 1px solid var(--h-border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: border-color 0.15s;
+    }
+    .task-card.task-done { border-color: #BBF7D0; background: #F8FFFE; }
+    .task-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .task-header:hover { background: var(--h-tan); }
+    .task-done .task-header { background: #F0FDF4; }
+    .task-done .task-header:hover { background: #DCFCE7; }
+    .task-checkbox {
+      width: 22px; height: 22px; border-radius: 6px;
+      border: 2px solid var(--h-border); background: var(--h-white);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; cursor: pointer; transition: all 0.15s;
+    }
+    .task-done .task-checkbox { background: #059669; border-color: #059669; }
+    .task-checkbox-inner { display: none; color: white; font-size: 13px; font-weight: 700; }
+    .task-done .task-checkbox-inner { display: block; }
+    .task-meta { flex: 1; min-width: 0; }
+    .task-date {
+      font-size: 12px; font-weight: 700; color: var(--p-accent);
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px;
+    }
+    .task-done .task-date { color: #059669; }
+    .task-title { font-size: 15px; font-weight: 600; color: var(--h-dark); }
+    .task-done .task-title { text-decoration: line-through; color: var(--h-mid); }
+    .task-owner {
+      font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+      padding: 3px 10px; border-radius: 20px; flex-shrink: 0;
+    }
+    .owner-partner { background: var(--p-accent-light); color: var(--p-accent); }
+    .owner-tyler { background: rgba(84,97,174,0.1); color: var(--h-blue); }
+    .owner-heroic { background: #F0FDF4; color: #059669; }
+    .task-expand-arrow { font-size: 14px; color: var(--h-mid); transition: transform 0.2s; flex-shrink: 0; }
+    .task-card.task-open .task-expand-arrow { transform: rotate(180deg); }
+    .task-copy-panel {
+      display: none;
+      border-top: 1px solid var(--h-border);
+      background: #FAFAF8;
+      padding: 20px;
+    }
+    .task-card.task-open .task-copy-panel { display: block; }
+    .task-copy-label {
+      font-size: 11px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--p-accent); margin-bottom: 14px;
+    }
+
+    /* progress bar */
+    .campaign-progress-wrap { margin-bottom: 20px; }
+    .campaign-progress-label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px; color: var(--h-mid); margin-bottom: 8px;
+    }
+    .campaign-progress-label strong { color: var(--h-dark); }
+    .campaign-progress-bar {
+      height: 6px; background: var(--h-border); border-radius: 10px; overflow: hidden;
+    }
+    .campaign-progress-fill {
+      height: 100%; background: linear-gradient(90deg, var(--p-accent), var(--h-blue));
+      border-radius: 10px; transition: width 0.4s ease;
+    }
+
     @media (max-width: 700px) {
+      /* Global spacing */
       .page-wrap { padding: 0 20px; }
       hr.heroic-hr { margin: 32px 0; }
+
+      /* Header */
       .hq-header { padding: 0 20px; height: 56px; }
       .header-logos img { height: 22px; }
       .kit-label { font-size: 10px; padding: 3px 10px; }
+
+      /* Hero */
       .hq-hero { padding: 24px 0 20px; }
       .hq-hero-inner { padding: 0 20px; }
       .hq-hero h1 { font-size: 26px; }
       .hq-hero .hero-sub { font-size: 14px; }
       .hero-link-box { flex-wrap: wrap; gap: 10px; padding: 12px 14px; }
       .hero-link-box code { font-size: 13px; }
+
+      /* Quick actions: 1 col on very small, 3 col stays on 400+ */
       .quick-actions { grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 20px 0 36px; }
       .qa-card { padding: 14px 8px; min-height: 72px; }
       .qa-icon { font-size: 18px; height: 22px; }
       .qa-title { font-size: 11px; }
+
+      /* Welcome */
       .welcome-card { padding: 22px; }
       .signoff-avatars { gap: 16px; }
+      .signoff-name { font-size: 11px; }
+      .signoff-role { font-size: 10px; }
+
+      /* Section headings */
       .hq-section h2 { font-size: 22px; }
+
+      /* Products */
       .product-card { padding: 18px; }
+
+      /* Campaign */
       .campaign-row { flex-direction: column; gap: 4px; }
       .campaign-date { min-width: unset; white-space: normal; }
-      .product-grid, .brand-grid, .promo-grid { grid-template-columns: 1fr; }
-      .idea-grid, .link-grid { grid-template-columns: repeat(2, 1fr); }
+
+      /* Grids: all collapse to 1 col */
+      .product-grid,
+      .brand-grid,
+      .promo-grid { grid-template-columns: 1fr; }
+
+      /* 2-col on mobile for ideas and links */
+      .idea-grid,
+      .link-grid { grid-template-columns: repeat(2, 1fr); }
+
+      /* Promotional assets */
       .asset-trigger { font-size: 14px; padding: 15px 16px; }
       .asset-content { padding: 18px 16px; }
       .email-trigger { font-size: 14px; padding: 12px 14px; }
       .email-body { padding: 14px 14px; }
       .email-preview { padding: 16px; font-size: 13px; }
+
+      /* Badge grid: 1 col */
       .badge-grid-3col { grid-template-columns: 1fr !important; }
+
+      /* Footer */
       .hq-footer-simple { padding: 24px 20px; }
     }
 
@@ -424,110 +624,118 @@
 </head>
 <body>
 
-  <!-- ══ HEADER ══ -->
-  <div class="hq-header">
-    <div class="header-logos">
-      <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic">
-      <div class="header-divider"></div>
-      <img src="https://www.benpakulski.com/wp-content/uploads/ben-pakulski-logo.png" alt="Ben Pakulski" style="height: 28px;">
+<!-- PASSWORD GATE -->
+<div id="pw-gate">
+  <div class="pw-box">
+    <img class="pw-logo" src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic">
+    <div class="pw-title">Partner GTM Kit</div>
+    <div class="pw-sub">Enter your access password to continue.</div>
+    <input class="pw-input" id="pw-input" type="password" placeholder="Password" onkeydown="if(event.key==='Enter') checkPassword()">
+    <button class="pw-btn" onclick="checkPassword()">Access Kit</button>
+    <div class="pw-error" id="pw-error">Incorrect password. Try again.</div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="hq-header">
+  <div class="header-logos">
+    <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic">
+    <div class="header-divider"></div>
+    <img src="https://www.benpakulski.com/wp-content/uploads/ben-pakulski-logo.png" alt="Ben Pakulski" style="height: 28px;">
+  </div>
+  <span class="kit-label">Partner GTM Kit</span>
+</div>
+
+<!-- HERO -->
+<div class="hq-hero">
+  <div class="hq-hero-inner">
+    <h1>Your Partner Toolkit</h1>
+    <p class="hero-sub">Everything you need to promote the 30-Day Mind + Body Challenge. Bookmark this page.</p>
+    <div class="hero-link-row">
+      <div class="hero-link-box">
+        <span class="hero-link-label">Your Link</span>
+        <code id="hero-link-text">https://go.heroic.us/bp-pn</code>
+        <button class="hero-copy-btn" id="hero-copy-btn" onclick="copyHeroLink()">Copy Link</button>
+      </div>
     </div>
-    <span class="kit-label">Partner GTM Kit</span>
+  </div>
+</div>
+
+<!-- PAGE WRAP STARTS -->
+<div class="page-wrap">
+
+  <!-- QUICK ACTIONS (3-column) -->
+  <div class="quick-actions" style="margin-top: 32px; grid-template-columns: repeat(3, 1fr);">
+    <a href="https://partners.dub.co/programs/heroic" class="qa-card" target="_blank">
+      <div class="qa-icon"><img src="https://assets.dub.co/wordmark.png" alt="Dub" style="height: 18px; display: block; margin: 0 auto;"></div>
+      <div class="qa-title">Dub Dashboard</div>
+    </a>
+    <a href="https://partners.dub.co/programs/heroic/earnings" class="qa-card" target="_blank">
+      <div class="qa-icon">💰</div>
+      <div class="qa-title">Earnings</div>
+    </a>
+    <a href="#assets" class="qa-card" onclick="event.preventDefault(); document.getElementById('assets').scrollIntoView({behavior:'smooth'});">
+      <div class="qa-icon">📦</div>
+      <div class="qa-title">Copy & Assets</div>
+    </a>
   </div>
 
-  <!-- ══ HERO ══ -->
-  <div class="hq-hero">
-    <div class="hq-hero-inner">
-      <div class="hero-eyebrow">Ben Pakulski x Heroic</div>
-      <h1>Your Partner Toolkit</h1>
-      <p class="hero-sub">Everything you need to promote the 30-Day Mind + Body Challenge. Bookmark this page.</p>
-      <div class="hero-link-row">
-        <div class="hero-link-box">
-          <span class="hero-link-label">Your Link</span>
-          <code id="hero-link-text">https://go.heroic.us/bp-pn</code>
-          <button class="hero-copy-btn" id="hero-copy-btn" onclick="copyHeroLink()">Copy Link</button>
+  <!-- WELCOME SECTION -->
+  <div class="hq-section">
+    <div class="hq-section-header">
+      <h2>Welcome, Ben.</h2>
+    </div>
+    <div class="welcome-card">
+      <div class="welcome-signoff">
+        <div class="signoff-text">
+          <p style="font-size:15px;line-height:1.8;color:var(--h-dark);margin-bottom:12px;">This is more than a partnership. The Warrior & The Monk is a first-of-its-kind collaboration: your world-class training methodology paired with Brian's 20+ years of philosophical wisdom, delivered as a 30-day challenge that trains the body and the mind as one practice.</p>
+          <p style="font-size:15px;line-height:1.8;color:var(--h-dark);margin-bottom:12px;">The goal is ambitious and simple: 10,000 people, 30 days, $99 each. Your audience trusts you because you've always gone deeper than the surface. This challenge is an extension of that standard. Every workout you record, every note Brian curates, every daily email we send brings someone closer to closing the gap between who they are and who they're capable of becoming.</p>
+          <p style="font-size:15px;line-height:1.8;color:var(--h-dark);margin-bottom:4px;">This kit has everything you need to promote the challenge. Use it as-is or customize it to match your voice. We're here to support you every step of the way.</p>
+          <p style="font-size:13px;font-weight:600;color:var(--h-mid);margin-top:8px;">— The Heroic Partnerships Team</p>
         </div>
-        <span class="tier-pill tier-gold">Gold Partner</span>
+        <div class="signoff-avatars">
+          <div class="signoff-avatar-wrap">
+            <img class="signoff-avatar" src="https://pbs.twimg.com/profile_images/1917957401346531328/cqVyHmm7_400x400.jpg" alt="Tyler">
+            <div class="signoff-name">Tyler</div>
+            <div class="signoff-role">Partnerships</div>
+          </div>
+          <div class="signoff-avatar-wrap">
+            <img class="signoff-avatar" src="https://media.licdn.com/dms/image/v2/D5603AQGmyLPGjbtR4g/profile-displayphoto-crop_800_800/B56Zl8dtJ6JkAI-/0/1758729797522?e=1775692800&v=beta&t=JIbQ290eENDQMQ1DUNsKGE8nHu1Pb3Pat2ZEEUjn85A" alt="Michael Balchan">
+            <div class="signoff-name">Michael</div>
+            <div class="signoff-role">Head Coach / CEO</div>
+          </div>
+          <div class="signoff-avatar-wrap">
+            <img class="signoff-avatar" src="https://media.licdn.com/dms/image/v2/C4E03AQGxn3y3Z1H_dA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1637428882248?e=1775692800&v=beta&t=TJjZoDL-xsjH_vEx_4A9tp4xErJCM90c0vt3kg4hyMs" alt="Brian Johnson">
+            <div class="signoff-name">Brian</div>
+            <div class="signoff-role">Founder</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="page-wrap">
+  <hr class="heroic-hr">
 
-    <!-- ══ QUICK ACTIONS ══ -->
-    <div class="quick-actions">
-      <a href="https://partners.dub.co/programs/heroic" class="qa-card" target="_blank">
-        <div class="qa-icon"><img src="https://assets.dub.co/wordmark.png" alt="Dub" style="height: 18px; display: block; margin: 0 auto;"></div>
-        <div class="qa-title">Dub Dashboard</div>
-      </a>
-      <a href="https://partners.dub.co/programs/heroic/earnings" class="qa-card" target="_blank">
-        <div class="qa-icon">💰</div>
-        <div class="qa-title">Earnings</div>
-      </a>
-      <a href="#assets" class="qa-card" onclick="event.preventDefault(); document.getElementById('assets').scrollIntoView({behavior:'smooth'});">
-        <div class="qa-icon">📦</div>
-        <div class="qa-title">Copy & Assets</div>
-      </a>
+  <!-- PRODUCTS SECTION -->
+  <div class="hq-section">
+    <div class="hq-section-header">
+      <h2>Products You're Promoting</h2>
     </div>
-
-    <!-- ══ WELCOME ══ -->
-    <div class="hq-section">
-      <div class="hq-section-header">
-        <h2>Welcome, Ben.</h2>
+    <div class="product-card primary" style="width: 100%; margin-bottom: 12px;">
+      <div class="product-card-top">
+        <div class="product-name">The Warrior & The Monk: 30-Day Challenge</div>
+        <div class="product-price">$99</div>
       </div>
-      <div class="welcome-card">
-        <div class="welcome-signoff">
-          <div class="signoff-text">
-            <p style="font-size:15px;line-height:1.8;color:var(--h-dark);margin-bottom:12px;">This is more than a partnership. The Warrior & The Monk is a first-of-its-kind collaboration: your world-class training methodology paired with Brian's 20+ years of philosophical wisdom, delivered as a 30-day challenge that trains the body and the mind as one practice.</p>
-            <p style="font-size:15px;line-height:1.8;color:var(--h-dark);margin-bottom:12px;">The goal is ambitious and simple: 10,000 people, 30 days, $99 each. Your audience trusts you because you've always gone deeper than the surface. This challenge is an extension of that standard. Every workout you record, every note Brian curates, every daily email we send brings someone closer to closing the gap between who they are and who they're capable of becoming.</p>
-            <p style="font-size:15px;line-height:1.8;color:var(--h-dark);margin-bottom:4px;">This kit has everything you need to promote the challenge. Use it as-is or customize it to match your voice. We're here to support you every step of the way.</p>
-            <p style="font-size:13px;font-weight:600;color:var(--h-mid);margin-top:8px;">— The Heroic Partnerships Team</p>
-          </div>
-          <div class="signoff-avatars">
-            <div class="signoff-avatar-wrap">
-              <img class="signoff-avatar" src="https://pbs.twimg.com/profile_images/1917957401346531328/cqVyHmm7_400x400.jpg" alt="Tyler">
-              <div class="signoff-name">Tyler</div>
-              <div class="signoff-role">Partnerships</div>
-            </div>
-            <div class="signoff-avatar-wrap">
-              <img class="signoff-avatar" src="https://media.licdn.com/dms/image/v2/D5603AQGmyLPGjbtR4g/profile-displayphoto-crop_800_800/B56Zl8dtJ6JkAI-/0/1758729797522?e=1775692800&v=beta&t=JIbQ290eENDQMQ1DUNsKGE8nHu1Pb3Pat2ZEEUjn85A" alt="Michael Balchan">
-              <div class="signoff-name">Michael</div>
-              <div class="signoff-role">Head Coach / CEO</div>
-            </div>
-            <div class="signoff-avatar-wrap">
-              <img class="signoff-avatar" src="https://media.licdn.com/dms/image/v2/C4E03AQGxn3y3Z1H_dA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1637428882248?e=1775692800&v=beta&t=TJjZoDL-xsjH_vEx_4A9tp4xErJCM90c0vt3kg4hyMs" alt="Brian Johnson">
-              <div class="signoff-name">Brian</div>
-              <div class="signoff-role">Founder</div>
-            </div>
-          </div>
-        </div>
+      <span class="product-status status-live">✓ Always Available</span>
+      <div class="product-desc">30 daily workouts from Ben + 30 daily Philosopher's Notes curated by Brian. Lifetime access to the full PN library (700+ book summaries). Weekly live coaching from Ben alongside daily lessons. Community accountability with a daily social sharing challenge and prize drawing for 30-day completers. Buy your spot and bring a friend to the challenge for free.</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 4px;">
+        <div class="product-earn">Your commission: <span>$49.50 per sale</span> (50%)</div>
       </div>
     </div>
+    <p style="font-size:13px;color:var(--h-mid);margin-top:14px;line-height:1.6;">For any additional Heroic products your referred customers purchase within 12 months of their first order (Coach, Mastery, All-3 Bundle), you earn commission on those sales too.</p>
+  </div>
 
-    <hr class="heroic-hr">
-
-    <!-- ══ PRODUCTS YOU'RE PROMOTING ══ -->
-    <div class="hq-section">
-      <div class="hq-section-header">
-        <h2>What You're Promoting</h2>
-      </div>
-
-      <!-- 30-Day Challenge — primary product -->
-      <div class="product-card primary" style="width: 100%; margin-bottom: 12px;">
-        <div class="product-card-top">
-          <div class="product-name">The Warrior & The Monk: 30-Day Challenge</div>
-          <div class="product-price">$99</div>
-        </div>
-        <span class="product-status status-live">✓ Always Available</span>
-        <div class="product-desc">30 daily workouts from Ben + 30 daily Philosopher's Notes curated by Brian. Lifetime access to the full PN library (700+ book summaries). Weekly live coaching from Ben alongside daily lessons. Community accountability with a daily social sharing challenge and prize drawing for 30-day completers. Buy your spot and bring a friend to the challenge for free.</div>
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 4px;">
-          <div class="product-earn">Your commission: <span>$49.50 per sale</span> (50%)</div>
-        </div>
-      </div>
-
-      <p style="font-size:13px;color:var(--h-mid);margin-top:14px;line-height:1.6;">For any additional Heroic products your referred customers purchase within 12 months of their first order (Coach, Mastery, All-3 Bundle), you earn commission on those sales too.</p>
-    </div>
-
-    <hr class="heroic-hr">
+  <hr class="heroic-hr">
 
     <!-- ══ CAMPAIGN OVERVIEW ══ -->
     <div class="hq-section">
@@ -539,179 +747,114 @@
         <div style="padding:28px 32px;">
 
           <!-- Campaign name + dates -->
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:24px;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:20px;">
             <div>
               <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--p-accent);margin-bottom:6px;">Campaign</div>
               <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--h-dark);">The Warrior & The Monk: 30-Day Mind + Body Challenge</div>
             </div>
             <div style="text-align:right;">
               <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--h-mid);margin-bottom:6px;">Promotion Window</div>
-              <div style="font-size:15px;font-weight:600;color:var(--h-dark);">April 1 — April 11, 2026</div>
+              <div style="font-size:15px;font-weight:600;color:var(--h-dark);">April 1 – April 15, 2026</div>
             </div>
           </div>
 
           <!-- Campaign description -->
-          <p style="font-size:15px;line-height:1.8;color:var(--h-dark);margin-bottom:24px;">"75 Hard" but for mindset. A 30-day challenge pairing Philosopher's Notes with 20-minute workouts from Ben Pakulski. The goal: train the body and the mind as one practice. 10-day promo window to drive enrollment, then a 30-day live cohort starting April 11. Target: 10,000 participants.</p>
+          <p style="font-size:15px;line-height:1.8;color:var(--h-dark);margin-bottom:28px;">Two-week promotional push to drive enrollment into the 30-Day Mind + Body Challenge. Promo runs April 1 through April 15. The challenge goes live April 15 and runs through May 15. Target: 10,000 participants at $99 each.</p>
 
-          <!-- Activities -->
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--h-mid);margin-bottom:12px;">What We're Doing Together</div>
-          <div id="campaign-activities" style="display:flex;flex-direction:column;gap:10px;">
-            <div class="campaign-row">
-              <div class="campaign-date">April 1</div>
-              <div class="campaign-activity">Pre-launch email sequence fires. Social teasers begin across all channels. Landing page and payment flow go live.</div>
+          <!-- Progress bar -->
+          <div class="campaign-progress-wrap">
+            <div class="campaign-progress-label">
+              <span>Campaign Checklist</span>
+              <strong id="progress-text">0 of 5 complete</strong>
             </div>
-            <div class="campaign-row">
-              <div class="campaign-date">April 1 - 11</div>
-              <div class="campaign-activity">Ben promotes: email blasts to list, Instagram stories, social posts, daily content building anticipation. Social content calendar running daily.</div>
-            </div>
-            <div class="campaign-row">
-              <div class="campaign-date">Week of April 4</div>
-              <div class="campaign-activity">Podcast episode with Brian drops. Deep dive on the philosophy behind the challenge, what participants can expect, and why this matters.</div>
-            </div>
-            <div class="campaign-row">
-              <div class="campaign-date">April 11</div>
-              <div class="campaign-activity">Cohort officially launches. Daily content drip begins: workout video + Philosopher's Note delivered via email. Live coaching sessions start.</div>
-            </div>
-            <div class="campaign-row">
-              <div class="campaign-date">May 11</div>
-              <div class="campaign-activity">Program wraps. Prize drawing for 30-day completers. Post-program upsell sequence into Coach and Mastery begins.</div>
+            <div class="campaign-progress-bar">
+              <div class="campaign-progress-fill" id="progress-fill" style="width:0%"></div>
             </div>
           </div>
 
-        </div>
-      </div>
-    </div>
-
-    <hr class="heroic-hr">
-
-    <!-- ══ PROMOTIONAL ASSETS ══ -->
-    <div class="hq-section" id="assets">
-      <div class="hq-section-header">
-        <div class="hq-section-label">Promotional Assets</div>
-        <h2>Copy, Scripts & Social</h2>
-      </div>
-      <p style="font-size: 14px; color: var(--h-mid); margin-bottom: 20px;">Click any section to expand and copy. These are written in your voice for your audience. Treat everything as a strong starting point and customize freely.</p>
-
-      <!-- Co-Branded Landing Page -->
-      <div class="asset-accordion">
-        <button class="asset-trigger" onclick="toggleAsset(this)">
-          <span class="asset-label">🚀 Co-Branded Landing Page</span>
-          <span class="badge badge-ready">Ready</span>
-          <span class="asset-arrow">&#9660;</span>
-        </button>
-        <div class="asset-content">
-          <p style="font-size:13px;color:var(--h-mid);margin-bottom:0;line-height:1.7;">Your custom co-branded landing page is live. By default, any traffic you send via your partner link will automatically be directed to your co-branded landing page. Just use your partner link above for all promotions.</p>
-        </div>
-      </div>
-
-      <!-- Logos & Brand Colors -->
-      <div class="asset-accordion">
-        <button class="asset-trigger" onclick="toggleAsset(this)">
-          <span class="asset-label">🎨 Heroic Logos & Brand Colors</span>
-          <span class="badge badge-ready">Ready</span>
-          <span class="asset-arrow">&#9660;</span>
-        </button>
-        <div class="asset-content">
-          <p class="asset-body-text">Use these logos and colors in any co-branded content you create. Do not modify or recolor the logo.</p>
-
-          <p class="asset-section-title">Primary Logo (Dark)</p>
-          <div style="background:var(--h-cream);border:1px solid #E5E7EB;border-radius:8px;padding:24px;text-align:center;margin-bottom:10px;">
-            <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic Logo" style="height:40px;">
-          </div>
-          <a href="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" download="heroic-logo.png" class="asset-btn" style="margin-bottom:20px;">&#8595; Download Logo</a>
-
-          <p class="asset-section-title" style="margin-top:20px;">Brand Colors <span style="font-size:11px;color:var(--h-mid);font-weight:400;">(click to copy hex)</span></p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:4px;">
-            <div onclick="copyHex('#13171B', this)" style="cursor:pointer;text-align:center;">
-              <div style="width:56px;height:56px;background:#13171B;border-radius:6px;border:1px solid #E5E7EB;"></div>
-              <div class="hex-label" style="font-size:10px;font-weight:600;color:var(--h-mid);margin-top:4px;font-family:monospace;">#13171B</div>
-            </div>
-            <div onclick="copyHex('#5461AE', this)" style="cursor:pointer;text-align:center;">
-              <div style="width:56px;height:56px;background:#5461AE;border-radius:6px;"></div>
-              <div class="hex-label" style="font-size:10px;font-weight:600;color:var(--h-mid);margin-top:4px;font-family:monospace;">#5461AE</div>
-            </div>
-            <div onclick="copyHex('#E2CA39', this)" style="cursor:pointer;text-align:center;">
-              <div style="width:56px;height:56px;background:#E2CA39;border-radius:6px;"></div>
-              <div class="hex-label" style="font-size:10px;font-weight:600;color:var(--h-mid);margin-top:4px;font-family:monospace;">#E2CA39</div>
-            </div>
-            <div onclick="copyHex('#CFE1ED', this)" style="cursor:pointer;text-align:center;">
-              <div style="width:56px;height:56px;background:#CFE1ED;border-radius:6px;border:1px solid #E5E7EB;"></div>
-              <div class="hex-label" style="font-size:10px;font-weight:600;color:var(--h-mid);margin-top:4px;font-family:monospace;">#CFE1ED</div>
-            </div>
-            <div onclick="copyHex('#F8F7F3', this)" style="cursor:pointer;text-align:center;">
-              <div style="width:56px;height:56px;background:#F8F7F3;border-radius:6px;border:1px solid #E5E7EB;"></div>
-              <div class="hex-label" style="font-size:10px;font-weight:600;color:var(--h-mid);margin-top:4px;font-family:monospace;">#F8F7F3</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Partner Badges -->
-      <div class="asset-accordion">
-        <button class="asset-trigger" onclick="toggleAsset(this)">
-          <span class="asset-label">🏅 Partner Badges</span>
-          <span class="badge badge-ready">Ready</span>
-          <span class="asset-arrow">&#9660;</span>
-        </button>
-        <div class="asset-content">
-          <p class="asset-body-text">Display your "Official Heroic Partner" badge on your website, email signature, or social profiles.</p>
-          <div class="badge-grid-3col">
-            <div style="text-align:center;">
-              <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--h-mid);margin-bottom:8px;">Wide</div>
-              <div style="background:var(--h-cream);border:1px solid #E5E7EB;border-radius:8px;padding:20px 12px;display:flex;align-items:center;justify-content:center;min-height:80px;">
-                <div style="display:inline-flex;align-items:center;gap:10px;background:var(--h-dark);color:var(--h-cream);padding:10px 20px;border-radius:8px;font-size:12px;font-weight:600;letter-spacing:0.5px;white-space:nowrap;">
-                  <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic" style="height:14px;filter:invert(1);">
-                  Official Partner
-                </div>
+          <!-- ══ TASK 1: Tyler pre-launch prep ══ -->
+          <div class="task-card" id="task-1">
+            <div class="task-header" onclick="toggleTask(1)">
+              <div class="task-checkbox" onclick="event.stopPropagation(); toggleCheck(1)">
+                <span class="task-checkbox-inner">✓</span>
               </div>
-              <button onclick="downloadBadge('wide')" class="asset-btn" style="margin-top:8px;">&#8595; Download</button>
-            </div>
-            <div style="text-align:center;">
-              <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--h-mid);margin-bottom:8px;">Square</div>
-              <div style="background:var(--h-cream);border:1px solid #E5E7EB;border-radius:8px;padding:12px;display:flex;align-items:center;justify-content:center;min-height:80px;">
-                <div style="background:var(--h-dark);color:var(--h-cream);padding:14px;border-radius:8px;text-align:center;width:90px;">
-                  <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic" style="height:12px;filter:invert(1);margin-bottom:5px;display:block;margin-left:auto;margin-right:auto;">
-                  <div style="font-size:8px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;">Official<br>Partner</div>
-                </div>
+              <div class="task-meta">
+                <div class="task-date">By March 27</div>
+                <div class="task-title">Pre-launch setup: Dub links, co-branded pages, GTM kit</div>
               </div>
-              <button onclick="downloadBadge('square')" class="asset-btn" style="margin-top:8px;">&#8595; Download</button>
+              <span class="task-owner owner-tyler">Tyler</span>
+              <span class="task-expand-arrow">&#9660;</span>
             </div>
-            <div style="text-align:center;">
-              <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--h-mid);margin-bottom:8px;">Circle</div>
-              <div style="background:var(--h-cream);border:1px solid #E5E7EB;border-radius:8px;padding:12px;display:flex;align-items:center;justify-content:center;min-height:80px;">
-                <div style="background:var(--h-dark);color:var(--h-cream);width:72px;height:72px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
-                  <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic" style="height:11px;filter:invert(1);margin-bottom:4px;">
-                  <div style="font-size:7px;font-weight:600;letter-spacing:0.3px;text-transform:uppercase;line-height:1.3;">Official<br>Partner</div>
-                </div>
-              </div>
-              <button onclick="downloadBadge('circle')" class="asset-btn" style="margin-top:8px;">&#8595; Download</button>
+            <div class="task-copy-panel">
+              <p style="font-size:14px;color:var(--h-mid);line-height:1.7;margin-bottom:0;">All infrastructure ready before promo begins:</p>
+              <ul style="font-size:14px;color:var(--h-dark);line-height:1.8;margin:8px 0 0 18px;">
+                <li>Dub.co setup and tracking links configured</li>
+                <li>Co-branded Challenge landing page live</li>
+                <li>Co-branded PN landing page live</li>
+                <li>Co-branded PN opt-in page live</li>
+                <li>Partner GTM Kit finalized for Ben and team</li>
+              </ul>
             </div>
           </div>
-          <p class="asset-sublabel">Use on your website, email footer, or social bios. Do not modify the badge design or colors.</p>
-        </div>
-      </div>
 
-      <!-- ══ EMAIL SWIPE COPY ══ -->
-      <div class="asset-accordion">
-        <button class="asset-trigger" onclick="toggleAsset(this)">
-          <span class="asset-label">📧 Email Swipe Copy</span>
-          <span class="badge badge-ready">Ready</span>
-          <span class="asset-arrow">&#9660;</span>
-        </button>
-        <div class="asset-content">
-          <p style="font-size:13px;margin-bottom:16px;">Three formats. Expand, copy, personalize. Always include your partner link.</p>
+          <!-- ══ TASK 2: Ben Dub account ══ -->
+          <div class="task-card" id="task-2">
+            <div class="task-header" onclick="toggleTask(2)">
+              <div class="task-checkbox" onclick="event.stopPropagation(); toggleCheck(2)">
+                <span class="task-checkbox-inner">✓</span>
+              </div>
+              <div class="task-meta">
+                <div class="task-date">By March 27</div>
+                <div class="task-title">Create your Dub partner account</div>
+              </div>
+              <span class="task-owner owner-partner">Ben</span>
+              <span class="task-expand-arrow">&#9660;</span>
+            </div>
+            <div class="task-copy-panel">
+              <p style="font-size:14px;color:var(--h-mid);line-height:1.7;margin-bottom:0;">Sign up at <a href="https://partners.dub.co/programs/heroic" target="_blank" style="color:var(--h-blue);font-weight:500;">partners.dub.co/programs/heroic</a> so your tracking link and earnings dashboard are ready before April 1. Takes about 2 minutes.</p>
+            </div>
+          </div>
 
-          <!-- Dedicated Send -->
-          <div class="email-item">
-            <button class="email-trigger" onclick="toggleEmail(this)">
-              <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">📨</span><span><strong>Dedicated Send</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Full email to your list</span></span></span>
-              <span class="email-arrow">&#9654;</span>
-            </button>
-            <div class="email-body">
-              <div class="email-preview" id="email-pn-long">
-                <div class="email-field"><span class="email-field-label">Subject:</span> The 30-day challenge I built with a philosopher</div>
-                <div class="email-divider"></div>
-                <div class="email-content">I've spent 20 years training bodies. But the thing that separates the men who actually transform from the ones who spin their wheels has never been the workout program. It's what's happening between their ears.
+          <!-- ══ TASK 3: Ben promo activities ══ -->
+          <div class="task-card" id="task-3">
+            <div class="task-header" onclick="toggleTask(3)">
+              <div class="task-checkbox" onclick="event.stopPropagation(); toggleCheck(3)">
+                <span class="task-checkbox-inner">✓</span>
+              </div>
+              <div class="task-meta">
+                <div class="task-date">April 1 – 15</div>
+                <div class="task-title">Promote the challenge to your audience</div>
+              </div>
+              <span class="task-owner owner-partner">Ben</span>
+              <span class="task-expand-arrow">&#9660;</span>
+            </div>
+            <div class="task-copy-panel">
+              <!-- Suggested activities overview -->
+              <div style="background:var(--h-cream);border:1px solid var(--h-border);border-radius:8px;padding:16px 20px;margin-bottom:20px;">
+                <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--p-accent);margin-bottom:10px;">Suggested Activities</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                  <div style="font-size:14px;color:var(--h-dark);padding:6px 0;">📧 2-4 Dedicated Emails</div>
+                  <div style="font-size:14px;color:var(--h-dark);padding:6px 0;">📱 4-6 Social Media Mentions</div>
+                  <div style="font-size:14px;color:var(--h-dark);padding:6px 0;">📹 1-2 YouTube Integrations</div>
+                  <div style="font-size:14px;color:var(--h-dark);padding:6px 0;">🎙️ Podcast Interview with Brian</div>
+                </div>
+                <p style="font-size:12px;color:var(--h-mid);margin-top:10px;margin-bottom:0;">Remember to tag @heroic on socials. All copy below is a starting point. Customize to match your voice.</p>
+              </div>
+
+              <!-- ── EMAIL COPY ── -->
+              <div class="task-copy-label">📧 Email Swipe Copy (4 Sends)</div>
+
+              <!-- Email 1: Launch announcement -->
+              <div class="email-item" style="margin-bottom:8px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">📨</span><span><strong>Email 1: Launch Announcement</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Send April 1. Introduce the challenge.</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-email-1">
+                    <div class="email-field"><span class="email-field-label">Subject:</span> The 30-day challenge I built with a philosopher</div>
+                    <div class="email-divider"></div>
+                    <div class="email-content">I've spent 20 years training bodies. But the thing that separates the men who actually transform from the ones who spin their wheels has never been the workout program. It's what's happening between their ears.
 
 That's why I partnered with Brian Johnson on something I've never done before.
 
@@ -730,71 +873,160 @@ Here's what you get for $99:
 
 This is for men who want to operate at a higher level. Not just in the gym. In every area of life.
 
-The cohort starts April 11. Spots are open now.
+The cohort starts April 15. Spots are open now.
 
 Join here: https://go.heroic.us/bp-pn
 
 - Ben</div>
+                  </div>
+                  <button class="copy-btn" onclick="copyContent('t3-email-1', this)">Copy Email</button>
+                </div>
               </div>
-              <button class="copy-btn" onclick="copyContent('email-pn-long', this)">Copy Email</button>
-            </div>
-          </div>
 
-          <!-- P.S. Mention -->
-          <div class="email-item">
-            <button class="email-trigger" onclick="toggleEmail(this)">
-              <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">✏️</span><span><strong>Newsletter P.S. Mention</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Quick add to any send</span></span></span>
-              <span class="email-arrow">&#9654;</span>
-            </button>
-            <div class="email-body">
-              <div class="email-preview" id="email-pn-ps">
-                <div class="email-content">P.S. I built a 30-day challenge with Brian Johnson, the philosopher behind Heroic. Daily workouts from me + daily book summaries from his library of 700+ titles on philosophy, psychology, and peak performance. $99 gets you lifetime access to everything, and you can bring a friend for free. Cohort starts April 11.
+              <!-- Email 2: The Why / Brian's story -->
+              <div class="email-item" style="margin-bottom:8px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">📨</span><span><strong>Email 2: Why I Built This</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Send April 4-5. Go deeper on the story.</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-email-2">
+                    <div class="email-field"><span class="email-field-label">Subject:</span> Why I stopped training just the body</div>
+                    <div class="email-divider"></div>
+                    <div class="email-content">Quick story.
 
-Join here: https://go.heroic.us/bp-pn</div>
+A few years ago I realized something uncomfortable: some of the most physically impressive men I'd ever trained were quietly falling apart in every other area of their lives. Marriages strained. Businesses stalling. Sleep destroyed. They looked the part but didn't feel it.
+
+That stuck with me. Because I'd been there too.
+
+The missing piece was never another workout program. It was building a practice for the mind that was just as disciplined as what we do in the gym.
+
+That's what led me to Brian Johnson. Brian is the founder of Heroic. He's spent 20+ years reading over 1,000 books on philosophy, psychology, and peak human performance. Not skimming them. Studying them. Then distilling every one into practical, actionable notes called Philosopher's Notes. His methodology has been adopted by West Point, US Special Operations, and 10,000+ certified coaches worldwide.
+
+When I called Brian about building something together, he didn't hesitate. We both saw the same gap.
+
+The result is The Warrior & The Monk: a 30-day challenge where you get a daily 20-minute workout from me and a daily Philosopher's Note from Brian. Body and mind. Same practice. Every day for 30 days.
+
+$99 gets you lifetime access to everything, including Brian's full library of 700+ book summaries. And you can bring a friend for free.
+
+We start April 15. Here's the link: https://go.heroic.us/bp-pn
+
+- Ben</div>
+                  </div>
+                  <button class="copy-btn" onclick="copyContent('t3-email-2', this)">Copy Email</button>
+                </div>
               </div>
-              <button class="copy-btn" onclick="copyContent('email-pn-ps', this)">Copy P.S.</button>
-            </div>
-          </div>
 
-          <!-- Sponsorship Block -->
-          <div class="email-item">
-            <button class="email-trigger" onclick="toggleEmail(this)">
-              <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">📰</span><span><strong>Sponsorship Block</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Formatted sponsor section</span></span></span>
-              <span class="email-arrow">&#9654;</span>
-            </button>
-            <div class="email-body">
-              <div class="email-preview" id="email-pn-sponsor">
-                <div class="email-content">Presented by Heroic x Ben Pakulski
+              <!-- Email 3: What you get / social proof -->
+              <div class="email-item" style="margin-bottom:8px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">📨</span><span><strong>Email 3: What's Inside</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Send April 8-10. Break down what they get.</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-email-3">
+                    <div class="email-field"><span class="email-field-label">Subject:</span> Here's exactly what you get for $99</div>
+                    <div class="email-divider"></div>
+                    <div class="email-content">I've gotten a lot of questions about The Warrior & The Monk challenge, so let me break down exactly what's included.
+
+Every day for 30 days you get two things:
+
+1. A 20-minute workout from me. These rotate through five training types: speed, strength, stability, skill, and softness. Designed to be done anywhere with minimal equipment. No fluff. Every rep has a purpose.
+
+2. A Philosopher's Note from Brian Johnson. These are deep, practical summaries of the best books ever written on discipline, resilience, focus, and human performance. Brian writes every single one himself. No AI. No ghostwriters. 20+ years of work distilled into notes you can apply the same day.
+
+On top of the daily content, you get:
+
+- Weekly live coaching sessions from me alongside the daily lessons
+- Lifetime access to Brian's full Philosopher's Notes library (700+ titles)
+- A community accountability challenge with daily posting
+- A prize drawing for everyone who completes all 30 days
+- The ability to bring a friend along for free
+
+All of that for $99. Lifetime access. Not a subscription.
+
+I designed the workouts. Brian curated the philosophy. The combination is something neither of us could build alone.
+
+We start April 15. Here's where to join: https://go.heroic.us/bp-pn
+
+- Ben</div>
+                  </div>
+                  <button class="copy-btn" onclick="copyContent('t3-email-3', this)">Copy Email</button>
+                </div>
+              </div>
+
+              <!-- Email 4: Final call -->
+              <div class="email-item" style="margin-bottom:8px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">📨</span><span><strong>Email 4: Final Call</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Send April 14. Last chance before cohort starts.</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-email-4">
+                    <div class="email-field"><span class="email-field-label">Subject:</span> Starts tomorrow. Last call.</div>
+                    <div class="email-divider"></div>
+                    <div class="email-content">The Warrior & The Monk challenge starts tomorrow.
+
+30 days. Daily workouts from me. Daily Philosopher's Notes from Brian Johnson. Train the body and the mind as one practice.
+
+If you've been on the fence, here's what I'll say: the men who actually change are the ones who commit to a container. Not "I'll start Monday." Not "when things calm down." They pick a date, show up, and do the work.
+
+This is that container. 30 days. $99. Lifetime access to everything.
+
+And you can bring a friend for free. Grab someone who'll hold you accountable.
+
+Join here before we start: https://go.heroic.us/bp-pn
+
+See you tomorrow.
+
+- Ben</div>
+                  </div>
+                  <button class="copy-btn" onclick="copyContent('t3-email-4', this)">Copy Email</button>
+                </div>
+              </div>
+
+              <!-- P.S. / Sponsorship quick inserts -->
+              <div class="email-item" style="margin-bottom:8px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">✏️</span><span><strong>Newsletter P.S. Mention</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Quick add to any email send</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-email-ps"><div class="email-content">P.S. I built a 30-day challenge with Brian Johnson, the philosopher behind Heroic. Daily workouts from me + daily book summaries from his library of 700+ titles on philosophy, psychology, and peak performance. $99 gets you lifetime access to everything, and you can bring a friend for free. Cohort starts April 15.
+
+Join here: https://go.heroic.us/bp-pn</div></div>
+                  <button class="copy-btn" onclick="copyContent('t3-email-ps', this)">Copy P.S.</button>
+                </div>
+              </div>
+
+              <div class="email-item" style="margin-bottom:24px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">📰</span><span><strong>Sponsorship Block</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Formatted sponsor section for newsletters</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-email-sponsor"><div class="email-content">Presented by Heroic x Ben Pakulski
 
 The Warrior & The Monk: 30-Day Mind + Body Challenge
 
 Train your body and your mind in one daily practice. 30 workouts from IFBB Pro Ben Pakulski paired with 30 Philosopher's Notes from Brian Johnson, the philosopher-CEO whose methodology is used at West Point and by 10,000+ certified coaches worldwide. Brian personally crafts every note. $99 for lifetime access to the full program and 700+ book summaries. Bring a friend for free.
 
-https://go.heroic.us/bp-pn (Partner link)</div>
+https://go.heroic.us/bp-pn</div></div>
+                  <button class="copy-btn" onclick="copyContent('t3-email-sponsor', this)">Copy Block</button>
+                </div>
               </div>
-              <button class="copy-btn" onclick="copyContent('email-pn-sponsor', this)">Copy Block</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- ══ SOCIAL MEDIA CAPTIONS ══ -->
-      <div class="asset-accordion">
-        <button class="asset-trigger" onclick="toggleAsset(this)">
-          <span class="asset-label">📱 Social Media Captions</span>
-          <span class="badge badge-ready">Ready</span>
-          <span class="asset-arrow">&#9660;</span>
-        </button>
-        <div class="asset-content">
+              <!-- ── SOCIAL MEDIA COPY ── -->
+              <div class="task-copy-label">📱 Social Media Captions (6 Posts)</div>
 
-          <!-- LinkedIn -->
-          <div class="email-item">
-            <button class="email-trigger" onclick="toggleEmail(this)">
-              <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">💼</span><span><strong>LinkedIn Post</strong></span></span>
-              <span class="email-arrow">&#9654;</span>
-            </button>
-            <div class="email-body">
-              <div class="email-preview" id="social-pn-li"><div class="email-content">The best-performing men I've trained over 20 years all share one thing: they take their mental game as seriously as their physical game.
+              <!-- Social 1: LinkedIn launch -->
+              <div class="email-item" style="margin-bottom:8px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">💼</span><span><strong>LinkedIn: Launch Announcement</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Post April 1</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-social-li1"><div class="email-content">The best-performing men I've trained over 20 years all share one thing: they take their mental game as seriously as their physical game.
 
 That's why I partnered with Brian Johnson to build something new.
 
@@ -804,322 +1036,672 @@ We created The Warrior & The Monk: a 30-day challenge pairing my daily workouts 
 
 $99 gets you lifetime access to Brian's full library of 700+ book summaries, 30 daily workouts, weekly live coaching from me, and community accountability. Plus you can bring a friend for free.
 
-Cohort starts April 11. Link in comments.
+Cohort starts April 15. Link in comments.
 
-#peakperformance #mindandbody #philosophy
+#peakperformance #mindandbody #philosophy</div></div>
+                  <button class="copy-btn" onclick="copyContent('t3-social-li1', this)">Copy Post</button>
+                </div>
+              </div>
 
-</div></div>
-              <button class="copy-btn" onclick="copyContent('social-pn-li', this)">Copy Post</button>
-            </div>
-          </div>
-
-          <!-- Instagram / Facebook -->
-          <div class="email-item">
-            <button class="email-trigger" onclick="toggleEmail(this)">
-              <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">📸</span><span><strong>Instagram / Facebook</strong></span></span>
-              <span class="email-arrow">&#9654;</span>
-            </button>
-            <div class="email-body">
-              <div class="email-preview" id="social-pn-ig"><div class="email-content">Your body is only as strong as the mind running it.
+              <!-- Social 2: Instagram launch -->
+              <div class="email-item" style="margin-bottom:8px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">📸</span><span><strong>Instagram / Facebook: Launch</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Post April 1-2</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-social-ig1"><div class="email-content">Your body is only as strong as the mind running it.
 
 I built a 30-day challenge with Brian Johnson, the philosopher whose work is used at West Point and by elite athletes worldwide.
 
 Daily workouts from me. Daily philosophy from Brian. One practice.
 
-$99. Lifetime access. Bring a friend for free. Cohort starts April 11.
+$99. Lifetime access. Bring a friend for free. Cohort starts April 15.
 
-Link in bio.
+Link in bio.</div></div>
+                  <button class="copy-btn" onclick="copyContent('t3-social-ig1', this)">Copy Caption</button>
+                </div>
+              </div>
 
-</div></div>
-              <button class="copy-btn" onclick="copyContent('social-pn-ig', this)">Copy Caption</button>
+              <!-- Social 3: X/Twitter launch -->
+              <div class="email-item" style="margin-bottom:8px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">🐦</span><span><strong>X (Twitter): Launch</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Post April 1</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-social-x1"><div class="email-content">I partnered with @BrianJohnson (used at West Point, 700+ books distilled) to build a 30-day mind + body challenge. Daily workouts from me, daily philosophy from Brian. $99 lifetime access + bring a friend free. Starts April 15: https://go.heroic.us/bp-pn</div></div>
+                  <button class="copy-btn" onclick="copyContent('t3-social-x1', this)">Copy Post</button>
+                </div>
+              </div>
+
+              <!-- Social 4: IG Story / mid-promo -->
+              <div class="email-item" style="margin-bottom:8px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">📸</span><span><strong>Instagram Story / Reel Hook</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Use mid-promo window (April 5-10)</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-social-story"><div class="email-content">Story/Reel script:
+
+"Here's why I stopped believing that fitness is just about the body."
+
+[camera on you, talking direct]
+
+"I partnered with Brian Johnson, the guy who's read over 1,000 books on peak performance and built a system used at West Point, to create a 30-day challenge that trains your mind AND your body every single day."
+
+"20-minute workout from me. One Philosopher's Note from Brian. Every day. For 30 days."
+
+"It's $99, lifetime access, and you can bring a friend for free."
+
+"Link in bio. We start April 15."
+
+[Swipe up / link sticker to https://go.heroic.us/bp-pn]</div></div>
+                  <button class="copy-btn" onclick="copyContent('t3-social-story', this)">Copy Script</button>
+                </div>
+              </div>
+
+              <!-- Social 5: LinkedIn mid-promo / personal angle -->
+              <div class="email-item" style="margin-bottom:8px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">💼</span><span><strong>LinkedIn: Personal Angle</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Post mid-promo (April 7-10)</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-social-li2"><div class="email-content">I used to think the answer to every problem was more discipline in the gym.
+
+Feeling stuck? Train harder. Business plateauing? Wake up earlier. Relationship strained? Push through it.
+
+It took me years to realize that approach has a ceiling. And that ceiling is your mind.
+
+The men I've coached who actually sustain their results, in the gym and outside of it, are the ones who build a practice for how they think. Not just how they lift.
+
+That's why I built The Warrior & The Monk with Brian Johnson. 30 days of daily workouts from me paired with daily Philosopher's Notes from Brian, the guy whose framework is used at West Point and by 10,000+ coaches worldwide.
+
+It's not a fitness program with some mindset sprinkled on top. It's one integrated practice. Body and mind. Same commitment. Every day.
+
+$99. Lifetime access. Bring a friend for free. We start April 15.
+
+Link in comments.</div></div>
+                  <button class="copy-btn" onclick="copyContent('t3-social-li2', this)">Copy Post</button>
+                </div>
+              </div>
+
+              <!-- Social 6: Countdown / urgency -->
+              <div class="email-item" style="margin-bottom:24px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">📸</span><span><strong>Instagram / X: Final Countdown</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Post April 13-14</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-social-countdown"><div class="email-content">The Warrior & The Monk starts in 48 hours.
+
+30 days. Daily workouts from me. Daily philosophy from Brian Johnson.
+
+If you've been thinking about it, stop thinking. The men who change are the ones who pick a start date and commit.
+
+This is that start date. April 15. $99. Bring a friend for free.
+
+https://go.heroic.us/bp-pn</div></div>
+                  <button class="copy-btn" onclick="copyContent('t3-social-countdown', this)">Copy Post</button>
+                </div>
+              </div>
+
+              <!-- ── YOUTUBE COPY ── -->
+              <div class="task-copy-label">📹 YouTube Integration Scripts</div>
+
+              <!-- YouTube 1: Dedicated video -->
+              <div class="email-item" style="margin-bottom:8px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">📹</span><span><strong>Dedicated Video Script</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">Full video announcing the challenge</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-yt-dedicated"><div class="email-content">HOOK (first 10 seconds):
+"The hardest thing I've learned in 20 years of coaching is that the body has a ceiling, and the mind is what sets it."
+
+INTRO:
+"I partnered with someone I've wanted to work with for a long time. His name is Brian Johnson. He's the founder of Heroic. He's spent 20+ years reading over 1,000 books on philosophy, psychology, and peak performance, and he personally distills every single one into a practical summary called a Philosopher's Note. His methodology is used at West Point and by US Special Operations. This is not motivational fluff. This is the real thing."
+
+THE CHALLENGE:
+"Together we built The Warrior & The Monk. It's a 30-day challenge. Every day you get a 20-minute workout from me and a Philosopher's Note from Brian. The workouts cycle through five types: speed, strength, stability, skill, and softness. The philosophy covers the best books ever written on discipline, focus, resilience, and performance."
+
+WHAT'S INCLUDED:
+"For $99 you get lifetime access to Brian's full library, that's 700+ book summaries in PDF, audio, and video. You get all 30 workouts. Weekly live coaching from me alongside the daily lessons. Community accountability. A prize drawing for completers. And you can bring a friend for free."
+
+CTA:
+"We start April 15. The link is in the description below and pinned in the comments. If you're serious about training the mind and the body as one practice, I'll see you in there."
+
+DESCRIPTION BOX:
+Join The Warrior & The Monk: 30-Day Mind + Body Challenge
+https://go.heroic.us/bp-pn
+
+$99 | Lifetime Access | Bring a Friend Free
+Starts April 15, 2026</div></div>
+                  <button class="copy-btn" onclick="copyContent('t3-yt-dedicated', this)">Copy Script</button>
+                </div>
+              </div>
+
+              <!-- YouTube 2: Mid-roll mention -->
+              <div class="email-item" style="margin-bottom:24px;">
+                <button class="email-trigger" onclick="toggleEmail(this)">
+                  <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;">📹</span><span><strong>Mid-Roll / End-Roll Mention</strong><br><span style="font-size:11px;color:var(--h-mid);font-weight:400;">60-second plug for any video</span></span></span>
+                  <span class="email-arrow">&#9654;</span>
+                </button>
+                <div class="email-body">
+                  <div class="email-preview" id="t3-yt-midroll"><div class="email-content">"Quick pause. I want to tell you about something I built that I'm genuinely proud of."
+
+"I partnered with Brian Johnson, the founder of Heroic, on a 30-day challenge called The Warrior & The Monk. Brian has read over 1,000 books on peak performance and distilled every one into a tool you can use the same day. His work is used at West Point. I combined that with 30 daily workouts from me."
+
+"$99 for lifetime access to everything, including Brian's full library of 700+ book summaries. You can bring a friend for free. We start April 15."
+
+"Link is in the description. Back to the video."</div></div>
+                  <button class="copy-btn" onclick="copyContent('t3-yt-midroll', this)">Copy Script</button>
+                </div>
+              </div>
+
+              <!-- ── PODCAST TALKING POINTS ── -->
+              <div class="task-copy-label">🎙️ Podcast Talking Points (Interview with Brian)</div>
+              <p style="font-size:14px;color:var(--h-mid);margin-bottom:14px;">Read cold or use as riff prompts. Written for your audience and voice.</p>
+              <ul class="talking-points" id="t3-tp-pn">
+                <li data-num="01">Brian Johnson has spent 20 years reading over 1,000 books on philosophy, psychology, and peak performance and distilling each one into practical tools you can use the same day. His methodology is used at West Point and by US Special Operations Command. He helped Luke Donald's team prepare for and win the Ryder Cup. This isn't theory. This is tested at the highest levels.</li>
+                <li data-num="02">I partnered with Brian to build The Warrior & The Monk: a 30-day challenge that pairs a daily 20-minute workout from me with a daily Philosopher's Note from Brian. The workouts rotate through five training types: speed, strength, stability, skill, and softness. The philosophy covers the best books ever written on discipline, resilience, and human performance.</li>
+                <li data-num="03">For $99 you get lifetime access to Brian's full Philosopher's Notes library, which is 700+ book summaries in PDF, audio, and video. Plus all 30 workouts, weekly live coaching from me alongside daily lessons, and community accountability. And here's the kicker: you can bring a friend to the challenge for free. Brian personally writes every single note. No AI, no outsourcing. That level of craft is rare.</li>
+                <li data-num="04">What I've seen over 20 years of coaching is that the men who actually transform are the ones who train the mind alongside the body. You can have the perfect program and still self-sabotage if the mental game isn't there. This challenge is built to fix that gap. You show up every day, do the work, read the note, and post it publicly. 30 days of that changes how you operate.</li>
+                <li data-num="05">The cohort starts April 15. Head to https://go.heroic.us/bp-pn to join. If you're serious about performing at the next level, both physically and mentally, this is the move.</li>
+              </ul>
+              <button class="copy-btn" onclick="copyContent('t3-tp-pn', this)">Copy All Points</button>
             </div>
           </div>
 
-          <!-- X / Twitter -->
-          <div class="email-item">
-            <button class="email-trigger" onclick="toggleEmail(this)">
-              <span style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">🐦</span><span><strong>X (Twitter)</strong></span></span>
-              <span class="email-arrow">&#9654;</span>
-            </button>
-            <div class="email-body">
-              <div class="email-preview" id="social-pn-x"><div class="email-content">I partnered with @BrianJohnson (used at West Point, 700+ books distilled) to build a 30-day mind + body challenge. Daily workouts from me, daily philosophy from Brian. $99 lifetime access + bring a friend free. Starts April 11: https://go.heroic.us/bp-pn</div></div>
-              <button class="copy-btn" onclick="copyContent('social-pn-x', this)">Copy Post</button>
+          <!-- ══ TASK 4: Heroic promotes ══ -->
+          <div class="task-card" id="task-4">
+            <div class="task-header" onclick="toggleTask(4)">
+              <div class="task-checkbox" onclick="event.stopPropagation(); toggleCheck(4)">
+                <span class="task-checkbox-inner">✓</span>
+              </div>
+              <div class="task-meta">
+                <div class="task-date">April 1 – 15</div>
+                <div class="task-title">Heroic promotes the challenge to our audience</div>
+              </div>
+              <span class="task-owner owner-heroic">Heroic</span>
+              <span class="task-expand-arrow">&#9660;</span>
+            </div>
+            <div class="task-copy-panel">
+              <p style="font-size:14px;color:var(--h-mid);line-height:1.7;margin-bottom:0;">We'll run our own promo push in parallel: email to the Heroic list, social posts, and targeted outreach to the Coach alumni community. Tyler coordinates timing with your sends so we're not overlapping audiences on the same day.</p>
+            </div>
+          </div>
+
+          <!-- ══ TASK 5: Challenge goes live ══ -->
+          <div class="task-card" id="task-5">
+            <div class="task-header" onclick="toggleTask(5)">
+              <div class="task-checkbox" onclick="event.stopPropagation(); toggleCheck(5)">
+                <span class="task-checkbox-inner">✓</span>
+              </div>
+              <div class="task-meta">
+                <div class="task-date">April 15 – May 15</div>
+                <div class="task-title">Challenge goes live. 30 days of daily content, coaching, and community.</div>
+              </div>
+              <span class="task-owner owner-heroic">Heroic</span>
+              <span class="task-expand-arrow">&#9660;</span>
+            </div>
+            <div class="task-copy-panel">
+              <p style="font-size:14px;color:var(--h-mid);line-height:1.7;">Daily content drip: workout video from Ben + Philosopher's Note from Brian delivered each morning. Ben leads weekly live coaching sessions. Community accountability runs throughout with daily posting challenges. Prize drawing for 30-day completers at the end.</p>
+              <p style="font-size:14px;color:var(--h-mid);line-height:1.7;margin-bottom:0;">Post-program upsell sequence fires into Coach and Mastery for all participants.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <hr class="heroic-hr">
+
+  <!-- ASSETS & RESOURCES SECTION -->
+  <div class="hq-section" id="assets">
+    <div class="hq-section-header">
+      <h2>Assets & Resources</h2>
+    </div>
+    <p style="font-size: 14px; color: var(--h-mid); margin-bottom: 20px;">Logos, brand assets, partner badges, and promotional imagery for your campaign.</p>
+
+    <!-- Co-Branded Landing Page -->
+    <div class="asset-accordion">
+      <button class="asset-trigger" onclick="toggleAsset(this)">
+        <span class="asset-label">
+          <span class="badge badge-ready">Ready</span> Co-Branded Landing Page
+        </span>
+        <span class="asset-arrow">▼</span>
+      </button>
+      <div class="asset-content">
+        <p class="asset-body-text">We've pre-built a co-branded landing page that combines your brand with Heroic's visual identity. Designed to convert and fully responsive.</p>
+        <p class="asset-sublabel">Your unique link:</p>
+        <code style="background: var(--h-cream); padding: 10px 14px; border-radius: 6px; font-size: 13px; display: inline-block; margin-bottom: 16px;">https://go.heroic.us/bp-pn</code>
+        <p class="asset-sublabel">The landing page includes:</p>
+        <ul style="margin: 12px 0 16px 20px; font-size: 14px; color: var(--h-dark); line-height: 1.6;">
+          <li>Hero section with product overview</li>
+          <li>Your credibility, Brian's credibility, Heroic credibility</li>
+          <li>Product details and pricing</li>
+          <li>Testimonials and social proof</li>
+          <li>Clear CTA and payment flow</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Heroic Logos & Brand Colors -->
+    <div class="asset-accordion">
+      <button class="asset-trigger" onclick="toggleAsset(this)">
+        <span class="asset-label">
+          <span class="badge badge-ready">Ready</span> Heroic Logos & Brand Colors
+        </span>
+        <span class="asset-arrow">▼</span>
+      </button>
+      <div class="asset-content">
+        <p class="asset-body-text">Official Heroic brand assets for use in your promotional materials.</p>
+        <div style="margin-bottom: 20px;">
+          <p class="asset-section-title" style="margin-bottom: 12px;">Logos</p>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+            <div style="background: var(--h-cream); padding: 20px; border-radius: 8px; border: 1px solid var(--h-border); text-align: center;">
+              <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic Logo" style="height: 40px; margin-bottom: 12px;">
+              <button class="asset-btn">Download</button>
+            </div>
+            <div style="background: var(--h-white); padding: 20px; border-radius: 8px; border: 1px solid var(--h-border); text-align: center;">
+              <div style="color: var(--h-blue); font-family: 'DM Serif Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em;">Heroic</div>
+              <button class="asset-btn">Download</button>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- ══ PODCAST & VIDEO TALKING POINTS ══ -->
-      <div class="asset-accordion">
-        <button class="asset-trigger" onclick="toggleAsset(this)">
-          <span class="asset-label">🎙️ Podcast & Video Talking Points</span>
-          <span class="badge badge-ready">Ready</span>
-          <span class="asset-arrow">&#9660;</span>
-        </button>
-        <div class="asset-content">
-          <p style="font-size:13px;margin-bottom:16px;">Read cold or use as riff prompts. Written for your audience and voice.</p>
-          <ul class="talking-points" id="tp-pn">
-            <li data-num="01">Brian Johnson has spent 20 years reading over 1,000 books on philosophy, psychology, and peak performance and distilling each one into practical tools you can use the same day. His methodology is used at West Point and by US Special Operations Command. He helped Luke Donald's team prepare for and win the Ryder Cup. This isn't theory. This is tested at the highest levels.</li>
-            <li data-num="02">I partnered with Brian to build The Warrior & The Monk: a 30-day challenge that pairs a daily 20-minute workout from me with a daily Philosopher's Note from Brian. The workouts rotate through five training types: speed, strength, stability, skill, and softness. The philosophy covers the best books ever written on discipline, resilience, and human performance.</li>
-            <li data-num="03">For $99 you get lifetime access to Brian's full Philosopher's Notes library, which is 700+ book summaries in PDF, audio, and video. Plus all 30 workouts, weekly live coaching from me alongside daily lessons, and community accountability. And here's the kicker: you can bring a friend to the challenge for free. Brian personally writes every single note. No AI, no outsourcing. That level of craft is rare.</li>
-            <li data-num="04">What I've seen over 20 years of coaching is that the men who actually transform are the ones who train the mind alongside the body. You can have the perfect program and still self-sabotage if the mental game isn't there. This challenge is built to fix that gap. You show up every day, do the work, read the note, and post it publicly. 30 days of that changes how you operate.</li>
-            <li data-num="05">The cohort starts April 11. Head to https://go.heroic.us/bp-pn to join. If you're serious about performing at the next level, both physically and mentally, this is the move.</li>
-          </ul>
-          <button class="copy-btn" onclick="copyContent('tp-pn', this)">Copy All Points</button>
-        </div>
-      </div>
-
-      <!-- ══ IMAGES, GRAPHICS & MEDIA ══ -->
-      <div class="asset-accordion">
-        <button class="asset-trigger" onclick="toggleAsset(this)">
-          <span class="asset-label">🖼️ Images, Graphics & Media</span>
-          <span class="badge badge-ready">Ready</span>
-          <span class="asset-arrow">&#9660;</span>
-        </button>
-        <div class="asset-content">
-          <p class="asset-body-text">Use these in social posts, email headers, blog articles, and video thumbnails. Right-click any image to save, or use the download button. Always include your partner link when sharing.</p>
-          <div class="promo-grid">
-            <div class="promo-img-card">
-              <img src="https://lh3.googleusercontent.com/d/1eYf3_0pjtX2YQoQx2J0ZayjEYLlb6khS" alt="The Ultimate Wisdom Library">
-              <div class="promo-img-footer">
-                <div>
-                  <div class="promo-img-name">The Ultimate Wisdom Library</div>
-                  <div class="promo-img-desc">App hero with categories</div>
-                </div>
-                <a class="asset-btn" href="https://drive.google.com/uc?export=download&id=1eYf3_0pjtX2YQoQx2J0ZayjEYLlb6khS" download="pn-ultimate-wisdom-library.jpg">&#8595; Download</a>
-              </div>
-            </div>
-            <div class="promo-img-card">
-              <img src="https://lh3.googleusercontent.com/d/1HYxUfDPcq4uhXsQLuRZ5Pw_xdciKYN3L" alt="Installing the Big Ideas">
-              <div class="promo-img-footer">
-                <div>
-                  <div class="promo-img-name">Installing the Big Ideas</div>
-                  <div class="promo-img-desc">Atomic Habits feature</div>
-                </div>
-                <a class="asset-btn" href="https://drive.google.com/uc?export=download&id=1HYxUfDPcq4uhXsQLuRZ5Pw_xdciKYN3L" download="pn-installing-big-ideas.jpg">&#8595; Download</a>
-              </div>
-            </div>
-            <div class="promo-img-card">
-              <img src="https://lh3.googleusercontent.com/d/1sSzNQdZXEtpnXBu7-FoTEFSgdnxP3A1R" alt="Wisest Person in the Room">
-              <div class="promo-img-footer">
-                <div>
-                  <div class="promo-img-name">Wisest Person in the Room</div>
-                  <div class="promo-img-desc">Statue with headphones</div>
-                </div>
-                <a class="asset-btn" href="https://drive.google.com/uc?export=download&id=1sSzNQdZXEtpnXBu7-FoTEFSgdnxP3A1R" download="pn-wisest-person-room.jpg">&#8595; Download</a>
-              </div>
-            </div>
-            <div class="promo-img-card">
-              <img src="https://lh3.googleusercontent.com/d/1kG8iFOCGrPd-rDByqGck3LZtiFkqvMXJ" alt="700+ PhilosophersNotes">
-              <div class="promo-img-footer">
-                <div>
-                  <div class="promo-img-name">700+ PhilosophersNotes</div>
-                  <div class="promo-img-desc">Laptop &amp; phone mockup</div>
-                </div>
-                <a class="asset-btn" href="https://drive.google.com/uc?export=download&id=1kG8iFOCGrPd-rDByqGck3LZtiFkqvMXJ" download="pn-700-notes-mockup.jpg">&#8595; Download</a>
-              </div>
-            </div>
-          </div>
-          <p class="asset-sublabel">More images added regularly. Always include your partner link when sharing promotional materials.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <hr class="heroic-hr">
-
-    <!-- ══ BRAND GUIDELINES ══ -->
-    <div class="hq-section">
-      <div class="hq-section-header">
-        <h2>Brand Guidelines</h2>
-      </div>
-      <div class="brand-grid">
-        <div class="brand-do">
-          <h4>Do</h4>
-          <ul>
-            <li>Use approved Heroic logos without modification</li>
-            <li>Link directly to heroic.us or philosophersnotes.com</li>
-            <li>Share genuine personal experiences with the product</li>
-            <li>Include your unique partner link in all promotions</li>
-            <li>Use your unique tracking link for all promotions</li>
-            <li>Match the brand tone: aspirational, practical, credible</li>
-          </ul>
-        </div>
-        <div class="brand-dont">
-          <h4>Don't</h4>
-          <ul>
-            <li>Modify, recolor, or distort Heroic logos</li>
-            <li>Make false or exaggerated product claims</li>
-            <li>Bid on "Heroic" or "PhilosophersNotes" in paid ads</li>
-            <li>Send spam or unsolicited bulk emails</li>
-            <li>Use Heroic branding in misleading contexts</li>
-            <li>Offer unauthorized discounts or cash incentives</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <hr class="heroic-hr">
-
-    <!-- ══ WAYS TO PROMOTE ══ -->
-    <div class="hq-section">
-      <div class="hq-section-header">
-        <h2>Ways to Promote</h2>
-      </div>
-      <div class="idea-grid">
-        <div class="idea-card"><div class="idea-icon">📧</div><div class="idea-title">Email</div><div class="idea-desc">Dedicated send or P.S. mention in your next issue</div></div>
-        <div class="idea-card"><div class="idea-icon">🎙️</div><div class="idea-title">Podcast</div><div class="idea-desc">Mid-roll or end-roll mention with link in show notes</div></div>
-        <div class="idea-card"><div class="idea-icon">📹</div><div class="idea-title">YouTube</div><div class="idea-desc">Dedicated review or mention in a relevant video</div></div>
-        <div class="idea-card"><div class="idea-icon">💼</div><div class="idea-title">LinkedIn</div><div class="idea-desc">Personal recommendation to your professional network</div></div>
-        <div class="idea-card"><div class="idea-icon">📝</div><div class="idea-title">Instagram Stories</div><div class="idea-desc">Daily stories showing the challenge in action</div></div>
-        <div class="idea-card"><div class="idea-icon">🤝</div><div class="idea-title">Direct Referral</div><div class="idea-desc">Recommend one-on-one to clients or community members</div></div>
-      </div>
-    </div>
-
-    <hr class="heroic-hr">
-
-    <!-- ══ KEY RESOURCES ══ -->
-    <div class="hq-section">
-      <div class="hq-section-header">
-        <h2>Key Resources</h2>
-      </div>
-      <div class="link-grid" style="grid-template-columns: repeat(3, 1fr);">
-        <a href="https://partners.dub.co/programs/heroic" class="link-card" target="_blank">
-          <div class="link-card-title">Partner Dashboard</div>
-          <div class="link-card-desc">Stats, links & payouts</div>
-        </a>
-        <a href="https://www.philosophersnotes.com/" class="link-card" target="_blank">
-          <div class="link-card-title">Philosopher's Notes</div>
-          <div class="link-card-desc">philosophersnotes.com</div>
-        </a>
-        <a href="https://heroic.us" class="link-card" target="_blank">
-          <div class="link-card-title">Heroic Website</div>
-          <div class="link-card-desc">heroic.us</div>
-        </a>
-      </div>
-    </div>
-
-    <hr class="heroic-hr">
-
-    <!-- ══ NEED HELP ══ -->
-    <div class="hq-section" id="help">
-      <div class="hq-section-header">
-        <h2>Need Help?</h2>
-      </div>
-      <div class="contact-card">
-        <img src="https://pbs.twimg.com/profile_images/1917957401346531328/cqVyHmm7_400x400.jpg" alt="Tyler" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--h-border);flex-shrink:0;">
         <div>
-          <div class="contact-name">Tyler Gillespie</div>
-          <div class="contact-role">Partnerships</div>
-          <div class="contact-email"><a href="mailto:partners@heroic.us">partners@heroic.us</a></div>
+          <p class="asset-section-title" style="margin-bottom: 12px;">Brand Colors</p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <div style="background: #F8F7F3; border: 1px solid var(--h-border); border-radius: 8px; padding: 12px; text-align: center; cursor: pointer;" onclick="copyHex('#F8F7F3', this)">
+              <div style="height: 40px; background: #F8F7F3; border: 1px solid var(--h-border); border-radius: 4px; margin-bottom: 8px;"></div>
+              <span class="hex-label" style="font-size: 12px; font-weight: 600; color: var(--h-mid);">#F8F7F3</span>
+            </div>
+            <div style="background: white; border: 1px solid var(--h-border); border-radius: 8px; padding: 12px; text-align: center; cursor: pointer;" onclick="copyHex('#5461AE', this)">
+              <div style="height: 40px; background: #5461AE; border-radius: 4px; margin-bottom: 8px;"></div>
+              <span class="hex-label" style="font-size: 12px; font-weight: 600; color: var(--h-mid);">#5461AE</span>
+            </div>
+            <div style="background: white; border: 1px solid var(--h-border); border-radius: 8px; padding: 12px; text-align: center; cursor: pointer;" onclick="copyHex('#E2CA39', this)">
+              <div style="height: 40px; background: #E2CA39; border-radius: 4px; margin-bottom: 8px;"></div>
+              <span class="hex-label" style="font-size: 12px; font-weight: 600; color: var(--h-mid);">#E2CA39</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-  </div><!-- /page-wrap -->
+    <!-- Partner Badges -->
+    <div class="asset-accordion">
+      <button class="asset-trigger" onclick="toggleAsset(this)">
+        <span class="asset-label">
+          <span class="badge badge-custom">Design</span> Partner Badges
+        </span>
+        <span class="asset-arrow">▼</span>
+      </button>
+      <div class="asset-content">
+        <p class="asset-body-text">Use these badges in emails, on your website, or in social posts to show official partnership status.</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px;" class="badge-grid-3col">
+          <div style="background: var(--h-cream); padding: 16px; border-radius: 8px; border: 1px solid var(--h-border); text-align: center;">
+            <div style="background: #13171B; color: white; padding: 20px; border-radius: 8px; margin-bottom: 12px; font-weight: 600; font-size: 14px;">HEROIC Official Partner</div>
+            <button class="asset-btn" onclick="downloadBadge('wide')">Download Wide</button>
+          </div>
+          <div style="background: var(--h-cream); padding: 16px; border-radius: 8px; border: 1px solid var(--h-border); text-align: center;">
+            <div style="background: #13171B; color: white; padding: 30px 20px; border-radius: 8px; margin-bottom: 12px; font-weight: 600; font-size: 12px; line-height: 1.4;">HEROIC OFFICIAL PARTNER</div>
+            <button class="asset-btn" onclick="downloadBadge('square')">Download Square</button>
+          </div>
+          <div style="background: var(--h-cream); padding: 16px; border-radius: 8px; border: 1px solid var(--h-border); text-align: center;">
+            <div style="background: #13171B; color: white; width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 11px; line-height: 1.3; text-align: center; padding: 10px;">HEROIC OFFICIAL PARTNER</div>
+            <button class="asset-btn" onclick="downloadBadge('circle')">Download Circle</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- ══ FOOTER ══ -->
-  <div class="hq-footer-simple">
-    <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic">
+    <!-- Images, Graphics & Media -->
+    <div class="asset-accordion">
+      <button class="asset-trigger" onclick="toggleAsset(this)">
+        <span class="asset-label">
+          <span class="badge badge-ready">Ready</span> Images, Graphics & Media
+        </span>
+        <span class="asset-arrow">▼</span>
+      </button>
+      <div class="asset-content">
+        <p class="asset-body-text">High-resolution promotional images for use across email, social, and web.</p>
+        <div class="promo-grid">
+          <div class="promo-img-card">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=600&fit=crop" alt="Workout">
+            <div class="promo-img-footer">
+              <div>
+                <div class="promo-img-name">Workout Scene</div>
+                <div class="promo-img-desc">1200x1200px</div>
+              </div>
+              <button class="asset-btn">Download</button>
+            </div>
+          </div>
+          <div class="promo-img-card">
+            <img src="https://images.unsplash.com/photo-1507842072343-583f20270319?w=600&h=600&fit=crop" alt="Philosophy">
+            <div class="promo-img-footer">
+              <div>
+                <div class="promo-img-name">Philosophy Stack</div>
+                <div class="promo-img-desc">1200x1200px</div>
+              </div>
+              <button class="asset-btn">Download</button>
+            </div>
+          </div>
+          <div class="promo-img-card">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop" alt="Team">
+            <div class="promo-img-footer">
+              <div>
+                <div class="promo-img-name">Community</div>
+                <div class="promo-img-desc">1200x1200px</div>
+              </div>
+              <button class="asset-btn">Download</button>
+            </div>
+          </div>
+          <div class="promo-img-card">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop" alt="Challenge">
+            <div class="promo-img-footer">
+              <div>
+                <div class="promo-img-name">30-Day Challenge Hero</div>
+                <div class="promo-img-desc">1200x1200px</div>
+              </div>
+              <button class="asset-btn">Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <script>
-    function copyHeroLink() {
-      const text = document.getElementById('hero-link-text').innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.getElementById('hero-copy-btn');
-        btn.textContent = 'Copied!';
-        btn.style.background = '#059669';
-        btn.style.borderColor = '#059669';
-        setTimeout(() => { btn.textContent = 'Copy Link'; btn.style.background = ''; btn.style.borderColor = ''; }, 2000);
-      });
-    }
+  <hr class="heroic-hr">
 
-    function copyContent(id, btn) {
-      const el = document.getElementById(id);
-      navigator.clipboard.writeText((el.innerText || el.textContent).trim()).then(() => {
-        const orig = btn.textContent;
-        btn.textContent = 'Copied!';
-        btn.style.background = '#059669';
-        btn.style.borderColor = '#059669';
-        setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.borderColor = ''; }, 2000);
-      });
-    }
+  <!-- BRAND GUIDELINES -->
+  <div class="hq-section">
+    <div class="hq-section-header">
+      <h2>Brand Guidelines</h2>
+    </div>
+    <div class="brand-grid">
+      <div class="brand-do">
+        <h4>✓ Do</h4>
+        <ul>
+          <li>Use official logos without modification</li>
+          <li>Maintain adequate clear space around logos</li>
+          <li>Use primary brand colors for emphasis</li>
+          <li>Pair Heroic with your own branding authentically</li>
+          <li>Highlight the partnership as co-created</li>
+        </ul>
+      </div>
+      <div class="brand-dont">
+        <h4>✗ Don't</h4>
+        <ul>
+          <li>Stretch, skew, or rotate logos</li>
+          <li>Change logo colors or proportions</li>
+          <li>Use Heroic branding without permission</li>
+          <li>Claim sole ownership of the product</li>
+          <li>Misrepresent the partnership scope</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-    function copyHex(hex, el) {
-      navigator.clipboard.writeText(hex).then(() => {
-        const label = el.querySelector('.hex-label');
-        const orig = label.textContent;
-        label.textContent = 'Copied!';
-        label.style.color = '#059669';
-        setTimeout(() => { label.textContent = orig; label.style.color = ''; }, 1500);
-      });
-    }
+  <hr class="heroic-hr">
 
-    function toggleAsset(btn) {
-      const content = btn.nextElementSibling;
-      const isOpen = content.classList.contains('open');
-      document.querySelectorAll('.asset-content').forEach(c => c.classList.remove('open'));
-      document.querySelectorAll('.asset-trigger').forEach(t => t.classList.remove('open'));
-      if (!isOpen) { content.classList.add('open'); btn.classList.add('open'); }
-    }
+  <!-- WAYS TO PROMOTE -->
+  <div class="hq-section">
+    <div class="hq-section-header">
+      <h2>Ways to Promote</h2>
+    </div>
+    <p style="font-size: 14px; color: var(--h-mid); margin-bottom: 20px; line-height: 1.6;">The most effective promotion channels for the 30-day challenge based on what works best for your audience.</p>
+    <div class="idea-grid">
+      <div class="idea-card">
+        <div class="idea-icon">📧</div>
+        <div class="idea-title">Email</div>
+        <div class="idea-desc">Your most powerful channel. Send dedicated emails and mention in regular newsletters.</div>
+      </div>
+      <div class="idea-card">
+        <div class="idea-icon">🎙️</div>
+        <div class="idea-title">Podcast</div>
+        <div class="idea-desc">Feature the challenge on your show. Interview Brian or discuss your own experience.</div>
+      </div>
+      <div class="idea-card">
+        <div class="idea-icon">📱</div>
+        <div class="idea-title">Social Posts</div>
+        <div class="idea-desc">LinkedIn, Twitter, Instagram. Mix carousel posts, reels, and short-form content.</div>
+      </div>
+      <div class="idea-card">
+        <div class="idea-icon">🎥</div>
+        <div class="idea-title">Video</div>
+        <div class="idea-desc">YouTube, TikTok, Reels. Quick testimonials or behind-the-scenes from the challenge.</div>
+      </div>
+      <div class="idea-card">
+        <div class="idea-icon">📲</div>
+        <div class="idea-title">Instagram Stories</div>
+        <div class="idea-desc">Daily updates, swipe-up links, polls, and countdowns to launch day.</div>
+      </div>
+      <div class="idea-card">
+        <div class="idea-icon">💬</div>
+        <div class="idea-title">Community</div>
+        <div class="idea-desc">Mention in Slack communities, forums, or membership groups you're part of.</div>
+      </div>
+    </div>
+  </div>
 
-    function toggleEmail(btn) {
-      const body = btn.nextElementSibling;
-      const isOpen = body.classList.contains('open');
-      const parent = btn.closest('.asset-content');
-      if (parent) {
-        parent.querySelectorAll('.email-body').forEach(b => b.classList.remove('open'));
-        parent.querySelectorAll('.email-trigger').forEach(t => t.classList.remove('open'));
-      }
-      if (!isOpen) { body.classList.add('open'); btn.classList.add('open'); }
-    }
+  <hr class="heroic-hr">
 
-    function downloadBadge(type) {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      const dark = '#13171B';
-      const cream = '#F8F7F3';
-      if (type === 'wide') {
-        canvas.width = 400; canvas.height = 80;
-        ctx.fillStyle = dark; roundRect(ctx, 0, 0, 400, 80, 12); ctx.fill();
-        ctx.fillStyle = cream; ctx.font = '600 18px Outfit, sans-serif';
-        ctx.textAlign = 'center'; ctx.fillText('HEROIC  |  Official Partner', 200, 47);
-      } else if (type === 'square') {
-        canvas.width = 200; canvas.height = 200;
-        ctx.fillStyle = dark; roundRect(ctx, 0, 0, 200, 200, 16); ctx.fill();
-        ctx.fillStyle = cream; ctx.font = '600 14px Outfit, sans-serif';
-        ctx.textAlign = 'center'; ctx.fillText('HEROIC', 100, 90);
-        ctx.font = '600 11px Outfit, sans-serif';
-        ctx.fillText('OFFICIAL', 100, 118); ctx.fillText('PARTNER', 100, 134);
+  <!-- KEY RESOURCES -->
+  <div class="hq-section">
+    <div class="hq-section-header">
+      <h2>Key Resources</h2>
+    </div>
+    <div class="link-grid">
+      <a href="https://go.heroic.us/bp-pn" class="link-card" target="_blank">
+        <div class="link-card-title">Enrollment Link</div>
+        <div class="link-card-desc">Share with your audience. They'll land on the co-branded page.</div>
+      </a>
+      <a href="https://partners.dub.co/programs/heroic" class="link-card" target="_blank">
+        <div class="link-card-title">Dub Dashboard</div>
+        <div class="link-card-desc">Track clicks, conversions, and earnings in real-time.</div>
+      </a>
+      <a href="mailto:tg@100.partners" class="link-card">
+        <div class="link-card-title">Questions?</div>
+        <div class="link-card-desc">Reach out to Tyler for anything you need.</div>
+      </a>
+    </div>
+  </div>
+
+  <hr class="heroic-hr">
+
+  <!-- NEED HELP? -->
+  <div class="hq-section">
+    <div class="hq-section-header">
+      <h2>Need Help?</h2>
+    </div>
+    <div class="contact-card">
+      <img src="https://pbs.twimg.com/profile_images/1917957401346531328/cqVyHmm7_400x400.jpg" alt="Tyler" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover;">
+      <div>
+        <div class="contact-name">Tyler</div>
+        <div class="contact-role">Heroic Partnerships</div>
+        <div class="contact-email"><a href="mailto:tg@100.partners">tg@100.partners</a></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<div class="hq-footer-simple">
+  <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic">
+</div>
+
+<!-- SCRIPTS -->
+<script>
+  // PASSWORD GATE
+  const SITE_PASSWORD = 'heroic';
+  const PW_KEY = 'hq_auth_' + btoa(SITE_PASSWORD).slice(0, 8);
+
+  function checkPassword() {
+    const val = document.getElementById('pw-input').value;
+    if (val === SITE_PASSWORD) {
+      localStorage.setItem(PW_KEY, '1');
+      document.getElementById('pw-gate').style.display = 'none';
+    } else {
+      document.getElementById('pw-error').style.display = 'block';
+      document.getElementById('pw-input').value = '';
+      document.getElementById('pw-input').focus();
+    }
+  }
+
+  if (localStorage.getItem(PW_KEY) === '1') {
+    document.getElementById('pw-gate').style.display = 'none';
+  }
+
+  // TASK CHECKLIST
+  const TASK_COUNT = 5;
+  const TASK_KEY = 'hq_tasks_ben-pakulski';
+
+  function loadTaskState() {
+    try { return JSON.parse(localStorage.getItem(TASK_KEY)) || {}; }
+    catch(e) { return {}; }
+  }
+
+  function saveTaskState(state) {
+    localStorage.setItem(TASK_KEY, JSON.stringify(state));
+  }
+
+  function toggleCheck(n) {
+    const state = loadTaskState();
+    state['task' + n] = !state['task' + n];
+    saveTaskState(state);
+    applyTaskState();
+  }
+
+  function applyTaskState() {
+    const state = loadTaskState();
+    let done = 0;
+    for (let i = 1; i <= TASK_COUNT; i++) {
+      const card = document.getElementById('task-' + i);
+      if (!card) continue;
+      if (state['task' + i]) {
+        card.classList.add('task-done');
+        done++;
       } else {
-        canvas.width = 200; canvas.height = 200;
-        ctx.fillStyle = dark; ctx.beginPath(); ctx.arc(100, 100, 100, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = cream; ctx.font = '600 14px Outfit, sans-serif';
-        ctx.textAlign = 'center'; ctx.fillText('HEROIC', 100, 90);
-        ctx.font = '600 10px Outfit, sans-serif';
-        ctx.fillText('OFFICIAL', 100, 114); ctx.fillText('PARTNER', 100, 128);
+        card.classList.remove('task-done');
       }
-      const link = document.createElement('a');
-      link.download = 'heroic-partner-badge-' + type + '.png';
-      link.href = canvas.toDataURL('image/png');
-      link.click();
     }
+    const pct = TASK_COUNT > 0 ? Math.round((done / TASK_COUNT) * 100) : 0;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-text').textContent = done + ' of ' + TASK_COUNT + ' complete';
+  }
 
-    function roundRect(ctx, x, y, w, h, r) {
-      ctx.beginPath();
-      ctx.moveTo(x + r, y);
-      ctx.lineTo(x + w - r, y);
-      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-      ctx.lineTo(x + w, y + h - r);
-      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-      ctx.lineTo(x + r, y + h);
-      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-      ctx.lineTo(x, y + r);
-      ctx.quadraticCurveTo(x, y, x + r, y);
-      ctx.closePath();
+  function toggleTask(n) {
+    const card = document.getElementById('task-' + n);
+    if (!card) return;
+    card.classList.toggle('task-open');
+  }
+
+  applyTaskState();
+
+  // COPY HERO LINK
+  function copyHeroLink() {
+    const text = document.getElementById('hero-link-text').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('hero-copy-btn');
+      btn.textContent = 'Copied!';
+      btn.style.background = '#059669';
+      btn.style.borderColor = '#059669';
+      setTimeout(() => { btn.textContent = 'Copy Link'; btn.style.background = ''; btn.style.borderColor = ''; }, 2000);
+    });
+  }
+
+  // COPY CONTENT
+  function copyContent(id, btn) {
+    const el = document.getElementById(id);
+    navigator.clipboard.writeText((el.innerText || el.textContent).trim()).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.style.background = '#059669';
+      btn.style.borderColor = '#059669';
+      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.borderColor = ''; }, 2000);
+    });
+  }
+
+  // COPY HEX
+  function copyHex(hex, el) {
+    navigator.clipboard.writeText(hex).then(() => {
+      const label = el.querySelector('.hex-label');
+      const orig = label.textContent;
+      label.textContent = 'Copied!';
+      label.style.color = '#059669';
+      setTimeout(() => { label.textContent = orig; label.style.color = ''; }, 1500);
+    });
+  }
+
+  // ASSET ACCORDION
+  function toggleAsset(btn) {
+    const content = btn.nextElementSibling;
+    const isOpen = content.classList.contains('open');
+    document.querySelectorAll('.asset-content').forEach(c => c.classList.remove('open'));
+    document.querySelectorAll('.asset-trigger').forEach(t => t.classList.remove('open'));
+    if (!isOpen) { content.classList.add('open'); btn.classList.add('open'); }
+  }
+
+  // EMAIL SUB-ACCORDION
+  function toggleEmail(btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    const parent = btn.closest('.asset-content') || btn.closest('.task-copy-panel');
+    if (parent) {
+      parent.querySelectorAll('.email-body').forEach(b => b.classList.remove('open'));
+      parent.querySelectorAll('.email-trigger').forEach(t => t.classList.remove('open'));
     }
-  </script>
+    if (!isOpen) { body.classList.add('open'); btn.classList.add('open'); }
+  }
+
+  // BADGE DOWNLOAD
+  function downloadBadge(type) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const dark = '#13171B', cream = '#F8F7F3';
+    if (type === 'wide') {
+      canvas.width = 400; canvas.height = 80;
+      ctx.fillStyle = dark; roundRect(ctx, 0, 0, 400, 80, 12); ctx.fill();
+      ctx.fillStyle = cream; ctx.font = '600 18px Outfit, sans-serif';
+      ctx.textAlign = 'center'; ctx.fillText('HEROIC  |  Official Partner', 200, 47);
+    } else if (type === 'square') {
+      canvas.width = 200; canvas.height = 200;
+      ctx.fillStyle = dark; roundRect(ctx, 0, 0, 200, 200, 16); ctx.fill();
+      ctx.fillStyle = cream; ctx.font = '600 14px Outfit, sans-serif';
+      ctx.textAlign = 'center'; ctx.fillText('HEROIC', 100, 90);
+      ctx.font = '600 11px Outfit, sans-serif';
+      ctx.fillText('OFFICIAL', 100, 118); ctx.fillText('PARTNER', 100, 134);
+    } else {
+      canvas.width = 200; canvas.height = 200;
+      ctx.fillStyle = dark; ctx.beginPath(); ctx.arc(100, 100, 100, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = cream; ctx.font = '600 14px Outfit, sans-serif';
+      ctx.textAlign = 'center'; ctx.fillText('HEROIC', 100, 90);
+      ctx.font = '600 10px Outfit, sans-serif';
+      ctx.fillText('OFFICIAL', 100, 114); ctx.fillText('PARTNER', 100, 128);
+    }
+    const link = document.createElement('a');
+    link.download = 'heroic-partner-badge-' + type + '.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }
+
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y); ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+</script>
 
 </body>
 </html>
