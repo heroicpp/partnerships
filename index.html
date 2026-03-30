@@ -174,8 +174,8 @@
     .email-field-label { font-weight: 600; color: var(--h-mid); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
     .email-divider { border-bottom: 1px solid #E5E7EB; margin: 8px 0 12px; }
     .email-content { white-space: pre-wrap; }
-    .copy-email-btn { display: block; margin-top: 12px; font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 8px; border: 1px solid var(--h-blue); background: var(--h-blue); color: white; cursor: pointer; transition: all 0.15s; }
-    .copy-email-btn:hover { background: #4551A0; }
+    .copy-email-btn { display: block; margin-top: 12px; font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 8px; border: 1px solid var(--h-blue); background: var(--h-blue); color: white; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+    .copy-email-btn:hover { background: #4551A0; border-color: #4551A0; }
 
     /* FAQ FILTER TAGS */
     .faq-tag { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid #D4D1C7; background: var(--h-white); color: var(--h-mid); cursor: pointer; transition: all 0.15s; }
@@ -185,12 +185,82 @@
 
     hr.heroic-hr { border: none; border-top: 1px solid #D4D1C7; margin: 48px 0; }
 
+    /* UNIFIED BUTTON STYLES */
+    .btn-primary { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 8px; border: 1px solid var(--h-blue); background: var(--h-blue); color: white; cursor: pointer; text-decoration: none; transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+    .btn-primary:hover { background: #4551A0; border-color: #4551A0; }
+    .btn-outline { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 8px; border: 1px solid var(--h-blue); background: none; color: var(--h-blue); cursor: pointer; text-decoration: none; transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+    .btn-outline:hover { background: rgba(84,97,174,0.08); }
+
+    /* TABLET */
+    @media (max-width: 900px) {
+      .page-wrap { padding: 0 28px; }
+      .hq-hero h1 { font-size: 36px; }
+      .idea-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* MOBILE */
     @media (max-width: 700px) {
-      .page-wrap { padding: 0 20px; }
-      .hq-header { padding: 14px 20px; }
-      .hq-hero h1 { font-size: 30px; }
-      .quick-actions, .gs-grid, .tier-row, .payout-grid, .brand-grid, .idea-grid, .link-grid, .calc-results { grid-template-columns: 1fr; }
+      .page-wrap { padding: 0 16px; }
+      .hq-header { padding: 14px 16px; }
+      .hq-hero { padding: 32px 0 28px; }
+      .hq-hero h1 { font-size: 28px; }
+      .hq-hero p { font-size: 15px; }
+      .hq-section { margin-bottom: 36px; }
+      .hq-section h2 { font-size: 24px; }
+      hr.heroic-hr { margin: 36px 0; }
+
+      .quick-actions { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 36px; }
+      .qa-card { padding: 16px 12px; }
+      .qa-icon { font-size: 20px; }
+      .qa-title { font-size: 13px; }
+
+      .gs-grid { grid-template-columns: 1fr; }
+      .gs-step { padding: 16px; }
+
+      .tier-row { grid-template-columns: 1fr; gap: 10px; }
+      .tier-card { padding: 22px 20px; }
+      .tier-pct { font-size: 36px; }
+
+      .calc-wrap { padding: 20px; }
+      .calc-results { grid-template-columns: 1fr; }
+      .calc-box-val { font-size: 24px; }
+
+      .payout-grid { grid-template-columns: 1fr; }
+
       .product-selector { grid-template-columns: repeat(2, 1fr) !important; }
+      .ps-card { padding: 12px; }
+
+      .promo-grid { grid-template-columns: 1fr !important; }
+
+      .asset-trigger { padding: 16px 18px; font-size: 15px; }
+      .asset-content { padding: 18px; }
+
+      .brand-grid { grid-template-columns: 1fr; }
+      .brand-do, .brand-dont { padding: 20px; }
+
+      .idea-grid { grid-template-columns: 1fr; }
+
+      .link-grid { grid-template-columns: 1fr; }
+
+      .faq-filters { gap: 6px; }
+      .faq-tag { font-size: 11px; padding: 5px 12px; }
+      .faq-mini-item { padding: 12px 16px; }
+      .faq-mini-q { font-size: 13px; }
+      .faq-mini-a { font-size: 12px; }
+
+      .hq-footer { padding: 24px 16px; }
+      .hq-footer-inner { flex-direction: column; text-align: center; gap: 8px; }
+
+      .badge-grid-mobile { grid-template-columns: 1fr !important; }
+
+      .product-link-box .btn-primary { width: 100%; justify-content: center; text-align: center; }
+
+      .promo-img-card div[style*="justify-content: space-between"] { flex-direction: column; align-items: flex-start !important; gap: 8px; }
+      .promo-img-card .btn-outline { width: 100%; justify-content: center; }
+
+      .hq-contact { padding: 12px 18px; }
+
+      .btn-primary, .btn-outline { font-size: 13px; }
     }
   </style>
 </head>
@@ -410,12 +480,14 @@
       </div>
 
       <!-- PRODUCT PAGE LINK (product-dependent) -->
-      <div class="product-asset" data-for="pn" style="background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 18px 24px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
-        <div style="flex: 1; min-width: 0;">
-          <div style="font-size: 15px; font-weight: 600;">PhilosophersNotes</div>
-          <div style="font-size: 13px; color: var(--h-mid);">Review the live product page. Always use your partner link when sharing with your audience.</div>
+      <div class="product-asset product-link-box" data-for="pn" style="background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 18px 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 15px; font-weight: 600;">PhilosophersNotes</div>
+            <div style="font-size: 13px; color: var(--h-mid);">Review the live product page. Always use your partner link when sharing with your audience.</div>
+          </div>
+          <a href="https://www.philosophersnotes.com/" target="_blank" class="btn-primary" style="flex-shrink: 0; width: auto;">Visit Page &rarr;</a>
         </div>
-        <a href="https://www.philosophersnotes.com/" target="_blank" style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--h-blue); color: white; text-decoration: none; white-space: nowrap; flex-shrink: 0;">Visit Page &rarr;</a>
       </div>
 
       <!-- LOGOS (always visible) -->
@@ -430,7 +502,7 @@
             <img id="heroic-logo-img" src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" alt="Heroic Logo" style="height: 40px;">
           </div>
           <div style="margin-bottom: 16px;">
-            <a href="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" download="heroic-logo.png" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--h-blue); text-decoration: none; padding: 6px 14px; border: 1px solid var(--h-blue); border-radius: 6px; transition: all 0.15s;" onmouseover="this.style.background='rgba(84,97,174,0.08)'" onmouseout="this.style.background=''">&#8595; Download Logo</a>
+            <a href="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2164464638/settings_images/0d3d8e-3f3-a375-d02-dda71dc13e_Heroic_Heroic_Black.png" download="heroic-logo.png" class="btn-outline">&#8595; Download Logo</a>
           </div>
           <p><strong>Brand Colors:</strong> <span style="font-size: 11px; color: var(--h-mid);">(click to copy)</span></p>
           <div style="display: flex; gap: 10px; margin: 8px 0 16px; flex-wrap: wrap;">
@@ -481,7 +553,7 @@
                   <div style="font-size: 13px; font-weight: 600;">The Ultimate Wisdom Library</div>
                   <div style="font-size: 11px; color: var(--h-mid);">App hero with categories</div>
                 </div>
-                <a href="https://drive.google.com/uc?export=download&id=1eYf3_0pjtX2YQoQx2J0ZayjEYLlb6khS" download="pn-ultimate-wisdom-library.jpg" style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer; text-decoration: none; white-space: nowrap;">&#8595; Download</a>
+                <a href="https://drive.google.com/uc?export=download&id=1eYf3_0pjtX2YQoQx2J0ZayjEYLlb6khS" download="pn-ultimate-wisdom-library.jpg" class="btn-outline">&#8595; Download</a>
               </div>
             </div>
 
@@ -493,7 +565,7 @@
                   <div style="font-size: 13px; font-weight: 600;">Installing the Big Ideas</div>
                   <div style="font-size: 11px; color: var(--h-mid);">Atomic Habits feature</div>
                 </div>
-                <a href="https://drive.google.com/uc?export=download&id=1HYxUfDPcq4uhXsQLuRZ5Pw_xdciKYN3L" download="pn-installing-big-ideas.jpg" style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer; text-decoration: none; white-space: nowrap;">&#8595; Download</a>
+                <a href="https://drive.google.com/uc?export=download&id=1HYxUfDPcq4uhXsQLuRZ5Pw_xdciKYN3L" download="pn-installing-big-ideas.jpg" class="btn-outline">&#8595; Download</a>
               </div>
             </div>
 
@@ -505,7 +577,7 @@
                   <div style="font-size: 13px; font-weight: 600;">Wisest Person in the Room</div>
                   <div style="font-size: 11px; color: var(--h-mid);">Statue with headphones</div>
                 </div>
-                <a href="https://drive.google.com/uc?export=download&id=1sSzNQdZXEtpnXBu7-FoTEFSgdnxP3A1R" download="pn-wisest-person-room.jpg" style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer; text-decoration: none; white-space: nowrap;">&#8595; Download</a>
+                <a href="https://drive.google.com/uc?export=download&id=1sSzNQdZXEtpnXBu7-FoTEFSgdnxP3A1R" download="pn-wisest-person-room.jpg" class="btn-outline">&#8595; Download</a>
               </div>
             </div>
 
@@ -517,7 +589,7 @@
                   <div style="font-size: 13px; font-weight: 600;">700+ PhilosophersNotes</div>
                   <div style="font-size: 11px; color: var(--h-mid);">Laptop & phone mockup</div>
                 </div>
-                <a href="https://drive.google.com/uc?export=download&id=1kG8iFOCGrPd-rDByqGck3LZtiFkqvMXJ" download="pn-700-notes-mockup.jpg" style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer; text-decoration: none; white-space: nowrap;">&#8595; Download</a>
+                <a href="https://drive.google.com/uc?export=download&id=1kG8iFOCGrPd-rDByqGck3LZtiFkqvMXJ" download="pn-700-notes-mockup.jpg" class="btn-outline">&#8595; Download</a>
               </div>
             </div>
 
@@ -679,7 +751,7 @@
         </button>
         <div class="asset-content">
           <p style="margin-bottom: 16px;">Display the "Official Heroic Partner" badge on your website, email signature, or social profiles. Three formats available.</p>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+          <div class="badge-grid-mobile" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
             <!-- Wide Badge -->
             <div style="text-align: center;">
               <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--h-mid); margin-bottom: 8px;">Wide</div>
@@ -689,7 +761,7 @@
                   Official Partner
                 </div>
               </div>
-              <button onclick="downloadBadge('wide')" style="margin-top: 8px; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer;">&#8595; Download</button>
+              <button onclick="downloadBadge('wide')" class="btn-outline" style="margin-top: 8px;">&#8595; Download</button>
             </div>
             <!-- Square Badge -->
             <div style="text-align: center;">
@@ -700,7 +772,7 @@
                   <div style="font-size: 9px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">Official<br>Partner</div>
                 </div>
               </div>
-              <button onclick="downloadBadge('square')" style="margin-top: 8px; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer;">&#8595; Download</button>
+              <button onclick="downloadBadge('square')" class="btn-outline" style="margin-top: 8px;">&#8595; Download</button>
             </div>
             <!-- Circular Badge -->
             <div style="text-align: center;">
@@ -711,7 +783,7 @@
                   <div style="font-size: 7px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; line-height: 1.2;">Official<br>Partner</div>
                 </div>
               </div>
-              <button onclick="downloadBadge('circle')" style="margin-top: 8px; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; color: var(--h-blue); background: none; border: 1px solid var(--h-blue); border-radius: 6px; padding: 5px 12px; cursor: pointer;">&#8595; Download</button>
+              <button onclick="downloadBadge('circle')" class="btn-outline" style="margin-top: 8px;">&#8595; Download</button>
             </div>
           </div>
           <p style="font-size: 12px; margin-top: 14px; color: var(--h-mid);">Use on your website, email footer, or social bios. Do not modify the badge design or colors.</p>
@@ -775,7 +847,7 @@
           <div style="font-size: 15px; font-weight: 600;">Want more ideas?</div>
           <div style="font-size: 13px; color: var(--h-mid);">Read our guide on the best ways to promote the Heroic Partner Program.</div>
         </div>
-        <a href="#" style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--h-blue); color: white; text-decoration: none; white-space: nowrap;">Read the Guide</a>
+        <a href="#" class="btn-primary">Read the Guide</a>
       </div>
     </div>
 
