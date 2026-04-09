@@ -231,6 +231,7 @@
       .ps-card { padding: 12px; }
 
       .promo-grid { grid-template-columns: 1fr !important; }
+      .brian-bio-grid { grid-template-columns: 1fr !important; }
 
       .asset-trigger { padding: 16px 18px; font-size: 15px; }
       .asset-content { padding: 18px; }
@@ -283,7 +284,7 @@
       <div class="hq-contact">
         <div style="display: flex; margin-right: 4px;">
           <img src="https://pbs.twimg.com/profile_images/1917957401346531328/cqVyHmm7_400x400.jpg" alt="TG" style="border: 2px solid var(--h-white); z-index: 2;">
-          <img src="https://media.licdn.com/dms/image/v2/D5603AQGmyLPGjbtR4g/profile-displayphoto-crop_800_800/B56Zl8dtJ6JkAI-/0/1758729797522?e=1775692800&v=beta&t=JIbQ290eENDQMQ1DUNsKGE8nHu1Pb3Pat2ZEEUjn85A" alt="MB" style="border: 2px solid var(--h-white); margin-left: -10px; z-index: 1;">
+          <img src="https://raw.githubusercontent.com/heroicpp/partnerships/main/assets/images/michael-balchan.png" alt="Michael Balchan" style="border: 2px solid var(--h-white); margin-left: -10px; z-index: 1;">
         </div>
         <div class="hq-contact-info">
           <div class="hq-contact-name">Contact Us</div>
@@ -532,6 +533,31 @@
             </div>
           </div>
           <p style="font-size: 12px;">Right-click any logo to save. Use these colors when creating co-branded content. Do not modify or recolor the logo.</p>
+        </div>
+      </div>
+
+      <!-- BRIAN JOHNSON MEDIA KIT (always visible) -->
+      <div class="asset-accordion">
+        <button class="asset-trigger" onclick="toggleAsset(this)">
+          <span class="asset-label">Brian Johnson Media Kit</span> <span class="badge badge-ready">Ready</span>
+          <span class="asset-arrow">&#9660;</span>
+        </button>
+        <div class="asset-content">
+          <p style="font-size: 13px; color: var(--h-mid); margin-bottom: 16px;">Use this photo and bio when featuring Brian in your content, interviews, podcast intros, or promotional pieces.</p>
+          <div class="brian-bio-grid" style="display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start;">
+            <div>
+              <div style="background: var(--h-cream); border: 1px solid #D4D1C7; border-radius: 10px; overflow: hidden;">
+                <img src="https://raw.githubusercontent.com/heroicpp/partnerships/main/assets/images/brian-johnson-arete.png" alt="Brian Johnson, founder and CEO of Heroic, wearing an Arete t-shirt in front of a wall of philosopher portraits." style="width: 100%; display: block;">
+              </div>
+              <a href="https://raw.githubusercontent.com/heroicpp/partnerships/main/assets/images/brian-johnson-arete.png" download="brian-johnson-arete.png" class="btn-outline" style="margin-top: 10px; width: 100%; justify-content: center;">&#8595; Download Photo</a>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--h-blue); margin-bottom: 10px;">Official Bio</div>
+              <p style="font-size: 14px; line-height: 1.7; color: var(--h-dark); margin-bottom: 12px;">Brian Johnson is the founder and CEO of Heroic, a public benefit corporation with a mission to help create a world in which 51% of humanity is flourishing by 2051. He is the author of Areté and the creator of Philosopher&rsquo;s Notes, one of the most comprehensive collections of practical wisdom in the world.</p>
+              <p style="font-size: 14px; line-height: 1.7; color: var(--h-dark); margin-bottom: 16px;">Over the past two decades, Brian has distilled the best ideas from ancient wisdom and modern science into a scientifically-validated system that helps individuals and teams consistently show up as their best. His work has been applied by elite performers including Ryder Cup captain Luke Donald, Notre Dame head coach Marcus Freeman, and leaders within U.S. Special Operations Command. He was also featured in the documentary Finding Joe on the modern hero&rsquo;s journey.</p>
+              <button onclick="copyBrianBio(this)" class="btn-outline">&#128203; Copy Bio</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1054,6 +1080,19 @@
       label.textContent = 'Copied!';
       label.style.color = '#059669';
       setTimeout(() => { label.textContent = orig; label.style.color = ''; }, 1500);
+    });
+  }
+
+  // COPY BRIAN BIO
+  function copyBrianBio(btn) {
+    const bio = "Brian Johnson is the founder and CEO of Heroic, a public benefit corporation with a mission to help create a world in which 51% of humanity is flourishing by 2051. He is the author of Areté and the creator of Philosopher's Notes, one of the most comprehensive collections of practical wisdom in the world.\n\nOver the past two decades, Brian has distilled the best ideas from ancient wisdom and modern science into a scientifically-validated system that helps individuals and teams consistently show up as their best. His work has been applied by elite performers including Ryder Cup captain Luke Donald, Notre Dame head coach Marcus Freeman, and leaders within U.S. Special Operations Command. He was also featured in the documentary Finding Joe on the modern hero's journey.";
+    navigator.clipboard.writeText(bio).then(() => {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '&#10003; Copied!';
+      btn.style.background = '#059669';
+      btn.style.borderColor = '#059669';
+      btn.style.color = '#fff';
+      setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.borderColor = ''; btn.style.color = ''; }, 2000);
     });
   }
 
