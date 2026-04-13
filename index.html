@@ -191,6 +191,11 @@
     .btn-outline { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 8px; border: 1px solid var(--h-blue); background: none; color: var(--h-blue); cursor: pointer; text-decoration: none; transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
     .btn-outline:hover { background: rgba(84,97,174,0.08); }
 
+    /* COPY LINK BUTTON */
+    .copy-link-btn { background: none; border: none; cursor: pointer; font-size: 16px; opacity: 0.25; transition: opacity 0.15s; padding: 0 4px; vertical-align: middle; line-height: 1; }
+    .copy-link-btn:hover { opacity: 0.6; }
+    .copy-link-btn.copied { opacity: 1; }
+
     /* TABLET */
     @media (max-width: 900px) {
       .page-wrap { padding: 0 28px; }
@@ -232,6 +237,8 @@
 
       .promo-grid { grid-template-columns: 1fr !important; }
       .brian-bio-grid { grid-template-columns: 1fr !important; }
+      .social-tag-grid { grid-template-columns: 1fr !important; }
+      .social-tag-grid a { font-size: 12px !important; padding: 7px 10px !important; }
 
       .asset-trigger { padding: 16px 18px; font-size: 15px; }
       .asset-content { padding: 18px; }
@@ -314,10 +321,10 @@
     </div>
 
     <!-- 1. GETTING STARTED -->
-    <div class="hq-section">
+    <div class="hq-section" id="getting-started">
       <div class="hq-section-header">
         <div class="hq-section-label">Getting Started</div>
-        <h2>Six Steps to Your First Commission</h2>
+        <h2>Six Steps to Your First Commission <button class="copy-link-btn" onclick="copySectionLink('getting-started', this)" title="Copy link to this section">&#128279;</button></h2>
       </div>
       <div class="gs-grid">
         <div class="gs-step">
@@ -353,7 +360,7 @@
     <div class="hq-section" id="commissions">
       <div class="hq-section-header">
         <div class="hq-section-label">Commissions</div>
-        <h2>Your Earning Potential</h2>
+        <h2>Your Earning Potential <button class="copy-link-btn" onclick="copySectionLink('commissions', this)" title="Copy link to this section">&#128279;</button></h2>
       </div>
 
       <div class="tier-row">
@@ -422,7 +429,7 @@
     <div class="hq-section" id="assets">
       <div class="hq-section-header">
         <div class="hq-section-label">Promotional Assets</div>
-        <h2>Heroic Logos, Copy & Creative</h2>
+        <h2>Heroic Logos, Copy & Creative <button class="copy-link-btn" onclick="copySectionLink('assets', this)" title="Copy link to this section">&#128279;</button></h2>
       </div>
 
       <!-- PRODUCT SELECTOR -->
@@ -869,10 +876,10 @@
     <hr class="heroic-hr">
 
     <!-- BRAND GUIDELINES -->
-    <div class="hq-section">
+    <div class="hq-section" id="brand">
       <div class="hq-section-header">
         <div class="hq-section-label">Brand</div>
-        <h2>Brand Guidelines & Rules</h2>
+        <h2>Brand Guidelines & Rules <button class="copy-link-btn" onclick="copySectionLink('brand', this)" title="Copy link to this section">&#128279;</button></h2>
       </div>
       <div class="brand-grid">
         <div class="brand-do">
@@ -903,10 +910,10 @@
     <hr class="heroic-hr">
 
     <!-- PROMO IDEAS -->
-    <div class="hq-section">
+    <div class="hq-section" id="playbook">
       <div class="hq-section-header">
         <div class="hq-section-label">Playbook</div>
-        <h2>Promotion Ideas</h2>
+        <h2>Promotion Ideas <button class="copy-link-btn" onclick="copySectionLink('playbook', this)" title="Copy link to this section">&#128279;</button></h2>
       </div>
       <p style="font-size: 14px; color: var(--h-mid); margin-bottom: 20px;">Not sure where to start? Here's how our top partners promote Heroic.</p>
       <div class="idea-grid">
@@ -929,10 +936,10 @@
     <hr class="heroic-hr">
 
     <!-- KEY LINKS -->
-    <div class="hq-section">
+    <div class="hq-section" id="quick-links">
       <div class="hq-section-header">
         <div class="hq-section-label">Quick Links</div>
-        <h2>Key Links</h2>
+        <h2>Key Links <button class="copy-link-btn" onclick="copySectionLink('quick-links', this)" title="Copy link to this section">&#128279;</button></h2>
       </div>
       <div class="link-grid">
         <a href="https://partners.dub.co/programs/heroic" class="link-card"><div class="link-card-title">Partner Dashboard</div><div class="link-card-desc">Stats, links & payouts</div></a>
@@ -942,6 +949,43 @@
         <a href="mailto:partners@heroic.us" class="link-card"><div class="link-card-title">Email Support</div><div class="link-card-desc">partners@heroic.us</div></a>
         <a href="https://heroic.us" class="link-card" target="_blank"><div class="link-card-title">Heroic Website</div><div class="link-card-desc">heroic.us</div></a>
       </div>
+
+      <!-- TAG US ON SOCIAL -->
+      <div style="margin-top: 32px;">
+        <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--h-blue); margin-bottom: 14px;">Follow & Tag Us on Social</div>
+        <p style="font-size: 14px; color: var(--h-mid); margin-bottom: 16px;">When you post about Heroic or Philosopher's Notes, tag us so we can reshare, engage, and amplify your content. Follow and tag us on social.</p>
+        <div class="social-tag-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+
+          <!-- Brian Johnson -->
+          <div style="background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+            <div style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">Brian Johnson</div>
+            <div style="font-size: 12px; color: var(--h-mid); margin-bottom: 14px;">Founder & CEO of Heroic</div>
+            <div style="display: flex; gap: 10px;">
+              <a href="https://www.linkedin.com/in/heroicbrian/" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 8px; border: 1px solid #D4D1C7; text-decoration: none; color: var(--h-dark); font-size: 13px; font-weight: 500; transition: all 0.15s;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                @heroicbrian
+              </a>
+              <a href="https://x.com/heroicbrian" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 8px; border: 1px solid #D4D1C7; text-decoration: none; color: var(--h-dark); font-size: 13px; font-weight: 500; transition: all 0.15s;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                @heroicbrian
+              </a>
+            </div>
+          </div>
+
+          <!-- Heroic (Company) -->
+          <div style="background: var(--h-white); border: 1px solid #D4D1C7; border-radius: 10px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+            <div style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">Heroic</div>
+            <div style="font-size: 12px; color: var(--h-mid); margin-bottom: 14px;">Official Company Page</div>
+            <div style="display: flex; gap: 10px;">
+              <a href="https://www.linkedin.com/company/heroic-pbc/" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 8px; border: 1px solid #D4D1C7; text-decoration: none; color: var(--h-dark); font-size: 13px; font-weight: 500; transition: all 0.15s;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                @heroic-pbc
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
 
     <hr class="heroic-hr">
@@ -950,7 +994,7 @@
     <div class="hq-section" id="faq-section">
       <div class="hq-section-header">
         <div class="hq-section-label">FAQ</div>
-        <h2>Partner FAQ</h2>
+        <h2>Partner FAQ <button class="copy-link-btn" onclick="copySectionLink('faq-section', this)" title="Copy link to this section">&#128279;</button></h2>
       </div>
 
       <!-- Filter Tags -->
@@ -1081,6 +1125,18 @@
       label.textContent = 'Copied!';
       label.style.color = '#059669';
       setTimeout(() => { label.textContent = orig; label.style.color = ''; }, 1500);
+    });
+  }
+
+  // COPY SECTION LINK
+  function copySectionLink(sectionId, btn) {
+    const url = window.location.origin + window.location.pathname + '#' + sectionId;
+    navigator.clipboard.writeText(url).then(() => {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '&#10003;';
+      btn.classList.add('copied');
+      btn.style.color = '#059669';
+      setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); btn.style.color = ''; }, 2000);
     });
   }
 
